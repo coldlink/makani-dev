@@ -47,6 +47,7 @@ export default function Home() {
         <h2>Full Stack Software Developer</h2>
 
         <p>Cruising the information superhighway 🏄</p>
+        <p>Coding along the full stack across the way 👨‍💻</p>
 
         <p>
           Currently doing code at{' '}
@@ -58,8 +59,8 @@ export default function Home() {
 
         <p>
           Previously at{' '}
-          <a href="https://natives.group" target="_blank" rel="noreferrer">
-            Natives
+          <a href="https://netnatives.com/" target="_blank" rel="noreferrer">
+            Net Natives
           </a>
           .
         </p>
