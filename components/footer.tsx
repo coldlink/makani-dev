@@ -2,10 +2,42 @@ export default function Footer() {
   return (
     <footer>
       <ul>
-        <li>Email</li>
-        <li>LinkedIn</li>
-        <li>GitHub</li>
-        <li>Twitter</li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="mailto:contact@makani.dev"
+          >
+            Email
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/mahesh-makani-9798a8108/"
+          >
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/coldlink"
+          >
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://twitter.com/coldlink_"
+          >
+            Twitter
+          </a>
+        </li>
       </ul>
     </footer>
   );
