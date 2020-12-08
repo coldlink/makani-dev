@@ -2,9 +2,16 @@ import Head from 'next/head';
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
-        <title>Create Next App</title>
+        <title>Mahesh Makani | Software Developer</title>
+        <meta
+          name="description"
+          content="Curising the information superhighway. Coding across the full stack along the way."
+        />
+        <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -32,6 +39,6 @@ export default function Home() {
 
         <p>Have a look at some of my work, or get in touch</p>
       </main>
-    </div>
+    </>
   );
 }
