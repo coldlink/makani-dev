@@ -3,7 +3,13 @@ import Layout from '../components/layout';
 export default function Work() {
   return (
     <Layout title="Work" subheading="Work Experience">
-      <h3>The Guardian</h3>
+      <a
+        href="https://theguardian.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <h3>The Guardian</h3>
+      </a>
       <h4>Full Stack Software Engineer | September 2019 - Present</h4>
       <h5>Identity Team</h5>
       <h6>About</h6>
@@ -21,7 +27,13 @@ export default function Work() {
         <br />
         AWS, Fastly, GitHub
       </p>
-      <h3>Net Natives</h3>
+      <a
+        href="https://netnatives.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <h3>Net Natives</h3>
+      </a>
       <h4>Software Developer | September 2015 - September 2019</h4>
       <a href="https://edurank.net" target="_blank" rel="noopener noreferrer">
         <h5>Edurank</h5>
