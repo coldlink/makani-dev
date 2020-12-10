@@ -1,0 +1,24 @@
+article,header,footer {
+  padding: 1rem;
+}
+
+header {
+  text-align: center;
+}
+
+article {
+  border: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+p,ul,ol,dl,blockquote,hr,pre,table,form,fieldset,figure,address {
+  margin-bottom: 1rem;
+}
+
+.center {
+  text-align: center;
+}

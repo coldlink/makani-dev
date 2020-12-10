@@ -5,19 +5,13 @@ export default function Navbar() {
     <nav>
       <ul>
         <li>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
+          <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/work">
-            <a>Work</a>
-          </Link>
+          <Link href="/work">Work</Link>
         </li>
         <li>
-          <Link href="/personal">
-            <a>Personal</a>
-          </Link>
+          <Link href="/personal">Personal</Link>
         </li>
         <li>
           <a
