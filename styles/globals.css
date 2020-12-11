@@ -19,6 +19,10 @@ p,ul,ol,dl,blockquote,hr,pre,table,form,fieldset,figure,address {
   margin-bottom: 1rem;
 }
 
+svg {
+  width: 1rem;
+}
+
 .center {
   text-align: center;
 }
