@@ -60,11 +60,6 @@ export default function Layout({
         />
         <meta name="msapplication-TileColor" content="#333333" />
         <meta name="theme-color" content="#333333" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@500&display=swap"
-          rel="stylesheet"
-        />
       </Head>
       <Navbar />
       <Header h2={subheading} />
