@@ -10,7 +10,9 @@ export default function Work() {
       >
         <h3>The Guardian</h3>
       </a>
-      <h4>Full Stack Software Engineer | September 2019 - Present</h4>
+      <h4>
+        Full Stack Software Engineer | September 2019 - Present | London, UK
+      </h4>
       <h5>Identity Team</h5>
       <h6>About</h6>
       <p>
@@ -34,7 +36,10 @@ export default function Work() {
       >
         <h3>Net Natives</h3>
       </a>
-      <h4>Software Developer | September 2015 - September 2019</h4>
+      <h4>
+        Software Developer | September 2015 - September 2019 |
+        Brighton/Portsmouth, UK
+      </h4>
       <a href="https://edurank.net" target="_blank" rel="noopener noreferrer">
         <h5>Edurank</h5>
       </a>

@@ -4,7 +4,7 @@ export default function Personal() {
   return (
     <Layout title="Personal" subheading="Personal Experience">
       <h3>Fight Lab Brighton</h3>
-      <h4>November 2017 - Present</h4>
+      <h4>November 2017 - Present | Brighton, UK</h4>
       <h5>Habrewken - Brighton Fighting Game Community</h5>
       <h6>About</h6>
       <p>
