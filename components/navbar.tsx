@@ -14,13 +14,7 @@ export default function Navbar() {
           <Link href="/personal">Personal</Link>
         </li>
         <li>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://drive.google.com/file/d/1KmAxyYImQkBwd4pwLUqtz2JuVcJo8JgC/view?usp=sharing"
-          >
-            Resume
-          </a>
+          <Link href="/cv">CV/Resume</Link>
         </li>
       </ul>
     </nav>
