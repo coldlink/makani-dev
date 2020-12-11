@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "tar": "tar -cvf ./deploy.tar --exclude='*.map' ./captain-definition ./out/*",
+    "deploy": "yarn build && yarn tar && caprover deploy -t ./deploy.tar"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
