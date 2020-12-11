@@ -1,15 +1,37 @@
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { faGlobeEurope } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import Layout from '../components/layout';
 
 export default function Work() {
   return (
     <Layout title="Work" subheading="Work Experience">
-      <a
-        href="https://theguardian.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <h3>The Guardian</h3>
-      </a>
+      <h3>The Guardian</h3>
+      <nav>
+        <ul className="in-article">
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://theguardian.com"
+              title="Website | The Guardian"
+            >
+              <FontAwesomeIcon icon={faGlobeEurope} />
+            </a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/guardian"
+              title="GitHub | The Guardian"
+            >
+              <FontAwesomeIcon icon={faGithubSquare} />
+            </a>
+          </li>
+        </ul>
+      </nav>
       <h4>
         Full Stack Software Engineer | September 2019 - Present | London, UK
       </h4>
@@ -29,20 +51,40 @@ export default function Work() {
         <br />
         AWS, Fastly, GitHub
       </p>
-      <a
-        href="https://netnatives.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <h3>Net Natives</h3>
-      </a>
+      <h3>Net Natives</h3>
+      <nav>
+        <ul className="in-article">
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://netnatives.com"
+              title="Website | Net Natives"
+            >
+              <FontAwesomeIcon icon={faGlobeEurope} />
+            </a>
+          </li>
+        </ul>
+      </nav>
       <h4>
         Software Developer | September 2015 - September 2019 |
         Brighton/Portsmouth, UK
       </h4>
-      <a href="https://edurank.net" target="_blank" rel="noopener noreferrer">
-        <h5>Edurank</h5>
-      </a>
+      <h5>Edurank</h5>
+      <nav>
+        <ul className="in-article">
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://edurank.net"
+              title="Website | Edurank"
+            >
+              <FontAwesomeIcon icon={faGlobeEurope} />
+            </a>
+          </li>
+        </ul>
+      </nav>
       <h6>About</h6>
       <p>
         Edurank is the source for social media analytics in the education
@@ -114,9 +156,21 @@ export default function Work() {
         Alongside leading the development of Edurank, I’ve worked on a number of
         projects within Natives. Some notable projects are described below.
       </p>
-      <a href="https://akerolabs.com" target="_blank" rel="noopener noreferrer">
-        <h6>Akero</h6>
-      </a>
+      <h6>Akero</h6>
+      <nav>
+        <ul className="in-article">
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://akerolabs.com"
+              title="Website | Akero"
+            >
+              <FontAwesomeIcon icon={faGlobeEurope} />
+            </a>
+          </li>
+        </ul>
+      </nav>
       <p>
         Akero is used by education marketers to convert more student enquires
         into enrollments. A unique combination of features that creates the

@@ -50,3 +50,12 @@ a {
 .center {
   text-align: center;
 }
+
+nav .in-article {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.in-article svg {
+  width: 1.5rem;
+}

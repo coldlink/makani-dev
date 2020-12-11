@@ -1,11 +1,42 @@
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { faGlobeEurope } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Layout from '../components/layout';
 
 export default function Personal() {
   return (
     <Layout title="Personal" subheading="Personal Experience">
       <h3>Fight Lab Brighton</h3>
+      <nav>
+        <ul className="in-article">
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/fightlab"
+              title="GitHub | Fight Lab Brighton"
+            >
+              <FontAwesomeIcon icon={faGithubSquare} />
+            </a>
+          </li>
+        </ul>
+      </nav>
       <h4>November 2017 - Present | Brighton, UK</h4>
       <h5>Habrewken - Brighton Fighting Game Community</h5>
+      <nav>
+        <ul className="in-article">
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://hbk.gg"
+              title="Website | Habrewken"
+            >
+              <FontAwesomeIcon icon={faGlobeEurope} />
+            </a>
+          </li>
+        </ul>
+      </nav>
       <h6>About</h6>
       <p>
         I&apos;ve been a member of the Fighting Game Community since 2012. I
@@ -114,6 +145,20 @@ export default function Personal() {
       <h3>Bracketor for Challonge</h3>
       <h4>December 2015 - March 2016</h4>
       <h5>App Development</h5>
+      <nav>
+        <ul className="in-article">
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/coldlink/bracketorv2"
+              title="GitHub | Bracketor"
+            >
+              <FontAwesomeIcon icon={faGithubSquare} />
+            </a>
+          </li>
+        </ul>
+      </nav>
       <h6>About</h6>
       <p>
         A mobile app communicating with the{' '}
