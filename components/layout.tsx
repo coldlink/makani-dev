@@ -26,7 +26,7 @@ export default function Layout({
         <title>{title}Mahesh Makani | Software Developer</title>
         <meta
           name="description"
-          content="Curising the information superhighway. Coding across the full stack along the way."
+          content="Hello! I'm a software developer. Cruising the information superhighway. Coding across the full stack along the way."
         />
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta charSet="utf-8" />
