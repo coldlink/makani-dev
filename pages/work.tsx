@@ -43,7 +43,7 @@ export default function Work() {
         Edurank is the source for social media analytics in the education
         sector. Institutions use Edurank to view their social activity as well
         as their competitors’ to benchmark themselves against the sector. The
-        paid for Enterprise SAAS version allows institutions to get a deep dive
+        paid for Enterprise SaaS version allows institutions to get a deep dive
         into their data by comparing their social media metrics down to an hours
         granularity against any number of competitors and sectors.
       </p>
@@ -114,7 +114,7 @@ export default function Work() {
       </a>
       <p>
         Akero is used by education marketers to convert more student enquires
-        into enrolments. A unique combination of features that creates the
+        into enrollments. A unique combination of features that creates the
         perfect advertising infrastructure. So we can track and report on all
         the data that matters, from impressions to the individual whilst
         improving conversions through personalisation and A/B testing.
