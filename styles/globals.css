@@ -1,3 +1,16 @@
+input,
+textarea,
+select,
+button, option, html,
+body {
+  font-family: 'Montserrat', system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
 article,header,footer {
   padding: 1rem;
 }
@@ -7,10 +20,13 @@ header {
 }
 
 article {
+  background: none;
   border: none;
 }
 
 h1,h2,h3,h4,h5,h6 {
+  font-family: 'Raleway', system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -21,6 +37,10 @@ p,ul,ol,dl,blockquote,hr,pre,table,form,fieldset,figure,address {
 
 svg {
   width: 1rem;
+}
+
+a {
+  color: #FF5722;
 }
 
 .center {
