@@ -1,7 +1,7 @@
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import { faGlobeEurope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Layout from '../components/layout';
+import Layout from '../../components/layout';
 
 export default function Personal() {
   return (
