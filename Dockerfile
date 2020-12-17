@@ -1,4 +1,4 @@
-FROM node:12 AS base
+FROM node:12-alpine AS base
 WORKDIR /app
 COPY package.json yarn.lock ./
 
