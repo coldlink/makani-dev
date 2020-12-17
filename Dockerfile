@@ -3,7 +3,7 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 
 FROM base AS build
-RUN yarn --audit
+RUN yarn
 ADD . .
 RUN yarn build
 
