@@ -10,6 +10,8 @@ export default function Home() {
         src="mahesh.jpg"
         alt="Mahesh Makani | Photo"
         className="avatar"
+        width="100"
+        height="100"
       ></img>
     </Layout>
   );
