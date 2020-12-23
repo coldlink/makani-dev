@@ -61,3 +61,10 @@ nav .in-article {
 .in-article svg {
   width: 1.5rem;
 }
+
+img.avatar {
+  vertical-align: middle;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
