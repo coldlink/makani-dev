@@ -23,10 +23,10 @@ yarn build
 Which will make an optimised production build ready for deployment
 
 
-### Deploy
+### Start
 
 ```bash
-yarn deploy
+yarn start
 ```
 
-I use [CapRover](https://caprover.com/) as my personal stack. So this command runs the build, packages it into a tar file, and runs the CapRover deploy command
+Starts a production server.
