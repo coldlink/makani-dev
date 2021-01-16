@@ -45,11 +45,87 @@ export default function Work() {
         security recommendations, and migrating legacy systems to a modern
         codebase.
       </p>
+      <p>
+        I have been featured in an{' '}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.theguardian.com/info/2021/jan/13/a-day-in-the-life"
+          title="Mahesh Makani | A Day in the Life | The Guardian"
+        >
+          engineering blog post
+        </a>{' '}
+        where I reflect on my career and experience at the Guardian to date.
+      </p>
       <h6>Technologies/Platforms</h6>
       <p>
-        TypeScript/JavaScript (React | Node), Scala, PostgreSQL, VCL
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://www.typescriptlang.org/"
+        >
+          TypeScript
+        </a>
+        ,{' '}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://reactjs.org/"
+        >
+          React.js
+        </a>
+        ,{' '}
+        <a target="_blank" rel="noopener noreferrer" href="https://nodejs.org/">
+          Node.js
+        </a>
+        ,{' '}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.scala-lang.org/"
+        >
+          Scala
+        </a>
+        ,{' '}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.postgresql.org/"
+        >
+          PostgreSQL
+        </a>
+        ,{' '}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://varnish-cache.org/docs/trunk/users-guide/vcl.html"
+        >
+          VCL
+        </a>
         <br />
-        AWS, Fastly, GitHub
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://aws.amazon.com/"
+        >
+          AWS
+        </a>
+        ,{' '}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.fastly.com/"
+        >
+          Fastly
+        </a>
+        ,{' '}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/guardian"
+        >
+          GitHub
+        </a>
       </p>
       <h3>Net Natives</h3>
       <nav>
