@@ -1,15 +1,26 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelopeSquare, faFire } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithubSquare,
   faLinkedin,
   faTwitterSquare,
 } from '@fortawesome/free-brands-svg-icons';
+import Konami from 'react-konami-code';
 
 export default function Footer() {
   return (
     <footer>
       <nav>
+        <Konami>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://tinder.com/@coldlink"
+            title="Tinder"
+          >
+            <FontAwesomeIcon icon={faFire} />
+          </a>
+        </Konami>
         <ul>
           <li>
             <a

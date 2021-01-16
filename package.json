@@ -15,6 +15,7 @@
     "next": "10.0.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-konami-code": "^2.0.1-beta.1",
     "tacit-css": "^1.5.2"
   },
   "devDependencies": {
