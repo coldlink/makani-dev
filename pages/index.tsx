@@ -6,6 +6,7 @@ export default function Home() {
       <p>Cruising the information superhighway 🏄</p>
       <p>Coding along the full stack across the way 👨‍💻</p>
       <p>Based in Hertfordshire and London, UK</p>
+      <p>He/Him</p>
       <img
         src="mahesh.jpg"
         alt="Mahesh Makani | Photo"
