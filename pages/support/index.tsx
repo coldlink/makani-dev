@@ -31,7 +31,7 @@ export default function Support() {
       </p>
       <h3>
         <a
-          href="www.bulb.me/maheshm6346"
+          href="https://www.bulb.me/maheshm6346"
           target="_blank"
           rel="noopener noreferrer"
         >
