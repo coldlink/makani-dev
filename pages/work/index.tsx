@@ -32,8 +32,9 @@ export default function Work() {
           </li>
         </ul>
       </nav>
+      <h4>Senior Software Developer | April 2022 - Present | London, UK</h4>
       <h4>
-        Full Stack Software Engineer | September 2019 - Present | London, UK
+        Full Stack Software Engineer | September 2019 - April 2022 | London, UK
       </h4>
       <h5>Identity Team</h5>
       <h6>About</h6>

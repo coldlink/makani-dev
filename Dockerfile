@@ -1,4 +1,4 @@
-FROM node:12-alpine AS base
+FROM node:16-alpine AS base
 WORKDIR /app
 COPY package.json yarn.lock ./
 
@@ -7,7 +7,7 @@ RUN yarn
 ADD . .
 RUN yarn build
 
-FROM node:12-alpine
+FROM node:16-alpine
 WORKDIR /app
 COPY --from=build /app .
 ENV NODE_ENV production
