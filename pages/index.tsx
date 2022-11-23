@@ -15,6 +15,9 @@ export default function Home() {
         width={100}
         height={100}
       ></Image>
+      <a rel="me" href="https://gustodon.makani.dev/@mahesh">
+        gustodon
+      </a>
     </Layout>
   );
 }
