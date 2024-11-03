@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-stone-50 dark:bg-stone-900 container max-w-screen-lg;
+    }
+}
