@@ -26,10 +26,10 @@ export default function Projects() {
                         <IoLogoGithub />
                     </a>
                 </h3>
-                <h4>
-                    November 2017 - March 2020 | Brighton, UK
-                </h4>
                 <h3>Habrewken - Brighton Fighting Game Community Website</h3>
+                <h4>
+                    October 2012 - March 2020 | Brighton, UK
+                </h4>
                 <h4 class="flex flex-row space-x-2">
                     <a
                         target="_blank"
