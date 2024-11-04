@@ -11,7 +11,7 @@ export default function Projects() {
                     content="Hello! I'm Mahesh Makani, a software developer based in Hertfordshire and London, UK. Here you can find non-professional/personal projects I've worked on."
                 />
             </Head>
-            <section class="prose sm:prose-sm md:prose-md lg:prose-lg prose-stone dark:prose-invert">
+            <section class="prose prose-stone dark:prose-invert max-w-[80ch]">
                 <h1>Projects</h1>
                 <h2>
                     The Fight Lab - Fighting Game Community

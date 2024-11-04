@@ -11,7 +11,7 @@ export default function Work() {
                     content="Hello! I'm Mahesh Makani, a software developer based in Hertfordshire and London, UK. Here you can find my professional work experience."
                 />
             </Head>
-            <section class="prose sm:prose-sm md:prose-md lg:prose-lg prose-stone dark:prose-invert">
+            <section class="prose prose-stone dark:prose-invert max-w-[80ch]">
                 <h1>Work Experience</h1>
                 <h2>
                     The Guardian

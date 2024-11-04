@@ -1,6 +1,6 @@
 export default function Nav() {
     return (
-        <nav class="w-full flex flex-row mt-4 mb-8 ml-2 mr-2">
+        <nav class="w-full flex flex-row mb-4 pt-4 pb-4 border-b border-b-stone-400">
             <div class="grow">
                 <a
                     href="/"
