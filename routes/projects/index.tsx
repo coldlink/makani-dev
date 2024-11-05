@@ -14,6 +14,61 @@ export default function Projects() {
             <section class="prose prose-stone dark:prose-invert max-w-[80ch]">
                 <h1>Projects</h1>
                 <h2>
+                    Personal Website
+                </h2>
+                <h3 class="flex flex-row space-x-2">
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://makani.dev"
+                        title="Website | Mahesh Makani Website"
+                    >
+                        <IoGlobe />
+                    </a>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/coldlink/makani-dev"
+                        title="GitHub | Mahesh Makani Website"
+                    >
+                        <IoLogoGithub />
+                    </a>
+                </h3>
+                <h4>About</h4>
+                <p>
+                    This website, which you are current on, is a personal
+                    website that I built to showcase my work and projects. It is
+                    built using the{" "}
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://fresh.deno.dev/"
+                    >
+                        Deno Fresh
+                    </a>{" "}
+                    framework, which is a modern web framework built on top of
+                    Deno, a runtime for JavaScript and TypeScript. It provides a
+                    fast, simple, and highly optimized approach to building web
+                    applications, especially for server-side rendering (SSR).
+                    Fresh emphasizes zero-config deployment, TypeScript-first
+                    development, and performance out of the box. Styling is done
+                    using{" "}
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://tailwindcss.com/"
+                    >
+                        Tailwind
+                    </a>{" "}
+                    CSS, a utility-first CSS framework.
+                </p>
+                <p>
+                    It is currently a work in progress, currently only used to
+                    showcase my work and projects, as well as contact
+                    information. In the works is a photography gallery, to
+                    showcase my photography work, as well as a tech blog.
+                </p>
+                <h2>
                     The Fight Lab - Fighting Game Community
                 </h2>
                 <h3 class="flex flex-row space-x-2">
@@ -26,6 +81,62 @@ export default function Projects() {
                         <IoLogoGithub />
                     </a>
                 </h3>
+                <p>
+                    I&apos;ve been a member of the Fighting Game Community since
+                    2012. I partake in, and help run events which promote the
+                    social and competitive nature of fighting games such as
+                    Street Fighter, Tekken, Guilty Gear etc. I also help co-run
+                    local events in Brighton and London, and have even run
+                    events at VSFighting, the UK&apos;s largest fighting game
+                    tournament.
+                </p>
+                <h3>Fightlab Fighting Game Community Stream Tool</h3>
+                <h4>
+                    November 2020 - Present
+                </h4>
+                <h4>About</h4>
+                <p>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/fightlab/hbk-stream-front"
+                    >
+                        Client
+                    </a>{" "}
+                    |{" "}
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://github.com/fightlab/hbk-stream-server"
+                    >
+                        Server
+                    </a>
+                </p>
+                <p>
+                    The Fight Lab stream tool allows us to control and manage
+                    overlays (e.g scoreboard/cameras) and text displayed on
+                    those overlays in real time (websockets) and from anywhere
+                    (webserver) for a live stream on Twitch using tools such as
+                    OBS. This was built to help us run our tournaments and
+                    events, and to make it easier to manage the stream.
+                </p>
+                <p>
+                    The client side is built using React.js, and is split
+                    between the views and the management tool. The views are the
+                    actual overlays that are displayed on the stream, and the
+                    management tool is the tool that allows us to control the
+                    views. The client side interfaces with the server side using
+                    websockets, which manages the data and state on each scene.
+                    The server side is built using Node.js and Express.js, and
+                    is responsible for managing the websockets, current state of
+                    the data, and the API to control the data.
+                </p>
+                <p>
+                    We've been using the tool for over 5 years now, and it has
+                    been a great help in managing our streams. We've even had
+                    other communities use it for their streams, and have had
+                    great feedback from them.
+                </p>
                 <h3>Habrewken - Brighton Fighting Game Community Website</h3>
                 <h4>
                     October 2012 - March 2020 | Brighton, UK
@@ -42,14 +153,10 @@ export default function Projects() {
                 </h4>
                 <h4>About</h4>
                 <p>
-                    I&apos;ve been a member of the Fighting Game Community since
-                    2012. I partake in, and help run events which promote the
-                    social and competitive nature of fighting games such as
-                    Street Fighter, Tekken, Blazblue etc. I also help co-run
-                    events in Brighton. The Brighton Fighting Game Community
-                    Website and Resource is a one stop shop for every event and
-                    tournament we’ve ever run. As well as statistics on players
-                    and games that we play.
+                    The Brighton Fighting Game Community Website and Resource is
+                    a one stop shop for every event and tournament we’ve ever
+                    run. As well as statistics on players and games that we
+                    play.
                 </p>
                 <p>
                     The web site was a major passion project, and a love letter

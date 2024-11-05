@@ -46,16 +46,68 @@ export default function Work() {
                 <h3>Identity Team</h3>
                 <h4>About</h4>
                 <p>
-                    Member of the Identity team who manage the sign-in and
-                    registration systems at The Guardian. Key results include
-                    identifying and creating features to increase the scale and
-                    experience of signed in users, improving the health of the
-                    identity system by implementing modern security
-                    recommendations, and migrating legacy systems to a modern
-                    codebase.
+                    Technical lead on the Identity & Trust team within the
+                    Product and Engineering department at the Guardian. The team
+                    manages the authentication and identity systems at the
+                    Guardian, which includes sign in, account creation, account
+                    recover, and user data management.
                 </p>
                 <p>
-                    I have been featured in an{" "}
+                    The team is responsible for the health and performance of
+                    the identity system, ensuring that it is secure, scalable,
+                    and reliable. We work closely with the editorial and
+                    commercial teams to provide a seamless experience for our
+                    users to help them get the most out of what the Guardian
+                    offers.
+                </p>
+                <p>
+                    During my time on the team, I have worked on a large scale
+                    migration from our in-house legacy identity platform to a
+                    hybrid model where the backend services and data store is
+                    provided by a third party identity-as-a-service provider,
+                    while keeping the user interfaces and interactions between
+                    the reader and the Guardian in house. This work is being
+                    done to modernise the identity platform, improve security
+                    around reader data, and enhance the reader experience for
+                    our readers.
+                </p>
+                <p>
+                    I've also helped to implement key identity standards with
+                    Guardian systems which include OAuth 2.0, and OpenID
+                    Connect, migrating our user facing applications away from a
+                    legacy in-house non-standard authentication system to these
+                    industry standards. This allows us to provide a more secure
+                    and reliable authentication system for our readers, and
+                    improving the developer experience for our internal teams
+                    when building new applications.
+                </p>
+                <p>
+                    I also am the top contributor to the{" "}
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://profile.theguardian.com/guardian/gateway"
+                    >
+                        Gateway
+                    </a>{" "}
+                    project, which is the full-stack identity portal that
+                    facilitates user authentication and identity interactions
+                    between the reader and the Guardian, and allows applications
+                    to authenticate and authorise users using the OpenID Connect
+                    standard. Gateway is primarily a TypeScript, React, and
+                    Express.js application, utilising the Guardian Source Design
+                    System components, and Emotion CSS-in-JS library for
+                    UI/design. We use Jest for unit testing, and Cypress for
+                    integration tests and E2E tests.
+                </p>
+                <p>
+                    Alongside Identity related projects, I have also worked on
+                    the main Guardian website, the discussion platform, and
+                    contributed to numerous libraries and services that are used
+                    across the Guardian&apos;s digital products.
+                </p>
+                <p>
+                    I featured in an 2021{"  "}
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
@@ -64,8 +116,8 @@ export default function Work() {
                     >
                         engineering blog post
                     </a>{" "}
-                    where I reflect on my career and experience at the Guardian
-                    to date.
+                    where I reflected on my career and experience at the
+                    Guardian.
                 </p>
                 <h4>Technologies/Platforms</h4>
                 <p>
@@ -159,7 +211,7 @@ export default function Work() {
                 <h3>Edurank</h3>
                 <h4>About</h4>
                 <p>
-                    Edurank is the source for social media analytics in the
+                    Edurank was the source for social media analytics in the
                     education sector. Institutions use Edurank to view their
                     social activity as well as their competitors’ to benchmark
                     themselves against the sector. The paid for Enterprise SaaS
