@@ -15,7 +15,7 @@ export default function Footer() {
                 title="Contact - Email"
                 class="block dark:text-white hover:text-gray-400"
             >
-                <IoMailOutline class="size-8" />
+                <IoMailOutline class="size-6 md:size-8" />
             </a>
             <a
                 target="_blank"
@@ -24,7 +24,7 @@ export default function Footer() {
                 title="Contact - LinkedIn"
                 class="block  dark:text-white hover:text-gray-400"
             >
-                <IoLogoLinkedin class="size-8" />
+                <IoLogoLinkedin class="size-6 md:size-8" />
             </a>
             <a
                 target="_blank"
@@ -33,7 +33,7 @@ export default function Footer() {
                 title="Contact - GitHub"
                 class="block  dark:text-white hover:text-gray-400"
             >
-                <IoLogoGithub class="size-8" />
+                <IoLogoGithub class="size-6 md:size-8" />
             </a>
             <a
                 target="_blank"
@@ -42,7 +42,7 @@ export default function Footer() {
                 title="Contact - Instagram"
                 class="block  dark:text-white hover:text-gray-400"
             >
-                <IoLogoInstagram class="size-8" />
+                <IoLogoInstagram class="size-6 md:size-8" />
             </a>
         </footer>
     );
