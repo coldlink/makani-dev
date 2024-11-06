@@ -1,7 +1,9 @@
+import { ProseSection } from "../components/ProseSection.tsx";
+
 export default function Home() {
   return (
     <section class="mx-auto flex flex-col-reverse sm:flex-row gap-4 items-center">
-      <div class="prose prose-stone dark:prose-invert max-w-[80ch] text-center basis-auto sm:basis-full">
+      <ProseSection className="text-center basis-auto sm:basis-full">
         <h1>Mahesh Makani</h1>
         <h2>Software Developer</h2>
         <p>
@@ -16,7 +18,7 @@ export default function Home() {
         <p>
           Based in Hertfordshire and London, UK 🌍
         </p>
-      </div>
+      </ProseSection>
       <div class="basis-auto sm:basis-full flex justify-center">
         <img
           class="rounded-full"

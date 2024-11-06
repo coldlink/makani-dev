@@ -1,4 +1,5 @@
 import { Head } from "$fresh/runtime.ts";
+import { ProseSection } from "../../components/ProseSection.tsx";
 
 export default function CV() {
     return (
@@ -10,13 +11,13 @@ export default function CV() {
                     content="Hello! I'm Mahesh Makani, a software developer based in Hertfordshire and London, UK. Here you can find my CV/Resume."
                 />
             </Head>
-            <section class="prose prose-stone dark:prose-invert max-w-[80ch]">
+            <ProseSection>
                 <h1>CV/Resume</h1>
                 <p>
                     If you would like a copy of my full CV/Resume please get in
                     touch using one of the contact methods below.
                 </p>
-            </section>
+            </ProseSection>
         </>
     );
 }

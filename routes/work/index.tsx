@@ -1,5 +1,6 @@
 import { Head } from "$fresh/runtime.ts";
 import { IoGlobe, IoLogoGithub } from "react-icons/io5";
+import { ProseSection } from "../../components/ProseSection.tsx";
 
 export default function Work() {
     return (
@@ -11,7 +12,7 @@ export default function Work() {
                     content="Hello! I'm Mahesh Makani, a software developer based in Hertfordshire and London, UK. Here you can find my professional work experience."
                 />
             </Head>
-            <section class="prose prose-stone dark:prose-invert max-w-[80ch]">
+            <ProseSection>
                 <h1>Work Experience</h1>
                 <h2>
                     The Guardian
@@ -361,7 +362,7 @@ export default function Work() {
                     creating an app which syncs data between our CRM and Google
                     Drive.
                 </p>
-            </section>
+            </ProseSection>
         </>
     );
 }
