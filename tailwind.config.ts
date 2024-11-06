@@ -16,6 +16,42 @@ export default {
         "2xl": "7rem",
       },
     },
+    fontFamily: {
+      "serif": ['"Libre Baskerville"', "serif"],
+      "sans": ['"Lato"', "sans-serif"],
+    },
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            h1: {
+              fontWeight: "400",
+            },
+            "h1 strong": {
+              fontWeight: "700",
+            },
+            h2: {
+              fontWeight: "400",
+            },
+            "h2 strong": {
+              fontWeight: "700",
+            },
+            h3: {
+              fontWeight: "400",
+            },
+            "h3 strong": {
+              fontWeight: "700",
+            },
+            h4: {
+              fontWeight: "400",
+            },
+            "h4 strong": {
+              fontWeight: "700",
+            },
+          },
+        },
+      },
+    },
   },
   plugins: [
     tailwindTypography,
