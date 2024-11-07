@@ -47,13 +47,11 @@ export default function MarkdownPage({ data }: PageProps<Page | null>) {
                     content={data.data.description as string}
                 />
             </Head>
-            <ProseSection>
-                <div
-                    dangerouslySetInnerHTML={{
-                        __html: data.markdown,
-                    }}
-                />
-            </ProseSection>
+            <ProseSection
+                dangerouslySetInnerHTML={{
+                    __html: data.markdown,
+                }}
+            />
         </>
     );
 }
