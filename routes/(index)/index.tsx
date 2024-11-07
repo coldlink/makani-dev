@@ -1,4 +1,4 @@
-import { ProseSection } from "../components/ProseSection.tsx";
+import { ProseSection } from "@/components/ProseSection.tsx";
 
 export default function Home() {
   return (

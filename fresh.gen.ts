@@ -2,25 +2,21 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
+import * as $_index_index from "./routes/(index)/index.tsx";
+import * as $_markdown_slug_ from "./routes/(markdown)/[slug].tsx";
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
-import * as $cv_index from "./routes/cv/index.tsx";
-import * as $index from "./routes/index.tsx";
-import * as $projects_index from "./routes/projects/index.tsx";
-import * as $work_index from "./routes/work/index.tsx";
 
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
+    "./routes/(index)/index.tsx": $_index_index,
+    "./routes/(markdown)/[slug].tsx": $_markdown_slug_,
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/_layout.tsx": $_layout,
-    "./routes/cv/index.tsx": $cv_index,
-    "./routes/index.tsx": $index,
-    "./routes/projects/index.tsx": $projects_index,
-    "./routes/work/index.tsx": $work_index,
   },
   islands: {},
   baseUrl: import.meta.url,
