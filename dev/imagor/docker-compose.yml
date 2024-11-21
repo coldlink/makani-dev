@@ -1,0 +1,6 @@
+services:
+  imagor:
+    image: shumc/imagor:latest
+    env_file: .env
+    ports:
+      - "8001:8001"
