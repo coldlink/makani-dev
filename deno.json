@@ -17,6 +17,11 @@
       ]
     }
   },
+  "fmt": {
+    "useTabs": true,
+    "indentWidth": 2,
+    "semiColons": true
+  },
   "exclude": [
     "**/_fresh/*"
   ],

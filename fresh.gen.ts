@@ -11,15 +11,15 @@ import * as $_layout from "./routes/_layout.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
-  routes: {
-    "./routes/(index)/index.tsx": $_index_index,
-    "./routes/(markdown)/[slug].tsx": $_markdown_slug_,
-    "./routes/_404.tsx": $_404,
-    "./routes/_app.tsx": $_app,
-    "./routes/_layout.tsx": $_layout,
-  },
-  islands: {},
-  baseUrl: import.meta.url,
+	routes: {
+		"./routes/(index)/index.tsx": $_index_index,
+		"./routes/(markdown)/[slug].tsx": $_markdown_slug_,
+		"./routes/_404.tsx": $_404,
+		"./routes/_app.tsx": $_app,
+		"./routes/_layout.tsx": $_layout,
+	},
+	islands: {},
+	baseUrl: import.meta.url,
 } satisfies Manifest;
 
 export default manifest;
