@@ -10,11 +10,18 @@ interface Page {
 	data: Record<string, unknown>;
 }
 
+// replace starting and trailing slashes with empty string
+// and replace any other slashes with a dash
+// to get a clean route which can be used as a filename
+// for the markdown file
+const cleanRoute = (route: string) =>
+	route.replace(/^\/|\/$/g, "").replace(/\//g, "-");
+
 export const markdownHandler: Handlers<Page> = {
 	async GET(_req, ctx) {
 		try {
 			const raw = await Deno.readTextFile(
-				`routes/(markdown)/${ctx.params.slug}.md`,
+				`markdown/${cleanRoute(ctx.route)}.md`,
 			);
 
 			const { attrs, body } = extract(raw);
