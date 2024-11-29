@@ -192,7 +192,11 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 					</div>
 				</a>
 			</section>
-			<License year={date.getUTCFullYear().toString()} />
+			<License
+				year={date.getUTCFullYear().toString()}
+				isPhoto
+				noLicense={photo.noLicense}
+			/>
 		</>
 	);
 }

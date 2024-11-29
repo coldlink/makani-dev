@@ -8,11 +8,13 @@ import { getImagorUrl } from "@/utils/imagor.ts";
  * @property {string} src - Name of the photo file as stored in s3.
  * @property {string} slug - URL slug of the photo.
  * @property {string} [timezone] - Timezone of the photo, if known, otherwise defaults to `Europe/London`. Based on https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+ * @property {boolean} [noLicense] - If true, the photo is not licensed under CC BY-NC-SA 4.0.
  */
 export type Photo = {
 	src: string;
 	slug: string;
 	timezone?: "Europe/London" | "Asia/Tokyo";
+	noLicense?: boolean;
 };
 
 /**
