@@ -63,7 +63,7 @@ const Gallery = ({
 
 						{/* Default JPEG format (fallback) */}
 						<img
-							class="h-auto max-w-full rounded-lg mb-4 hover:shadow-lg transition-shadow duration-200"
+							class="h-auto max-w-full rounded-lg mb-4 hover:shadow-lg border border-transparent hover:border-stone-300 dark:hover:border-stone-700"
 							src={getImagorUrl(
 								`fit-in/360x540/filters:format(avif):quality(80)/${photo.src}`,
 							)}

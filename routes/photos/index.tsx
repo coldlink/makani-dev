@@ -19,7 +19,7 @@ export default function Photos() {
 			</Head>
 			<section>
 				<Breadcrumb />
-				<div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+				<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
 					{ALBUMS.map((album, i) => (
 						<Album
 							album={album}

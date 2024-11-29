@@ -111,7 +111,7 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 
 						{/* Default JPEG format (fallback) */}
 						<img
-							class="max-h-full max-w-full rounded-lg"
+							class="max-h-full max-w-full rounded-lg border border-transparent hover:border-stone-300 dark:hover:border-stone-700"
 							src={getImagorUrl(
 								`fit-in/2000x2000/filters:format(avif):quality(80)/${photo.src}`,
 							)}
