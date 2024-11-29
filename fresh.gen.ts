@@ -7,6 +7,9 @@ import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
 import * as $cv from "./routes/cv.tsx";
 import * as $index from "./routes/index.tsx";
+import * as $photos_album_photo_ from "./routes/photos/[album]/[photo].tsx";
+import * as $photos_album_index from "./routes/photos/[album]/index.tsx";
+import * as $photos_index from "./routes/photos/index.tsx";
 import * as $projects from "./routes/projects.tsx";
 import * as $work from "./routes/work.tsx";
 
@@ -19,6 +22,9 @@ const manifest = {
 		"./routes/_layout.tsx": $_layout,
 		"./routes/cv.tsx": $cv,
 		"./routes/index.tsx": $index,
+		"./routes/photos/[album]/[photo].tsx": $photos_album_photo_,
+		"./routes/photos/[album]/index.tsx": $photos_album_index,
+		"./routes/photos/index.tsx": $photos_index,
 		"./routes/projects.tsx": $projects,
 		"./routes/work.tsx": $work,
 	},
