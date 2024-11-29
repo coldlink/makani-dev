@@ -18,8 +18,8 @@ export const License = (
 					href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
 					target="_blank"
 				>
-					CC BY-SA 4.0.
-				</a>
+					CC BY-SA 4.0
+				</a>. Contact me for high-res versions or commercial use.
 			</span>
 		</div>
 	);

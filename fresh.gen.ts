@@ -5,7 +5,7 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
-import * as $cv from "./routes/cv.tsx";
+import * as $contact from "./routes/contact.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $photos_album_photo_ from "./routes/photos/[album]/[photo].tsx";
 import * as $photos_album_index from "./routes/photos/[album]/index.tsx";
@@ -20,7 +20,7 @@ const manifest = {
 		"./routes/_404.tsx": $_404,
 		"./routes/_app.tsx": $_app,
 		"./routes/_layout.tsx": $_layout,
-		"./routes/cv.tsx": $cv,
+		"./routes/contact.tsx": $contact,
 		"./routes/index.tsx": $index,
 		"./routes/photos/[album]/[photo].tsx": $photos_album_photo_,
 		"./routes/photos/[album]/index.tsx": $photos_album_index,

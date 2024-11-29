@@ -40,7 +40,7 @@ export const Breadcrumb = (
 	return (
 		<nav aria-label="breadcrumb" class="w-full mb-4">
 			<ol class="flex flex-wrap items-center rounded-md">
-				<Crumb href="/photos" text="Photos" divider={!!album} />
+				<Crumb href="/photos" text="Photography" divider={!!album} />
 				{album && (
 					<Crumb
 						href={`/photos/${album.slug}`}
