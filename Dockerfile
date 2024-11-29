@@ -1,13 +1,18 @@
-FROM denoland/deno:2.0.4
+FROM denoland/deno:2.1.2
 
 ARG CAPROVER_GIT_COMMIT_SHA=${CAPROVER_GIT_COMMIT_SHA}
 ENV DENO_DEPLOYMENT_ID=${CAPROVER_GIT_COMMIT_SHA}
 
+ARG IMAGOR_SECRET=${IMAGOR_SECRET}
+ENV IMAGOR_SECRET=${IMAGOR_SECRET}
+ARG IMAGOR_URL=${IMAGOR_URL}
+ENV IMAGOR_URL=${IMAGOR_URL}
+
 WORKDIR /app
 
 COPY . .
-RUN deno cache main.ts
-RUN deno run -A dev.ts build
+RUN deno cache --allow-scripts main.ts
+RUN deno task build
 
 EXPOSE 8000
 
