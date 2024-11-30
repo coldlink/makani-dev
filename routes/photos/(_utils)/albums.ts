@@ -8,11 +8,13 @@ import { getImagorUrl } from "@/utils/imagor.ts";
  * @property {string} src - Name of the photo file as stored in s3.
  * @property {string} slug - URL slug of the photo.
  * @property {string} [timezone] - Timezone of the photo, if known, otherwise defaults to `Europe/London`. Based on https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+ * @property {boolean} [noLicense] - If true, the photo is not licensed under CC BY-NC-SA 4.0.
  */
 export type Photo = {
 	src: string;
 	slug: string;
 	timezone?: "Europe/London" | "Asia/Tokyo";
+	noLicense?: boolean;
 };
 
 /**
@@ -98,13 +100,304 @@ const TokyoSkytreeVistas: Album = {
 };
 
 /**
+ * Izu Peninsula
+ *
+ * @type {Album}
+ */
+const IzuPeninsula: Album = {
+	name: "The Izu Peninsula",
+	slug: "izu-peninsula",
+	dates: "April 2024",
+	copyrightYear: "2024",
+	photos: [
+		{
+			src: "20240423-3_87A2440-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "izu-lonely-boat",
+		},
+		{
+			src: "20240422-3_87A2153-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "izu-fisherman-edge",
+		},
+		{
+			src: "20240422-3_87A2271-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "izu-shimoda-hotel",
+		},
+		{
+			src: "20240423-3_87A2512-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "izu-crab",
+		},
+		{
+			src: "20240423-3_87A2741-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "izu-cormorant-view",
+		},
+		{
+			src: "20240422-3_87A2291-Pano.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "izu-shirahama-beach-panorama",
+		},
+		{
+			src: "20240422-3_87A2101-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "izu-river-path",
+		},
+		{
+			src: "20240422-3_87A2140-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "izu-suspension-bridge",
+		},
+		{
+			src: "20240423-3_87A2624-Pano.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "izu-heda-port-panorama",
+		},
+		{
+			src: "20240422-3_87A2230-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "izu-rockpool-flowers",
+		},
+		{
+			src: "20240423-3_87A2559-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "izu-yusuge-park-view",
+		},
+		{
+			src: "20240423-3_87A2499-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "izu-busy-fisherman",
+		},
+		{
+			src: "20240423-3_87A2653-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "izu-green-path",
+		},
+		{
+			src: "20240423-3_87A2716-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "izu-sacred-tree",
+		},
+	],
+};
+
+const Kyoto: Album = {
+	name: "Kyoto Wanders",
+	slug: "kyoto-wanders",
+	dates: "April 2024",
+	copyrightYear: "2024",
+	photos: [
+		{
+			src: "20240414-3_87A0799-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "kyoto-mossy-inari",
+		},
+		{
+			src: "20240414-3_87A0862-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "kyoto-fushimi-inari-portrait",
+			noLicense: true,
+		},
+		{
+			src: "20240413-2_87A0394-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "kyoto-temple-buddhas",
+		},
+		{
+			src: "20240414-3_87A0819-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "kyoto-cat-2",
+		},
+
+		{
+			src: "20240413-2_87A0583-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "kyoto-mt-hiei-view",
+		},
+		{
+			src: "20240413-2_87A0590-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "kyoto-cat-1",
+		},
+		{
+			src: "20240413-2_87A0599-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "kyoto-rail-infra",
+		},
+		{
+			src: "20240414-3_87A0903-Pano.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "kyoto-city-panorama",
+		},
+		{
+			src: "20240415-3_87A1002-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "kyoto-philosopher-path",
+		},
+		{
+			src: "20240415-3_87A1037-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "kyoto-single-train",
+		},
+		{
+			src: "20240413-2_87A0388-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "kyoto-temple-path",
+		},
+		{
+			src: "20240413-2_87A0658-Pano.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "kyoto-kiyomizu-city-panorama",
+		},
+	],
+};
+
+const TokyoDay: Album = {
+	name: "Tokyo Day Vibes",
+	slug: "tokyo-day-vibes",
+	dates: "April 2024",
+	copyrightYear: "2024",
+	photos: [
+		{
+			src: "20240420-3_87A1612-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-station-sketch",
+			noLicense: true,
+		},
+		{
+			src: "20240425-3_87A2833-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-construction",
+		},
+		{
+			src: "20240418-3_87A1508-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-disney-teens",
+			noLicense: true,
+		},
+		{
+			src: "20240425-3_87A2760-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-hamarikyuu-gardens-man",
+		},
+		{
+			src: "20240420-3_87A1697-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-skytree-ueno-park",
+		},
+		{
+			src: "20240425-3_87A2785-Pano.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-hamarikyuu-gardens-pano",
+		},
+		{
+			src: "20240426-3_87A3051-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-kanda-river",
+		},
+		{
+			src: "20240426-3_87A3076-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-walking-sumida",
+			noLicense: true,
+		},
+		{
+			src: "20240408-0_87A9513-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-row-blossoms",
+			noLicense: true,
+		},
+	],
+};
+
+const TokyoNight: Album = {
+	name: "Tokyo Night City",
+	slug: "tokyo-night-city",
+	dates: "April 2024",
+	copyrightYear: "2024",
+	photos: [
+		{
+			src: "20240419-3_87A1598-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-night-silhouette",
+		},
+		{
+			src: "20240419-3_87A1600-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-night-virtual-construction",
+		},
+		{
+			src: "20240409-1_87A0255-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-night-tower",
+		},
+		{
+			src: "20240417-3_87A1090-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-night-vending-train",
+		},
+		{
+			src: "20240417-3_87A1103-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-night-wall-art",
+		},
+		{
+			src: "20240417-3_87A1120-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-night-lone-walker",
+		},
+		{
+			src: "20240417-3_87A1168-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-night-rail-apartments",
+		},
+		{
+			src: "20240417-3_87A1179-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-night-shinjuku-station",
+		},
+		{
+			src: "20240417-3_87A1184-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-night-salaryman",
+		},
+		{
+			src: "20240419-3_87A1602-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-night-lawson",
+		},
+		{
+			src: "20240426-3_87A3102-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-night-toll-gate",
+		},
+		{
+			src: "20240426-3_87A3117-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-night-apartment-lights",
+		},
+		{
+			src: "20240427-3_87A3201-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-night-akihabara-station",
+		},
+	],
+};
+
+/**
  * @name ALBUMS
  * @description Array of all albums to display, order matters.
  * @type {Album[]}
  * @constant
  */
 export const ALBUMS: Album[] = [
+	IzuPeninsula,
 	TokyoSkytreeVistas,
+	Kyoto,
+	TokyoDay,
+	TokyoNight,
 ];
 
 /**

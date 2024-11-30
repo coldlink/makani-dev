@@ -6,21 +6,57 @@
  * @returns {JSX.Element} The rendered License component.
  */
 export const License = (
-	{ year = new Date().getUTCFullYear().toString() }: { year?: string },
+	{
+		year = new Date().getUTCFullYear().toString(),
+		isPhoto = false,
+		noLicense = false,
+	}: {
+		year?: string;
+		isPhoto?: boolean;
+		noLicense?: boolean;
+	},
 ) => {
 	return (
 		<div class="text-xs text-start text-stone-600 dark:text-stone-400 mt-6">
-			{/* @ts-ignore -- cc licence */}
-			<span xmlns:cc="http://creativecommons.org/ns#">
-				&copy; Mahesh Makani {year}. All photos licensed under{" "}
-				<a
-					class="text-xs underline hover:text-stone-700 dark:hover:text-stone-300 inline"
-					href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-					target="_blank"
-				>
-					CC BY-SA 4.0
-				</a>. Contact me for high-res versions or commercial use.
-			</span>
+			{isPhoto
+				? (
+					// @ts-ignore -- cc license tag
+					<span xmlns:cc="http://creativecommons.org/ns#">
+						&copy; Mahesh Makani {year}. {noLicense
+							? (
+								<b>
+									This photo is NOT licensed for any use.
+								</b>
+							)
+							: (
+								<>
+									This photo is licensed under{" "}
+									<a
+										class="text-xs underline hover:text-stone-700 dark:hover:text-stone-300 inline"
+										href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+										target="_blank"
+									>
+										CC BY-SA 4.0
+									</a>. Contact me for high-res versions or commercial use.
+								</>
+							)}
+					</span>
+				)
+				: (
+					// @ts-ignore -- cc license tag
+					<span xmlns:cc="http://creativecommons.org/ns#">
+						&copy; Mahesh Makani {year}. Photos licensed under{" "}
+						<a
+							class="text-xs underline hover:text-stone-700 dark:hover:text-stone-300 inline"
+							href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+							target="_blank"
+						>
+							CC BY-SA 4.0
+						</a>{" "}
+						unless otherwise stated on the photo page. Contact me for high-res
+						versions or commercial use.
+					</span>
+				)}
 		</div>
 	);
 };

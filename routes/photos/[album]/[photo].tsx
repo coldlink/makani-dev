@@ -97,7 +97,7 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 						<source
 							type="image/avif"
 							srcSet={getImagorUrl(
-								`fit-in/2000x2000/filters:format(avif):quality(100)/${photo.src}`,
+								`fit-in/2000x2000/filters:format(avif):quality(80)/${photo.src}`,
 							)}
 						/>
 
@@ -105,15 +105,15 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 						<source
 							type="image/webp"
 							srcSet={getImagorUrl(
-								`fit-in/2000x2000/filters:format(webp):quality(100)/${photo.src}`,
+								`fit-in/2000x2000/filters:format(webp):quality(80)/${photo.src}`,
 							)}
 						/>
 
 						{/* Default JPEG format (fallback) */}
 						<img
-							class="max-h-full max-w-full rounded-lg"
+							class="max-h-full max-w-full rounded-lg border-2 border-transparent hover:border-stone-400 dark:hover:border-stone-600"
 							src={getImagorUrl(
-								`fit-in/2000x2000/filters:format(avif):quality(100)/${photo.src}`,
+								`fit-in/2000x2000/filters:format(avif):quality(80)/${photo.src}`,
 							)}
 							alt={photo.src}
 						/>
@@ -168,7 +168,7 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 							<source
 								type="image/avif"
 								srcSet={getImagorUrl(
-									`fit-in/2000x2000/filters:format(avif):quality(100)/${photo.src}`,
+									`fit-in/2000x2000/filters:format(avif):quality(80)/${photo.src}`,
 								)}
 							/>
 
@@ -176,7 +176,7 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 							<source
 								type="image/webp"
 								srcSet={getImagorUrl(
-									`fit-in/2000x2000/filters:format(webp):quality(100)/${photo.src}`,
+									`fit-in/2000x2000/filters:format(webp):quality(80)/${photo.src}`,
 								)}
 							/>
 
@@ -184,7 +184,7 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 							<img
 								class="max-h-full max-w-full rounded-lg"
 								src={getImagorUrl(
-									`fit-in/2000x2000/filters:format(avif):quality(100)/${photo.src}`,
+									`fit-in/2000x2000/filters:format(avif):quality(80)/${photo.src}`,
 								)}
 								alt={photo.src}
 							/>
@@ -192,7 +192,11 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 					</div>
 				</a>
 			</section>
-			<License year={date.getUTCFullYear().toString()} />
+			<License
+				year={date.getUTCFullYear().toString()}
+				isPhoto
+				noLicense={photo.noLicense}
+			/>
 		</>
 	);
 }
