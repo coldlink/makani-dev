@@ -59,9 +59,7 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 				{exif.GPSLatitude && exif.GPSLongitude && (
 					<div class="col-start-4 md:col-start-6 col-span-1 text-xs italic underline text-end text-stone-600 dark:text-stone-400 hover:text-stone-700 dark:hover:text-stone-300">
 						<a
-							href={`https://www.google.com/maps/place/${
-								(+exif.GPSLatitude.description).toFixed(3)
-							},${(+exif.GPSLongitude.description).toFixed(3)}`}
+							href={`https://www.google.com/maps/place/${exif.GPSLatitude.description},${exif.GPSLongitude.description}`}
 							target="_blank"
 						>
 							Location

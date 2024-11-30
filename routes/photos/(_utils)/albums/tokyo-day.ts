@@ -23,6 +23,12 @@ export const TokyoDay: Album = {
 			slug: "tokyo-construction",
 		},
 		{
+			src: "20240418-3_87A1386-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-peter-pan-camera",
+			noLicense: true,
+		},
+		{
 			src: "20240418-3_87A1508-Enhanced-NR.jpg",
 			timezone: "Asia/Tokyo",
 			slug: "tokyo-disney-teens",

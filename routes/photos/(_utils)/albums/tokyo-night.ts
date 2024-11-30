@@ -76,5 +76,11 @@ export const TokyoNight: Album = {
 			timezone: "Asia/Tokyo",
 			slug: "tokyo-night-akihabara-station",
 		},
+		{
+			src: "20240426-3_87A3101-Enhanced-NR.jpg",
+			timezone: "Asia/Tokyo",
+			slug: "tokyo-sustainable-kitchen-rosy",
+			noLicense: true,
+		},
 	],
 };
