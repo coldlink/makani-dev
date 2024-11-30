@@ -1,8 +1,8 @@
 import { Album } from "@/routes/photos/(_components)/album.tsx";
-import { ALBUMS } from "@/routes/photos/(_utils)/albums.ts";
 import { Breadcrumb } from "@/routes/photos/(_components)/breadcrumb.tsx";
 import { License } from "@/routes/photos/(_components)/license.tsx";
 import { Head } from "$fresh/runtime.ts";
+import { ALBUMS } from "@/routes/photos/(_utils)/albums/index.ts";
 
 /**
  * /photos route
