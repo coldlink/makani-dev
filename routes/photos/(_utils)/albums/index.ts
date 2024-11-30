@@ -6,6 +6,8 @@ import { TokyoDay } from "@/routes/photos/(_utils)/albums/tokyo-day.ts";
 import { TokyoNight } from "@/routes/photos/(_utils)/albums/tokyo-night.ts";
 import { BirdsOfJapan } from "@/routes/photos/(_utils)/albums/birds-japan.ts";
 import { MtFuji } from "@/routes/photos/(_utils)/albums/mt-fuji.ts";
+import { TeamLabBorderless } from "@/routes/photos/(_utils)/albums/teamlab-borderless.ts";
+import { KewMarch24 } from "@/routes/photos/(_utils)/albums/kew-march-24.ts";
 
 /**
  * @name ALBUMS
@@ -19,6 +21,8 @@ export const ALBUMS: Album[] = [
 	Kyoto,
 	TokyoDay,
 	TokyoNight,
+	TeamLabBorderless,
 	BirdsOfJapan,
 	MtFuji,
+	KewMarch24,
 ];
