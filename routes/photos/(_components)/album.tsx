@@ -21,7 +21,7 @@ export const Album = ({
 	return (
 		<a
 			href={`/photos/${slug}`}
-			class="max-w-sm mx-auto relative rounded-lg hover:shadow-lg border border-transparent hover:border-stone-300 dark:hover:border-stone-700"
+			class="max-w-sm mx-auto relative rounded-lg hover:shadow-lg border-2 border-transparent hover:border-stone-400 dark:hover:border-stone-600"
 		>
 			<picture class="max-w-full h-auto object-cover rounded-lg">
 				{/* AVIF format */}
@@ -66,7 +66,7 @@ export const Album = ({
 
 				{/* Default JPEG format (fallback) */}
 				<img
-					class="h-auto max-w-full rounded-t-lg object-cover rounded-lg"
+					class="h-auto max-w-full rounded-lg object-cover"
 					src={getImagorUrl(
 						`400x400/filters:format(avif):quality(80)/${imageCover}`,
 					)}
