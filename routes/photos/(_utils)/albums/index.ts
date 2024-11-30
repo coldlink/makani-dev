@@ -5,6 +5,7 @@ import { TokyoSkytreeVistas } from "@/routes/photos/(_utils)/albums/skytree.ts";
 import { TokyoDay } from "@/routes/photos/(_utils)/albums/tokyo-day.ts";
 import { TokyoNight } from "@/routes/photos/(_utils)/albums/tokyo-night.ts";
 import { BirdsOfJapan } from "@/routes/photos/(_utils)/albums/birds-japan.ts";
+import { MtFuji } from "@/routes/photos/(_utils)/albums/mt-fuji.ts";
 
 /**
  * @name ALBUMS
@@ -19,4 +20,5 @@ export const ALBUMS: Album[] = [
 	TokyoDay,
 	TokyoNight,
 	BirdsOfJapan,
+	MtFuji,
 ];
