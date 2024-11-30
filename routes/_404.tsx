@@ -8,13 +8,15 @@ export default function Error404() {
 			</Head>
 			<div class="px-4 py-8 mx-auto">
 				<div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
-					<h1 class="text-4xl font-bold dark:text-white">
+					<h1 class="text-4xl font-bold text-stone-900 dark:text-stone-50">
 						404 - Page not found
 					</h1>
-					<p class="my-4 dark:text-white">
+					<p class="my-4 text-stone-900 dark:text-stone-50">
 						The page you were looking for doesn't exist.
 					</p>
-					<a href="/" class="underline dark:text-white">Go back home</a>
+					<a href="/" class="underline text-stone-900 dark:text-stone-50">
+						Go back home
+					</a>
 				</div>
 			</div>
 		</>

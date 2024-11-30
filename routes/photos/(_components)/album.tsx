@@ -23,6 +23,12 @@ export const Album = ({
 			href={`/photos/${slug}`}
 			class="max-w-sm mx-auto relative rounded-lg hover:shadow-lg border-2 border-transparent hover:border-stone-400 dark:hover:border-stone-600"
 		>
+			<div class="absolute top-0 left-0 right-0 h-auto bg-stone-50/50 dark:bg-stone-950/50 backdrop-blur text-white p-2 rounded-t-lg">
+				<h4 class="text-l tracking-tight text-stone-900 dark:text-stone-100">
+					{name}
+				</h4>
+			</div>
+
 			<picture class="max-w-full h-auto object-cover rounded-lg">
 				{/* AVIF format */}
 				<source
@@ -76,10 +82,7 @@ export const Album = ({
 				/>
 			</picture>
 
-			<div class="absolute bottom-0 left-0 right-0 h-20 bg-stone-50/50 dark:bg-stone-950/50 backdrop-blur text-white p-2 rounded-b-lg">
-				<h4 class="text-l tracking-tight text-stone-900 dark:text-stone-100">
-					{name}
-				</h4>
+			<div class="absolute bottom-0 left-0 right-0 h-auto bg-stone-50/50 dark:bg-stone-950/50 backdrop-blur text-white p-2 rounded-b-lg">
 				{dates && (
 					<p class="text-sm text-stone-700 dark:text-stone-300">
 						{dates}

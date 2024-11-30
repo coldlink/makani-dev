@@ -6,7 +6,7 @@ import type { Album } from "@/routes/photos/(_utils)/albums.ts";
  * @type {Album}
  */
 export const TeamLabBorderless: Album = {
-	name: "TeamLab Borderless",
+	name: "teamLab Borderless",
 	slug: "teamlab-borderless",
 	dates: "9th April 2024",
 	copyrightYear: "2024",
