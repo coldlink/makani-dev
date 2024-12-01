@@ -8,6 +8,7 @@ import { BirdsOfJapan } from "@/routes/photos/(_utils)/albums/birds-japan.ts";
 import { MtFuji } from "@/routes/photos/(_utils)/albums/mt-fuji.ts";
 import { TeamLabBorderless } from "@/routes/photos/(_utils)/albums/teamlab-borderless.ts";
 import { KewMarch24 } from "@/routes/photos/(_utils)/albums/kew-march-24.ts";
+import { WildLife } from "@/routes/photos/(_utils)/albums/wildlife.ts";
 
 /**
  * @name ALBUMS
@@ -16,6 +17,7 @@ import { KewMarch24 } from "@/routes/photos/(_utils)/albums/kew-march-24.ts";
  * @constant
  */
 export const ALBUMS: Album[] = [
+	WildLife,
 	IzuPeninsula,
 	TokyoSkytreeVistas,
 	Kyoto,
