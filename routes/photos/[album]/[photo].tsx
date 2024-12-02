@@ -38,7 +38,48 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 		: -1;
 	const prevPhotoIndex = photoIndex !== 0 ? photoIndex - 1 : -1;
 
-	const date = new Date(exif.DateCreated?.description!);
+	const date = (() => {
+		// attempt to get the date from the `DateCreated` first
+		const dateCreated = new Date(exif.DateCreated?.description!);
+		// if this is valid, return it
+		if (!isNaN(dateCreated.getTime())) {
+			return dateCreated;
+		}
+
+		// otherwise, try to get the date from `DateTimeOriginal` and `OffsetTimeOriginal`
+		// which we parse into an ISO 8601 string
+		const dateTimeOriginal = new Date(
+			`${
+				exif.DateTimeOriginal?.description.replace(":", "-").replace(":", "-")
+					.replace(" ", "T")
+			}${exif.OffsetTimeOriginal?.description}`,
+		);
+
+		// return the date if it's valid or invalid
+		// if invalid, it will return `Invalid Date` and no date will be displayed
+		return dateTimeOriginal;
+	})();
+
+	const gps: string | undefined = (() => {
+		// if any of the GPS tags are missing, return undefined
+		if (
+			!exif.GPSLatitude || !exif.GPSLongitude || !exif.GPSLatitudeRef ||
+			!exif.GPSLongitudeRef
+		) {
+			return undefined;
+		}
+
+		// get the latitude and longitude values
+		const lat = exif.GPSLatitude.description;
+		const lon = exif.GPSLongitude.description;
+
+		// get the latitude and longitude reference values, i.e N/S and E/W
+		const latRef = exif.GPSLatitudeRef.description.at(0);
+		const lonRef = exif.GPSLongitudeRef.description.at(0);
+
+		// return the GPS coordinates in a format that Google Maps can understand
+		return `${lat}${latRef}, ${lon}${lonRef}`;
+	})();
 
 	return (
 		<>
@@ -47,7 +88,7 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 				photo={photo}
 			/>
 			<section class="grid grid-cols-4 md:grid-cols-6 gap-1">
-				{exif.DateCreated && (
+				{date && (
 					<div class="col-start-1 col-span-3 md:col-span-5 text-xs italic text-start text-stone-600 dark:text-stone-400">
 						{new Intl.DateTimeFormat("en-GB", {
 							dateStyle: "full",
@@ -56,10 +97,10 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 						}).format(date)}
 					</div>
 				)}
-				{exif.GPSLatitude && exif.GPSLongitude && (
+				{gps && (
 					<div class="col-start-4 md:col-start-6 col-span-1 text-xs italic underline text-end text-stone-600 dark:text-stone-400 hover:text-stone-700 dark:hover:text-stone-300">
 						<a
-							href={`https://www.google.com/maps/place/${exif.GPSLatitude.description},${exif.GPSLongitude.description}`}
+							href={`https://www.google.com/maps/place/${gps}`}
 							target="_blank"
 						>
 							Location

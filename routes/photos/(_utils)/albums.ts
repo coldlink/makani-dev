@@ -74,9 +74,14 @@ export const findPhotoInAlbum = (
  * @returns {Promise<Tags>} - Metadata object. TODO: Validate this.
  */
 export const getPhotoExif = async (photo: Photo): Promise<Tags> => {
-	const tags = await ExifReader.load(getImagorUrl(
-		`fit-in/1x1/${photo.src}`,
-	));
+	const tags = await ExifReader.load(
+		getImagorUrl(
+			`fit-in/1x1/${photo.src}`,
+		),
+		{
+			includeUnknown: true,
+		},
+	);
 
 	return tags;
 };
