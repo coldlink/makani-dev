@@ -65,5 +65,25 @@ export const WildLife: Album = {
 			src: "20240803-_87A4908-Enhanced-NR.jpg",
 			slug: "wildlife-red-admiral-1",
 		},
+		{
+			src: "_87A5963-Enhanced-NR.jpg",
+			slug: "wildlife-red-kite-soar",
+		},
+		{
+			src: "_87A5930-Enhanced-NR-Edit.jpg",
+			slug: "wildlife-red-kite-chase",
+		},
+		{
+			src: "20231105-_87A0479-Enhanced-NR-2.jpg",
+			slug: "wildlife-cormorant-take-off",
+		},
+		{
+			src: "20230806-_MG_7821-Enhanced-NR.jpg",
+			slug: "wildlife-deer-gate",
+		},
+		{
+			src: "20230806-_MG_7801-Enhanced-NR.jpg",
+			slug: "wildlife-tiny-snail-moss",
+		},
 	],
 };

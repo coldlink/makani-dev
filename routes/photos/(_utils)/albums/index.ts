@@ -10,6 +10,7 @@ import { TeamLabBorderless } from "@/routes/photos/(_utils)/albums/teamlab-borde
 import { KewMarch24 } from "@/routes/photos/(_utils)/albums/kew-march-24.ts";
 import { WildLife } from "@/routes/photos/(_utils)/albums/wildlife.ts";
 import { Edinburgh24 } from "@/routes/photos/(_utils)/albums/edinburgh-24.ts";
+import { KewOct23 } from "@/routes/photos/(_utils)/albums/kew-oct-23.ts";
 
 /**
  * @name ALBUMS
@@ -29,4 +30,5 @@ export const ALBUMS: Album[] = [
 	BirdsOfJapan,
 	MtFuji,
 	KewMarch24,
+	KewOct23,
 ];

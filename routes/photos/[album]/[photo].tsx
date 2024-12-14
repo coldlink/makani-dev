@@ -55,9 +55,11 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 			}${exif.OffsetTimeOriginal?.description}`,
 		);
 
-		// return the date if it's valid or invalid
-		// if invalid, it will return `Invalid Date` and no date will be displayed
-		return dateTimeOriginal;
+		// return the date if it's valid
+		// if this is valid, return it
+		if (!isNaN(dateTimeOriginal.getTime())) {
+			return dateTimeOriginal;
+		}
 	})();
 
 	const gps: string | undefined = (() => {
@@ -120,10 +122,12 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 					{exif.FNumber?.description}
 				</div>
 				<div class="col-span-1 text-xs italic text-center text-stone-600 dark:text-stone-400">
-					{exif.ShutterSpeedValue?.description}s
+					{exif.ShutterSpeedValue?.description}
+					{exif.ShutterSpeedValue?.description ? "s" : ""}
 				</div>
 				<div class="col-span-1 text-xs italic text-end text-stone-600 dark:text-stone-400">
-					ISO {exif.ISOSpeedRatings?.description}
+					{exif.ISOSpeedRatings?.description ? "ISO " : ""}
+					{exif.ISOSpeedRatings?.description}
 				</div>
 				<a
 					href="#lightbox"
@@ -232,7 +236,7 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 				</a>
 			</section>
 			<License
-				year={date.getUTCFullYear().toString()}
+				year={date?.getUTCFullYear().toString() || album.copyrightYear}
 				isPhoto
 				noLicense={photo.noLicense}
 			/>
