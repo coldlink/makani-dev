@@ -132,7 +132,6 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 				<a
 					href="#lightbox"
 					class="col-span-full"
-					alt="open lightbox"
 					aria-label="open lightbox"
 				>
 					<picture>
@@ -201,7 +200,7 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 						</a>
 					</div>
 				)}
-				<a href="#" alt="close lightbox" aria-label="close lightbox">
+				<a href="#" aria-label="close lightbox">
 					<div
 						id="lightbox"
 						class="hidden fixed h-screen w-screen supports-[height:100dvh]:h-dvh supports-[width:100dvw]:w-dvw target:flex justify-center items-center inset-0 p-4 bg-stone-950/70 backdrop-blur-md overflow-auto"
