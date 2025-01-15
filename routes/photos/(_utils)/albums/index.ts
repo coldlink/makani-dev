@@ -11,6 +11,8 @@ import { KewMarch24 } from "@/routes/photos/(_utils)/albums/kew-march-24.ts";
 import { WildLife } from "@/routes/photos/(_utils)/albums/wildlife.ts";
 import { Edinburgh24 } from "@/routes/photos/(_utils)/albums/edinburgh-24.ts";
 import { KewOct23 } from "@/routes/photos/(_utils)/albums/kew-oct-23.ts";
+import { Miscellaneous } from "@/routes/photos/(_utils)/albums/miscellaneous.ts";
+import { Daily2025 } from "@/routes/photos/(_utils)/albums/2025.ts";
 
 /**
  * @name ALBUMS
@@ -19,8 +21,10 @@ import { KewOct23 } from "@/routes/photos/(_utils)/albums/kew-oct-23.ts";
  * @constant
  */
 export const ALBUMS: Album[] = [
-	Edinburgh24,
+	Daily2025,
 	WildLife,
+	Miscellaneous,
+	Edinburgh24,
 	IzuPeninsula,
 	TokyoSkytreeVistas,
 	Kyoto,

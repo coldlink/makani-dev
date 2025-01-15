@@ -6,6 +6,10 @@ export const WildLife: Album = {
 	dates: "Various dates",
 	photos: [
 		{
+			src: "20241230-_87A7993-Enhanced-NR.jpg",
+			slug: "wildlife-red-kite-over-london",
+		},
+		{
 			src: "20231226-_87A5843-Enhanced-NR.jpg",
 			slug: "wildlife-red-kite-stare",
 		},
