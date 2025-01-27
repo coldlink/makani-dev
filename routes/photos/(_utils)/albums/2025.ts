@@ -68,5 +68,71 @@ export const Daily2025: Album = {
 			src: "20250115-_87A9266-Enhanced-NR.jpg",
 			slug: "2025-jan-15",
 		},
+		{
+			src: "20250116-_87A9278-Enhanced-NR.jpg",
+			slug: "2025-jan-16",
+		},
+		{
+			src: "20250117-_87A9306-Enhanced-NR.jpg",
+			slug: "2025-jan-17",
+		},
+		{
+			src: "20250118-_87A9389-Enhanced-NR.jpg",
+			slug: "2025-jan-18",
+			noLicense: true,
+		},
+		{
+			src: "20250119-_87A9463-Enhanced-NR.jpg",
+			slug: "2025-jan-19",
+		},
+		{
+			src: "20250120-_87A9549-Enhanced-NR.jpg",
+			slug: "2025-jan-20",
+		},
+		{
+			src: "20250121-_87A9805-Enhanced-NR.jpg",
+			slug: "2025-jan-21",
+			noLicense: true,
+		},
+		{
+			src: "20250122-_87A9918-Enhanced-NR.jpg",
+			slug: "2025-jan-22",
+		},
+		{
+			src: "20250123-_87A9935-Enhanced-NR.jpg",
+			slug: "2025-jan-23",
+		},
+		{
+			src: "20250124-_87A0108-Enhanced-NR.jpg",
+			slug: "2025-jan-24",
+		},
+		{
+			src: "20250125-_87A0222-Enhanced-NR.jpg",
+			slug: "2025-jan-25",
+		},
+		{
+			src: "20250126-_87A0288-Enhanced-NR.jpg",
+			slug: "2025-jan-26",
+		},
+		{
+			src: "20250127-_87A0295-Enhanced-NR.jpg",
+			slug: "2025-jan-27",
+		},
+		// {
+		// 	src: "*.jpg",
+		// 	slug: "2025-jan-28",
+		// },
+		// {
+		// 	src: "*.jpg",
+		// 	slug: "2025-jan-29",
+		// },
+		// {
+		// 	src: "*.jpg",
+		// 	slug: "2025-jan-30",
+		// },
+		// {
+		// 	src: "*.jpg",
+		// 	slug: "2025-jan-31",
+		// },
 	],
 };
