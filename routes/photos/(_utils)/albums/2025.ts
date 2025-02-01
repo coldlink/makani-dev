@@ -134,10 +134,10 @@ export const Daily2025: Album = {
 			src: "20250131-_87A0523-Enhanced-NR.jpg",
 			slug: "2025-jan-31",
 		},
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-feb-01",
-		// },
+		{
+		 	src: "_87A0568-Enhanced-NR.jpg",
+		 	slug: "2025-feb-01",
+		},
 		// {
 		// 	src: "*.jpg",
 		// 	slug: "2025-feb-02",
