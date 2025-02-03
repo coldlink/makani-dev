@@ -135,17 +135,17 @@ export const Daily2025: Album = {
 			slug: "2025-jan-31",
 		},
 		{
-		 	src: "_87A0568-Enhanced-NR.jpg",
-		 	slug: "2025-feb-01",
+			src: "_87A0568-Enhanced-NR.jpg",
+			slug: "2025-feb-01",
 		},
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-feb-02",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-feb-03",
-		// },
+		{
+			src: "20250202-_87A0583-Enhanced-NR.jpg",
+			slug: "2025-feb-02",
+		},
+		{
+			src: "20250203-_87A0894-Enhanced-NR.jpg",
+			slug: "2025-feb-03",
+		},
 		// {
 		// 	src: "*.jpg",
 		// 	slug: "2025-feb-04",
