@@ -254,114 +254,115 @@ export const Daily2025: Album = {
 			src: "20250302-_87A2737-Enhanced-NR.jpg",
 			slug: "2025-mar-02",
 		},
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-03",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-04",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-05",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-06",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-07",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-08",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-09",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-10",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-11",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-12",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-13",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-14",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-15",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-16",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-17",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-18",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-19",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-20",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-21",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-22",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-23",
-		// },
+		{
+			src: "20250303-_87A2784-Enhanced-NR.jpg",
+			slug: "2025-mar-03",
+		},
+		{
+			src: "20250304-_87A2924-Enhanced-NR.jpg",
+			slug: "2025-mar-04",
+		},
+		{
+			src: "20250305-_87A2947-Enhanced-NR.jpg",
+			slug: "2025-mar-05",
+		},
+		{
+			src: "20250306-_87A2970-Enhanced-NR.jpg",
+			slug: "2025-mar-06",
+		},
+		{
+			src: "20250307-_87A2978-Enhanced-NR.jpg",
+			slug: "2025-mar-07",
+		},
+		{
+			src: "20250308-_87A3035-Enhanced-NR.jpg",
+			slug: "2025-mar-08",
+		},
+		{
+			src: "20250309-_87A3089-Enhanced-NR.jpg",
+			slug: "2025-mar-09",
+		},
+		{
+			src: "20250310-_87A3152-Enhanced-NR.jpg",
+			slug: "2025-mar-10",
+		},
+		{
+			src: "20250311-_87A3164-Enhanced-NR.jpg",
+			slug: "2025-mar-11",
+		},
+		{
+			src: "20250312-_87A3190-Enhanced-NR.jpg",
+			slug: "2025-mar-12",
+		},
+		{
+			src: "20250313-_87A3219-Enhanced-NR.jpg",
+			slug: "2025-mar-13",
+		},
+		{
+			src: "20250314-_87A3271-Enhanced-NR.jpg",
+			slug: "2025-mar-14",
+		},
+		{
+			src: "20250315-_87A3416-Enhanced-NR.jpg",
+			slug: "2025-mar-15",
+		},
+		{
+			src: "20250316-_87A4024-Enhanced-NR.jpg",
+			slug: "2025-mar-16",
+		},
+		{
+			src: "20250317-_87A4048-Enhanced-NR.jpg",
+			slug: "2025-mar-17",
+		},
+		{
+			src: "20250318-_87A4065-Enhanced-NR.jpg",
+			slug: "2025-mar-18",
+		},
+		{
+			src: "20250319-_87A4066-Enhanced-NR.jpg",
+			slug: "2025-mar-19",
+		},
+		{
+			src: "20250320-_87A4089-Enhanced-NR.jpg",
+			slug: "2025-mar-20",
+		},
+		{
+			src: "20250321-_87A4170-Enhanced-NR.jpg",
+			slug: "2025-mar-21",
+		},
+		{
+			src: "20250322-_87A4276-Enhanced-NR.jpg",
+			slug: "2025-mar-22",
+		},
+		{
+			src: "20250323-_87A4278-Enhanced-NR.jpg",
+			slug: "2025-mar-23",
+		},
+		// missed a day - 1 :(
 		// {
 		// 	src: "*.jpg",
 		// 	slug: "2025-mar-24",
 		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-25",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-26",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-27",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-28",
-		// },
-		// {
-		// 	src: "*.jpg",
-		// 	slug: "2025-mar-29",
-		// },
+		{
+			src: "20250325-_87A4283-Enhanced-NR.jpg",
+			slug: "2025-mar-25",
+		},
+		{
+			src: "20250326-_87A4311-Enhanced-NR.jpg",
+			slug: "2025-mar-26",
+		},
+		{
+			src: "20250327-_87A4317-Enhanced-NR.jpg",
+			slug: "2025-mar-27",
+		},
+		{
+			src: "20250328-_87A4323-Enhanced-NR.jpg",
+			slug: "2025-mar-28",
+		},
+		{
+			src: "20250329-_87A4343-Enhanced-NR.jpg",
+			slug: "2025-mar-29",
+		},
 		// {
 		// 	src: "*.jpg",
 		// 	slug: "2025-mar-30",
