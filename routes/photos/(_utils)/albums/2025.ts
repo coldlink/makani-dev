@@ -391,5 +391,109 @@ export const Daily2025: Album = {
 			src: "20250405-_87A4658-Enhanced-NR.jpg",
 			slug: "2025-apr-05",
 		},
+		{
+			src: "20250406-_87A4763-Enhanced-NR.jpg",
+			slug: "2025-apr-06",
+		},
+		{
+			src: "20250407-_87A4767-Enhanced-NR.jpg",
+			slug: "2025-apr-07",
+		},
+		{
+			src: "20250408-_87A4792-Enhanced-NR.jpg",
+			slug: "2025-apr-08",
+		},
+		{
+			src: "20250409-_87A4843-Enhanced-NR.jpg",
+			slug: "2025-apr-09",
+			timezone: "Europe/Amsterdam",
+		},
+		{
+			src: "20250410-_87A4966-Enhanced-NR.jpg",
+			slug: "2025-apr-10",
+			timezone: "Europe/Amsterdam",
+		},
+		{
+			src: "20250411-_87A5246-Enhanced-NR.jpg",
+			slug: "2025-apr-11",
+			timezone: "Europe/Amsterdam",
+		},
+		{
+			src: "20250412-_87A5408-Enhanced-NR.jpg",
+			slug: "2025-apr-12",
+			timezone: "Europe/Amsterdam",
+		},
+		{
+			src: "20250413-_87A5426-Enhanced-NR.jpg",
+			slug: "2025-apr-13",
+		},
+		{
+			src: "20250414-_87A5444-Enhanced-NR.jpg",
+			slug: "2025-apr-14",
+		},
+		{
+			src: "20250415-_87A5451-Enhanced-NR.jpg",
+			slug: "2025-apr-15",
+		},
+		{
+			src: "20250416-_87A5515-Enhanced-NR.jpg",
+			slug: "2025-apr-16",
+		},
+		{
+			src: "20250417-_87A5524-Enhanced-NR.jpg",
+			slug: "2025-apr-17",
+		},
+		{
+			src: "20250418-_87A5608-Enhanced-NR.jpg",
+			slug: "2025-apr-18",
+		},
+		{
+			src: "20250419-_87A5842-Enhanced-NR.jpg",
+			slug: "2025-apr-19",
+		},
+		{
+			src: "20250420-_87A5916-Enhanced-NR.jpg",
+			slug: "2025-apr-20",
+		},
+		{
+			src: "20250421-_87A6181-Enhanced-NR.jpg",
+			slug: "2025-apr-21",
+		},
+		{
+			src: "20250422-_87A6197-Enhanced-NR.jpg",
+			slug: "2025-apr-22",
+		},
+		{
+			src: "20250423-_87A6222-Enhanced-NR.jpg",
+			slug: "2025-apr-23",
+		},
+		{
+			src: "20250424-_87A6234-Enhanced-NR.jpg",
+			slug: "2025-apr-24",
+		},
+		{
+			src: "20250425-_87A6311-Enhanced-NR.jpg",
+			slug: "2025-apr-25",
+		},
+		{
+			src: "20250426-_87A6499-Enhanced-NR.jpg",
+			slug: "2025-apr-26",
+		},
+		// {
+		// 	src: "*.jpg",
+		// 	slug: "2025-apr-27",
+		// },
+		// {
+		// 	src: "*.jpg",
+		// 	slug: "2025-apr-28",
+		// },
+		// {
+		// 	src: "*.jpg",
+		// 	slug: "2025-apr-29",
+		// },
+		// {
+		// 	src: "*.jpg",
+		// 	slug: "2025-apr-30",
+		// }
 	],
 };

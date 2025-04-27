@@ -14,7 +14,7 @@ import { ALBUMS } from "@/routes/photos/(_utils)/albums/index.ts";
 export type Photo = {
 	src: string;
 	slug: string;
-	timezone?: "Europe/London" | "Asia/Tokyo";
+	timezone?: "Europe/Amsterdam" | "Europe/London" | "Asia/Tokyo";
 	noLicense?: boolean;
 };
 
