@@ -495,5 +495,77 @@ export const Daily2025: Album = {
 			src: "20250430-_87A6646-Enhanced-NR.jpg",
 			slug: "2025-apr-30",
 		},
+		{
+			src: "20250501-_87A6653-Enhanced-NR.jpg",
+			slug: "2025-may-01",
+		},
+		{
+			src: "20250502-_87A6732-Enhanced-NR.jpg",
+			slug: "2025-may-02",
+		},
+		{
+			src: "20250503-_87A6737-Enhanced-NR.jpg",
+			slug: "2025-may-03",
+		},
+		{
+			src: "20250504-_87A6791-Enhanced-NR.jpg",
+			slug: "2025-may-04",
+		},
+		{
+			src: "20250505-_87A6924-Enhanced-NR.jpg",
+			slug: "2025-may-05",
+		},
+		{
+			src: "20250506-_87A8622-Enhanced-NR.jpg",
+			slug: "2025-may-06",
+		},
+		{
+			src: "20250507-_87A8678-Enhanced-NR.jpg",
+			slug: "2025-may-07",
+		},
+		{
+			src: "20250508-_87A8888-Enhanced-NR.jpg",
+			slug: "2025-may-08",
+		},
+		{
+			src: "20250509-_87A9047-Enhanced-NR.jpg",
+			slug: "2025-may-09",
+		},
+		{
+			src: "20250510-_87A9116-Enhanced-NR.jpg",
+			slug: "2025-may-10",
+		},
+		{
+			src: "20250511-_87A9129-Enhanced-NR.jpg",
+			slug: "2025-may-11",
+		},
+		{
+			src: "20250512-_87A9155-Enhanced-NR.jpg",
+			slug: "2025-may-12",
+		},
+		{
+			src: "20250513-_87A9156-Enhanced-NR.jpg",
+			slug: "2025-may-13",
+		},
+		{
+			src: "20250514-_87A9160-Enhanced-NR.jpg",
+			slug: "2025-may-14",
+		},
+		{
+			src: "20250515-_87A9164-Enhanced-NR.jpg",
+			slug: "2025-may-15",
+		},
+		{
+			src: "20250516-_87A9171-Enhanced-NR.jpg",
+			slug: "2025-may-16",
+		},
+		{
+			src: "20250517-_87A9183-Enhanced-NR.jpg",
+			slug: "2025-may-17",
+		},
+		{
+			src: "20250518-_87A9253-Enhanced-NR.jpg",
+			slug: "2025-may-18",
+		},
 	],
 };
