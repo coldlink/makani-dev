@@ -1,6 +1,6 @@
 export default function Nav() {
 	return (
-		<header>
+		<header class="flex-initial">
 			<nav class="w-full grid grid-cols-1 sm:grid-cols-2 mb-4 pt-4 pb-4 border-b border-b-primary-600 dark:border-b-primary-400">
 				<div class="flex justify-center sm:justify-start">
 					<a

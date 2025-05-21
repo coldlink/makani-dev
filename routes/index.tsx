@@ -1,5 +1,6 @@
 import { ProseSection } from "@/components/ProseSection.tsx";
 import { basicHandler } from "@/utils/handler.ts";
+import { getImagorUrl } from "../utils/imagor.ts";
 
 export const handler = basicHandler({
 	title: "Mahesh Makani",
@@ -7,7 +8,7 @@ export const handler = basicHandler({
 });
 export default function Home() {
 	return (
-		<section class="mx-auto flex flex-col-reverse sm:flex-row gap-4 items-center">
+		<section class="justify-center mx-auto flex flex-col-reverse sm:flex-row gap-4 items-center h-full">
 			<ProseSection className="text-center basis-auto sm:basis-full">
 				<h1>Mahesh Makani</h1>
 				<h2>Software Developer</h2>
@@ -26,8 +27,10 @@ export default function Home() {
 			</ProseSection>
 			<div class="basis-auto sm:basis-full flex justify-center">
 				<img
-					class="rounded-full"
-					src="/mahesh.jpeg"
+					class="rounded-lg h-48 sm:h-72 md:h-full"
+					src={getImagorUrl(
+						"fit-in/540x540/filters:format(jpeg):quality(80)/PXL_20240413_010322043_crop.jpg",
+					)}
 					alt="A photo of Mahesh Makani, under a cherry blossom tree. He is smiling and looking towards the top left of the image."
 				/>
 			</div>

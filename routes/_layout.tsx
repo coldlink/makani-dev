@@ -6,7 +6,7 @@ export default function Layout({ Component }: PageProps) {
 	return (
 		<>
 			<Nav />
-			<main>
+			<main class="flex-auto">
 				<Component />
 			</main>
 			<Footer />

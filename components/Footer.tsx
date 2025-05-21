@@ -7,7 +7,7 @@ import {
 
 export default function Footer() {
 	return (
-		<footer class="flex space-x-10 justify-center items-center pt-4 mt-4 mb-4 border-t border-t-primary-600 dark:border-t-primary-400">
+		<footer class="flex flex-initial space-x-10 justify-center items-center pt-4 mt-4 mb-4 border-t border-t-primary-600 dark:border-t-primary-400">
 			<a
 				target="_blank"
 				rel="noopener noreferrer"
