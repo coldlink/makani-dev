@@ -91,7 +91,7 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 			/>
 			<section class="grid grid-cols-4 md:grid-cols-6 gap-1">
 				{date && (
-					<div class="col-start-1 col-span-3 md:col-span-5 text-xs italic text-start text-stone-600 dark:text-stone-400">
+					<div class="col-start-1 col-span-3 md:col-span-5 text-xs italic text-start text-primary-50 dark:text-primary-950">
 						{new Intl.DateTimeFormat("en-GB", {
 							dateStyle: "full",
 							timeStyle: "short",
@@ -100,7 +100,7 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 					</div>
 				)}
 				{gps && (
-					<div class="col-start-4 md:col-start-6 col-span-1 text-xs italic underline text-end text-stone-600 dark:text-stone-400 hover:text-stone-700 dark:hover:text-stone-300">
+					<div class="col-start-4 md:col-start-6 col-span-1 text-xs italic underline text-end text-primary-50 dark:text-primary-950 hover:text-primary-600 dark:hover:text-primary-400">
 						<a
 							href={`https://www.google.com/maps/place/${gps}`}
 							target="_blank"
@@ -109,23 +109,23 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 						</a>
 					</div>
 				)}
-				<div class="col-span-2 md:col-start-1 md:col-span-1 text-xs text-start italic text-stone-600 dark:text-stone-400">
+				<div class="col-span-2 md:col-start-1 md:col-span-1 text-xs text-start italic text-primary-50 dark:text-primary-950">
 					{exif.Model?.description}
 				</div>
-				<div class="col-span-2 md:col-span-1 text-xs italic text-end md:text-center text-stone-600 dark:text-stone-400">
+				<div class="col-span-2 md:col-span-1 text-xs italic text-end md:text-center text-primary-50 dark:text-primary-950">
 					{exif.LensModel?.description}
 				</div>
-				<div class="col-span-1 text-xs italic text-start md:text-center text-stone-600 dark:text-stone-400">
+				<div class="col-span-1 text-xs italic text-start md:text-center text-primary-50 dark:text-primary-950">
 					{exif.FocalLength?.description}
 				</div>
-				<div class="col-span-1 text-xs italic text-center text-stone-600 dark:text-stone-400">
+				<div class="col-span-1 text-xs italic text-center text-primary-50 dark:text-primary-950">
 					{exif.FNumber?.description}
 				</div>
-				<div class="col-span-1 text-xs italic text-center text-stone-600 dark:text-stone-400">
+				<div class="col-span-1 text-xs italic text-center text-primary-50 dark:text-primary-950">
 					{exif.ShutterSpeedValue?.description}
 					{exif.ShutterSpeedValue?.description ? "s" : ""}
 				</div>
-				<div class="col-span-1 text-xs italic text-end text-stone-600 dark:text-stone-400">
+				<div class="col-span-1 text-xs italic text-end text-primary-50 dark:text-primary-950">
 					{exif.ISOSpeedRatings?.description ? "ISO " : ""}
 					{exif.ISOSpeedRatings?.description}
 				</div>
@@ -153,7 +153,7 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 
 						{/* Default JPEG format (fallback) */}
 						<img
-							class="max-h-full max-w-full rounded-lg border-2 border-transparent hover:border-stone-400 dark:hover:border-stone-600"
+							class="max-h-full max-w-full rounded-lg border-2 border-transparent hover:border-primary-400 dark:hover:border-primary-600"
 							src={getImagorUrl(
 								`fit-in/2000x2000/filters:format(avif):quality(80)/${photo.src}`,
 							)}
@@ -161,7 +161,7 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 						/>
 					</picture>
 				</a>
-				<div class="col-span-2 md:col-span-4 text-xs text-start text-stone-600 dark:text-stone-400 hover:text-stone-700 dark:hover:text-stone-300">
+				<div class="col-span-2 md:col-span-4 text-xs text-start text-primary-50 dark:text-primary-950 hover:text-primary-600 dark:hover:text-primary-400">
 					<a
 						href={`/photos/${album.slug}`}
 						class="text-sm flex flex-row"
@@ -173,7 +173,7 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 					</a>
 				</div>
 				{prevPhotoIndex !== -1 && (
-					<div class="col-span-1 col-start-3 md:col-start-5 text-xs text-start text-stone-600 dark:text-stone-400 hover:text-stone-700 dark:hover:text-stone-300">
+					<div class="col-span-1 col-start-3 md:col-start-5 text-xs text-start text-primary-50 dark:text-primary-950 hover:text-primary-600 dark:hover:text-primary-400">
 						<a
 							href={`/photos/${album.slug}/${
 								album.photos[prevPhotoIndex].slug
@@ -187,7 +187,7 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 					</div>
 				)}
 				{nextPhotoIndex !== -1 && (
-					<div class="col-span-1 col-start-4 md:col-start-6 text-xs text-end text-stone-600 dark:text-stone-400 hover:text-stone-700 dark:hover:text-stone-300">
+					<div class="col-span-1 col-start-4 md:col-start-6 text-xs text-end text-primary-50 dark:text-primary-950 hover:text-primary-600 dark:hover:text-primary-400">
 						<a
 							href={`/photos/${album.slug}/${
 								album.photos[nextPhotoIndex].slug
@@ -203,7 +203,7 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 				<a href="#" aria-label="close lightbox">
 					<div
 						id="lightbox"
-						class="hidden fixed h-screen w-screen supports-[height:100dvh]:h-dvh supports-[width:100dvw]:w-dvw target:flex justify-center items-center inset-0 p-4 bg-stone-950/70 backdrop-blur-md overflow-auto"
+						class="hidden fixed h-screen w-screen supports-[height:100dvh]:h-dvh supports-[width:100dvw]:w-dvw target:flex justify-center items-center inset-0 p-4 bg-primary-50/70 backdrop-blur-md overflow-auto"
 					>
 						<picture class="flex justify-center items-center h-full w-auto">
 							{/* AVIF format */}

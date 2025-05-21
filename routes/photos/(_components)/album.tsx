@@ -21,10 +21,10 @@ export const Album = ({
 	return (
 		<a
 			href={`/photos/${slug}`}
-			class="max-w-sm mx-auto relative rounded-lg hover:shadow-lg border-2 border-transparent hover:border-stone-400 dark:hover:border-stone-600"
+			class="max-w-sm mx-auto relative rounded-lg hover:shadow-lg border-2 border-transparent hover:border-primary-600 dark:hover:border-primary-400"
 		>
-			<div class="absolute top-0 left-0 right-0 h-auto bg-stone-50/50 dark:bg-stone-950/50 backdrop-blur text-white p-2 rounded-t-lg">
-				<h4 class="text-l tracking-tight text-stone-900 dark:text-stone-100">
+			<div class="absolute top-0 left-0 right-0 h-auto bg-primary-50/50 dark:bg-primary-950/50 backdrop-blur text-white p-2 rounded-t-lg">
+				<h4 class="text-l tracking-tight text-primary-950 dark:text-primary-50">
 					{name}
 				</h4>
 			</div>
@@ -82,13 +82,13 @@ export const Album = ({
 				/>
 			</picture>
 
-			<div class="absolute bottom-0 left-0 right-0 h-auto bg-stone-50/50 dark:bg-stone-950/50 backdrop-blur text-white p-2 rounded-b-lg">
+			<div class="absolute bottom-0 left-0 right-0 h-auto bg-primary-50/50 dark:bg-primary-950/50 backdrop-blur text-white p-2 rounded-b-lg">
 				{dates && (
-					<p class="text-sm text-stone-700 dark:text-stone-300">
+					<p class="text-sm text-primary-950 dark:text-primary-50">
 						{dates}
 					</p>
 				)}
-				<p class="text-sm text-stone-700 dark:text-stone-300">
+				<p class="text-sm text-primary-950 dark:text-primary-50">
 					{photoCount} photos
 				</p>
 			</div>

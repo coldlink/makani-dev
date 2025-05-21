@@ -17,7 +17,7 @@ export const License = (
 	},
 ) => {
 	return (
-		<div class="text-xs text-start text-stone-600 dark:text-stone-400 mt-6">
+		<div class="text-xs text-start text-text dark:text-textDark mt-6">
 			{isPhoto
 				? (
 					// @ts-ignore -- cc license tag
@@ -32,7 +32,7 @@ export const License = (
 								<>
 									This photo is licensed under{" "}
 									<a
-										class="text-xs underline hover:text-stone-700 dark:hover:text-stone-300 inline"
+										class="text-xs underline hover:text-primary-600 hover:dark:text-primary-400 inline"
 										href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
 										target="_blank"
 									>
@@ -47,7 +47,7 @@ export const License = (
 					<span xmlns:cc="http://creativecommons.org/ns#">
 						&copy; Mahesh Makani {year}. Photos licensed under{" "}
 						<a
-							class="text-xs underline hover:text-stone-700 dark:hover:text-stone-300 inline"
+							class="text-xs underline hover:text-primary-600 hover:dark:text-primary-400 inline"
 							href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
 							target="_blank"
 						>

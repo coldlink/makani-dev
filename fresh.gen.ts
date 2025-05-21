@@ -11,6 +11,7 @@ import * as $photos_album_photo_ from "./routes/photos/[album]/[photo].tsx";
 import * as $photos_album_index from "./routes/photos/[album]/index.tsx";
 import * as $photos_index from "./routes/photos/index.tsx";
 import * as $projects from "./routes/projects.tsx";
+import * as $test from "./routes/test.tsx";
 import * as $work from "./routes/work.tsx";
 
 import type { Manifest } from "$fresh/server.ts";
@@ -26,6 +27,7 @@ const manifest = {
 		"./routes/photos/[album]/index.tsx": $photos_album_index,
 		"./routes/photos/index.tsx": $photos_index,
 		"./routes/projects.tsx": $projects,
+		"./routes/test.tsx": $test,
 		"./routes/work.tsx": $work,
 	},
 	islands: {},

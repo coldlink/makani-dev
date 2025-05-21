@@ -12,7 +12,7 @@ export const ProseSection = (
 	{ children, className, dangerouslySetInnerHTML }: ProseSectionProps,
 ) => (
 	<section
-		class={`prose prose-stone dark:prose-invert max-w-[80ch] ${
+		class={`prose prose-custom dark:prose-invert max-w-[80ch] ${
 			className || ""
 		}`}
 		dangerouslySetInnerHTML={dangerouslySetInnerHTML}
