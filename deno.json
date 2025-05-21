@@ -9,7 +9,12 @@
 		"preview": "deno run -A main.ts",
 		"update": "deno run -A -r https://fresh.deno.dev/update ."
 	},
-	"lint": { "rules": { "tags": ["fresh", "recommended"] } },
+	"lint": {
+		"rules": {
+			"tags": ["fresh", "recommended"],
+			"exclude": ["react-no-danger", "react-no-danger-with-children"]
+		}
+	},
 	"fmt": { "useTabs": true, "indentWidth": 2, "semiColons": true },
 	"exclude": ["**/_fresh/*"],
 	"imports": {

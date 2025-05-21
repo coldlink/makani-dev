@@ -1,9 +1,14 @@
-import { PageProps } from "$fresh/server.ts";
+import { Handlers, PageProps } from "$fresh/server.ts";
 import { Album, findAlbumFromSlug } from "@/routes/photos/(_utils)/albums.ts";
 import Error404 from "@/routes/_404.tsx";
 import { getImagorUrl } from "@/utils/imagor.ts";
 import { Breadcrumb } from "@/routes/photos/(_components)/breadcrumb.tsx";
 import { License } from "@/routes/photos/(_components)/license.tsx";
+import { defaultHandlerFunction, HandlerData } from "@/utils/handler.ts";
+
+type DataAlbum = {
+	album: Album | undefined;
+};
 
 const Gallery = ({
 	album,
@@ -46,8 +51,24 @@ const Gallery = ({
 	);
 };
 
-export default function PhotoAlbum(props: PageProps) {
-	const album = findAlbumFromSlug(props.params.album);
+export const handler: Handlers = {
+	GET(_req, ctx) {
+		const album = findAlbumFromSlug(ctx.params.album);
+
+		return defaultHandlerFunction<DataAlbum>(
+			_req,
+			ctx,
+			{
+				title: `${album?.name} | Photography`,
+				description:
+					`Photos from the ${album?.name} album. A collection of photos taken by myself, all licensed under CC BY-NC-SA 4.0 unless otherwise stated.`,
+				album,
+			},
+		);
+	},
+};
+export default function PhotoAlbum(props: PageProps<HandlerData<DataAlbum>>) {
+	const album = props.data.album;
 
 	if (!album) {
 		return <Error404 />;

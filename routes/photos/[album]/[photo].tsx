@@ -1,9 +1,10 @@
 import {
+	Album,
 	findAlbumFromSlug,
 	findPhotoInAlbum,
 	getPhotoExif,
+	Photo,
 } from "@/routes/photos/(_utils)/albums.ts";
-import { RouteContext } from "$fresh/src/server/types.ts";
 import Error404 from "@/routes/_404.tsx";
 import { Breadcrumb } from "@/routes/photos/(_components)/breadcrumb.tsx";
 import { getImagorUrl } from "@/utils/imagor.ts";
@@ -13,34 +14,101 @@ import {
 	IoReturnDownBack,
 } from "react-icons/io5";
 import { License } from "@/routes/photos/(_components)/license.tsx";
+import { Handlers, PageProps } from "$fresh/server.ts";
+import { defaultHandlerFunction, HandlerData } from "@/utils/handler.ts";
+import { Tags } from "exifreader";
+
+type DataPhoto = {
+	album: Album | undefined;
+	photo: Photo | undefined;
+	photoIndex: {
+		current: number;
+		next: number;
+		prev: number;
+	};
+	exif: Tags | undefined;
+};
 
 /**
  * @name PhotoPage
  * @description Photo page component.
  */
-export default async function PhotoPage(_: Request, ctx: RouteContext) {
-	const album = findAlbumFromSlug(ctx.params.album);
+export const handler: Handlers = {
+	async GET(_req, ctx) {
+		const album = findAlbumFromSlug(ctx.params.album);
 
-	if (!album) {
+		if (!album) {
+			return defaultHandlerFunction<DataPhoto>(
+				_req,
+				ctx,
+				{
+					album,
+					photo: undefined,
+					photoIndex: {
+						current: -1,
+						next: -1,
+						prev: -1,
+					},
+					exif: undefined,
+				},
+			);
+		}
+
+		const [photo, photoIndex] = findPhotoInAlbum(album, ctx.params.photo);
+
+		if (!photo) {
+			return defaultHandlerFunction<DataPhoto>(
+				_req,
+				ctx,
+				{
+					album,
+					photo: undefined,
+					photoIndex: {
+						current: -1,
+						next: -1,
+						prev: -1,
+					},
+					exif: undefined,
+				},
+			);
+		}
+
+		const nextPhotoIndex = photoIndex !== album.photos.length - 1
+			? photoIndex + 1
+			: -1;
+		const prevPhotoIndex = photoIndex !== 0 ? photoIndex - 1 : -1;
+
+		const exif = await getPhotoExif(photo);
+
+		return defaultHandlerFunction<DataPhoto>(
+			_req,
+			ctx,
+			{
+				title: `${album.name} | ${photo.slug} | Photography`,
+				description:
+					`A photo from the ${album.name} album, with the name "${photo.slug}". A collection of photos taken by myself, all licensed under CC BY-NC-SA 4.0 unless otherwise stated.`,
+				album,
+				photo,
+				photoIndex: {
+					current: photoIndex,
+					next: nextPhotoIndex,
+					prev: prevPhotoIndex,
+				},
+				exif,
+			},
+		);
+	},
+};
+export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
+	const { album, photo, photoIndex, exif } = props.data;
+
+	if (!album || !photo) {
 		return <Error404 />;
 	}
-
-	const [photo, photoIndex] = findPhotoInAlbum(album, ctx.params.photo);
-
-	if (!photo) {
-		return <Error404 />;
-	}
-
-	const exif = await getPhotoExif(photo);
-
-	const nextPhotoIndex = photoIndex !== album.photos.length - 1
-		? photoIndex + 1
-		: -1;
-	const prevPhotoIndex = photoIndex !== 0 ? photoIndex - 1 : -1;
 
 	const date = (() => {
 		// attempt to get the date from the `DateCreated` first
-		const dateCreated = new Date(exif.DateCreated?.description!);
+		const dateCreated = new Date(exif?.DateCreated?.description!);
 		// if this is valid, return it
 		if (!isNaN(dateCreated.getTime())) {
 			return dateCreated;
@@ -50,9 +118,9 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 		// which we parse into an ISO 8601 string
 		const dateTimeOriginal = new Date(
 			`${
-				exif.DateTimeOriginal?.description.replace(":", "-").replace(":", "-")
+				exif?.DateTimeOriginal?.description.replace(":", "-").replace(":", "-")
 					.replace(" ", "T")
-			}${exif.OffsetTimeOriginal?.description}`,
+			}${exif?.OffsetTimeOriginal?.description}`,
 		);
 
 		// return the date if it's valid
@@ -65,19 +133,19 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 	const gps: string | undefined = (() => {
 		// if any of the GPS tags are missing, return undefined
 		if (
-			!exif.GPSLatitude || !exif.GPSLongitude || !exif.GPSLatitudeRef ||
-			!exif.GPSLongitudeRef
+			!exif?.GPSLatitude || !exif?.GPSLongitude || !exif?.GPSLatitudeRef ||
+			!exif?.GPSLongitudeRef
 		) {
 			return undefined;
 		}
 
 		// get the latitude and longitude values
-		const lat = exif.GPSLatitude.description;
-		const lon = exif.GPSLongitude.description;
+		const lat = exif?.GPSLatitude.description;
+		const lon = exif?.GPSLongitude.description;
 
 		// get the latitude and longitude reference values, i.e N/S and E/W
-		const latRef = exif.GPSLatitudeRef.description.at(0);
-		const lonRef = exif.GPSLongitudeRef.description.at(0);
+		const latRef = exif?.GPSLatitudeRef.description.at(0);
+		const lonRef = exif?.GPSLongitudeRef.description.at(0);
 
 		// return the GPS coordinates in a format that Google Maps can understand
 		return `${lat}${latRef}, ${lon}${lonRef}`;
@@ -110,24 +178,24 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 					</div>
 				)}
 				<div class="col-span-2 md:col-start-1 md:col-span-1 text-xs text-start italic text-primary-50 dark:text-primary-950">
-					{exif.Model?.description}
+					{exif?.Model?.description}
 				</div>
 				<div class="col-span-2 md:col-span-1 text-xs italic text-end md:text-center text-primary-50 dark:text-primary-950">
-					{exif.LensModel?.description}
+					{exif?.LensModel?.description}
 				</div>
 				<div class="col-span-1 text-xs italic text-start md:text-center text-primary-50 dark:text-primary-950">
-					{exif.FocalLength?.description}
+					{exif?.FocalLength?.description}
 				</div>
 				<div class="col-span-1 text-xs italic text-center text-primary-50 dark:text-primary-950">
-					{exif.FNumber?.description}
+					{exif?.FNumber?.description}
 				</div>
 				<div class="col-span-1 text-xs italic text-center text-primary-50 dark:text-primary-950">
-					{exif.ShutterSpeedValue?.description}
-					{exif.ShutterSpeedValue?.description ? "s" : ""}
+					{exif?.ShutterSpeedValue?.description}
+					{exif?.ShutterSpeedValue?.description ? "s" : ""}
 				</div>
 				<div class="col-span-1 text-xs italic text-end text-primary-50 dark:text-primary-950">
-					{exif.ISOSpeedRatings?.description ? "ISO " : ""}
-					{exif.ISOSpeedRatings?.description}
+					{exif?.ISOSpeedRatings?.description ? "ISO " : ""}
+					{exif?.ISOSpeedRatings?.description}
 				</div>
 				<a
 					href="#lightbox"
@@ -172,11 +240,11 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 						</span>
 					</a>
 				</div>
-				{prevPhotoIndex !== -1 && (
+				{photoIndex.prev !== -1 && (
 					<div class="col-span-1 col-start-3 md:col-start-5 text-xs text-start text-primary-50 dark:text-primary-950 hover:text-primary-600 dark:hover:text-primary-400">
 						<a
 							href={`/photos/${album.slug}/${
-								album.photos[prevPhotoIndex].slug
+								album.photos[photoIndex.prev].slug
 							}`}
 							class="text-sm flex flex-row justify-end"
 						>
@@ -186,11 +254,11 @@ export default async function PhotoPage(_: Request, ctx: RouteContext) {
 						</a>
 					</div>
 				)}
-				{nextPhotoIndex !== -1 && (
+				{photoIndex.next !== -1 && (
 					<div class="col-span-1 col-start-4 md:col-start-6 text-xs text-end text-primary-50 dark:text-primary-950 hover:text-primary-600 dark:hover:text-primary-400">
 						<a
 							href={`/photos/${album.slug}/${
-								album.photos[nextPhotoIndex].slug
+								album.photos[photoIndex.next].slug
 							}`}
 							class="text-sm flex flex-row justify-end"
 						>

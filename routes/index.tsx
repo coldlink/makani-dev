@@ -1,5 +1,10 @@
 import { ProseSection } from "@/components/ProseSection.tsx";
+import { basicHandler } from "@/utils/handler.ts";
 
+export const handler = basicHandler({
+	title: "Mahesh Makani",
+	description: "Software Developer",
+});
 export default function Home() {
 	return (
 		<section class="mx-auto flex flex-col-reverse sm:flex-row gap-4 items-center">
