@@ -93,7 +93,9 @@ export default {
 						"--tw-prose-hr": customColors.primary[700],
 						"--tw-prose-quotes": customColors.primary[400],
 						"--tw-prose-quote-borders": customColors.primary[300],
-						"--tw-prose-captions": customColors.primary[400],
+						"--tw-prose-captions": `rgb(${
+							hexToRgb(customColors.primary[100])
+						} / 70%)`,
 						"--tw-prose-kbd": customColors.primary[100],
 						"--tw-prose-kbd-shadows": hexToRgb(customColors.primary[100]),
 						"--tw-prose-code": customColors.primary[50],
@@ -113,7 +115,9 @@ export default {
 						"--tw-prose-invert-hr": customColors.primary[300],
 						"--tw-prose-invert-quotes": customColors.primary[800],
 						"--tw-prose-invert-quote-borders": customColors.primary[300],
-						"--tw-prose-invert-captions": customColors.primary[900],
+						"--tw-prose-invert-captions": `rgb(${
+							hexToRgb(customColors.primary[900])
+						} / 70%)`,
 						"--tw-prose-invert-kbd": customColors.primary[900],
 						"--tw-prose-invert-kbd-shadows": hexToRgb(
 							customColors.primary[900],

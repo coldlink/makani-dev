@@ -3,8 +3,6 @@ title: "Work Experience"
 description: "Hello! I'm Mahesh Makani, a software developer based in Hertfordshire and London, UK. Here you can find my professional work experience."
 ---
 
-# Work Experience
-
 This is a summary of my professional work experience, and the projects I have
 worked on.
 

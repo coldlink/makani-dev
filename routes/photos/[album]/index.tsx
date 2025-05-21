@@ -5,6 +5,7 @@ import { getImagorUrl } from "@/utils/imagor.ts";
 import { Breadcrumb } from "@/routes/photos/(_components)/breadcrumb.tsx";
 import { License } from "@/routes/photos/(_components)/license.tsx";
 import { defaultHandlerFunction, HandlerData } from "@/utils/handler.ts";
+import { ProseSection } from "@/components/ProseSection.tsx";
 
 type DataAlbum = {
 	album: Album | undefined;
@@ -76,6 +77,9 @@ export default function PhotoAlbum(props: PageProps<HandlerData<DataAlbum>>) {
 
 	return (
 		<>
+			<ProseSection className="mb-8">
+				<h1>Photography</h1>
+			</ProseSection>
 			<Breadcrumb
 				album={album}
 			/>

@@ -17,6 +17,7 @@ import { License } from "@/routes/photos/(_components)/license.tsx";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { defaultHandlerFunction, HandlerData } from "@/utils/handler.ts";
 import { Tags } from "exifreader";
+import { ProseSection } from "@/components/ProseSection.tsx";
 
 type DataPhoto = {
 	album: Album | undefined;
@@ -153,19 +154,22 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 
 	return (
 		<>
+			<ProseSection className="mb-8">
+				<h1>Photography</h1>
+			</ProseSection>
 			<Breadcrumb
 				album={album}
 				photo={photo}
 			/>
 			<section class="grid grid-cols-4 md:grid-cols-6 gap-1">
 				{date && (
-					<div class="col-start-1 col-span-3 md:col-span-5 text-xs italic text-start text-primary-50 dark:text-primary-950">
+					<time class="col-start-1 col-span-3 md:col-span-5 text-xs italic text-start text-primary-50 dark:text-primary-950">
 						{new Intl.DateTimeFormat("en-GB", {
 							dateStyle: "full",
 							timeStyle: "short",
 							timeZone: photo.timezone || "Europe/London",
 						}).format(date)}
-					</div>
+					</time>
 				)}
 				{gps && (
 					<div class="col-start-4 md:col-start-6 col-span-1 text-xs italic underline text-end text-primary-50 dark:text-primary-950 hover:text-primary-600 dark:hover:text-primary-400">

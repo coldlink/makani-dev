@@ -3,8 +3,6 @@ title: "Projects"
 description: "Hello! I'm Mahesh Makani, a software developer based in Hertfordshire and London, UK. Here you can find non-professional/personal projects I've worked on."
 ---
 
-# Projects
-
 Here you can find non-professional/personal projects I've worked on. Most of the
 code for these projects can be found on my
 [GitHub](https://github.com/coldlink).

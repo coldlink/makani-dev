@@ -7,6 +7,7 @@ import { HandlerData } from "./handler.ts";
 
 interface Page {
 	markdown: string;
+	published_at?: string;
 }
 
 // replace starting and trailing slashes with empty string
@@ -37,16 +38,31 @@ export const markdownHandler: Handlers<HandlerData<Page>> = {
 	},
 };
 
-export default function MarkdownPage({ data }: PageProps<Page | null>) {
+export default function MarkdownPage({ data }: PageProps<HandlerData<Page>>) {
 	if (!data) {
 		return <Error404 />;
 	}
 
 	return (
-		<ProseSection
-			dangerouslySetInnerHTML={{
-				__html: data.markdown,
-			}}
-		/>
+		<>
+			<ProseSection className={`${data.published_at ? "mb-4" : "mb-8"}`}>
+				<h1>
+					{data.title}
+				</h1>
+				{data.published_at && (
+					<time class="text-xs">
+						{new Intl.DateTimeFormat("en-GB", {
+							dateStyle: "long",
+							timeZone: "Europe/London",
+						}).format(new Date(data.published_at))}
+					</time>
+				)}
+			</ProseSection>
+			<ProseSection
+				dangerouslySetInnerHTML={{
+					__html: data.markdown,
+				}}
+			/>
+		</>
 	);
 }

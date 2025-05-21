@@ -11,6 +11,16 @@ export default function Nav() {
 					</a>
 				</div>
 				<ul class="flex space-x-4 justify-center sm:justify-end">
+					{
+						/* <li>
+						<a
+							href="/blog"
+							class="flex items-center text-text dark:text-textDark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
+						>
+							Blog
+						</a>
+					</li> */
+					}
 					<li>
 						<a
 							href="/photos"

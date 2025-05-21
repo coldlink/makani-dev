@@ -1,6 +1,8 @@
 ---
-title: "Test"
-description: "A test page to test the typography plugin."
+title: "Tailwind Typography"
+published_at: 2025-05-21T15:00:00.000Z
+description: This is a demo of the Tailwind Typography plugin, which is a plugin for Tailwind CSS that provides a set of pre-defined styles for typography elements.
+hidden: true
 ---
 
 <p class="lead">
