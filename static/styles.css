@@ -5,8 +5,14 @@
 @tailwind utilities;
 
 @layer base {
+	html {
+		@apply min-h-full grid;
+	}
+
 	body {
-		@apply bg-background dark:bg-backgroundDark container max-w-screen-xl;
+		@apply flex flex-col bg-background dark:bg-backgroundDark container
+			max-w-screen-xl bg-gradient-to-br from-background to-primary-950
+			dark:from-backgroundDark dark:to-primary-100;
 	}
 
 	h1, h2, h3, h4, h5, h6 {

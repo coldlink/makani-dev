@@ -6,7 +6,7 @@ export default function App(
 ) {
 	const { Component, data = {} } = props;
 	return (
-		<html lang="en" class="h-full">
+		<html lang="en">
 			<head>
 				<meta charset="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,7 +43,7 @@ export default function App(
 				<meta name="apple-mobile-web-app-title" content="makani.dev" />
 				<link rel="manifest" href="/site.webmanifest" />
 			</head>
-			<body class="h-full flex flex-col">
+			<body>
 				<Component />
 			</body>
 		</html>

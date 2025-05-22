@@ -4,4 +4,4 @@ description: "Hello! I'm Mahesh Makani, a software developer based in Hertfordsh
 ---
 
 If you would like to contact me for any reason, then please do get in touch
-using one of the methods below!
+using one of the methods in the footer at the bottom of this page!
