@@ -24,7 +24,7 @@ export default function PhotoKeyboardNavigation(
 			}
 		}
 
-		if (event.key === "ArrowLeft" && photoIndex.next !== -1) {
+		if (event.key === "ArrowLeft" && photoIndex.prev !== -1) {
 			this.location.href = `/photos/${album.slug}/${
 				album.photos[photoIndex.prev].slug
 			}`;
