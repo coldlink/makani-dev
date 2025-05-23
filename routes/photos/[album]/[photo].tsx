@@ -229,7 +229,7 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 							{/* Default JPEG format (fallback) */}
 							<img
 								loading="lazy"
-								class="max-h-[70dvh] rounded-lg border-2 border-transparent hover:border-primary-400 dark:hover:border-primary-600"
+								class="w-auto max-h-[70dvh] rounded-lg border-2 border-transparent hover:border-primary-400 dark:hover:border-primary-600"
 								src={getImagorUrl(
 									`fit-in/2000x2000/filters:format(jpeg):quality(80)/${photo.src}`,
 								)}
@@ -305,7 +305,7 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 							<img
 								loading="lazy"
 								fetchPriority="low"
-								class="max-h-full max-w-full rounded-lg"
+								class="w-auto max-h-full max-w-full rounded-lg"
 								src={getImagorUrl(
 									`fit-in/2000x2000/filters:format(jpeg):quality(80)/${photo.src}`,
 								)}
