@@ -201,38 +201,39 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 					{exif?.ISOSpeedRatings?.description ? "ISO " : ""}
 					{exif?.ISOSpeedRatings?.description}
 				</div>
-				<a
-					href="#lightbox"
-					class="col-span-full"
-					aria-label="open lightbox"
-				>
-					<picture>
-						{/* AVIF format */}
-						<source
-							type="image/avif"
-							srcSet={getImagorUrl(
-								`fit-in/2000x2000/filters:format(avif):quality(80)/${photo.src}`,
-							)}
-						/>
+				<div class="col-span-full flex justify-center">
+					<a
+						href="#lightbox"
+						aria-label="open lightbox"
+					>
+						<picture>
+							{/* AVIF format */}
+							<source
+								type="image/avif"
+								srcSet={getImagorUrl(
+									`fit-in/2000x2000/filters:format(avif):quality(80)/${photo.src}`,
+								)}
+							/>
 
-						{/* WEBP format */}
-						<source
-							type="image/webp"
-							srcSet={getImagorUrl(
-								`fit-in/2000x2000/filters:format(webp):quality(80)/${photo.src}`,
-							)}
-						/>
+							{/* WEBP format */}
+							<source
+								type="image/webp"
+								srcSet={getImagorUrl(
+									`fit-in/2000x2000/filters:format(webp):quality(80)/${photo.src}`,
+								)}
+							/>
 
-						{/* Default JPEG format (fallback) */}
-						<img
-							class="max-h-full max-w-full rounded-lg border-2 border-transparent hover:border-primary-400 dark:hover:border-primary-600"
-							src={getImagorUrl(
-								`fit-in/2000x2000/filters:format(avif):quality(80)/${photo.src}`,
-							)}
-							alt={photo.src}
-						/>
-					</picture>
-				</a>
+							{/* Default JPEG format (fallback) */}
+							<img
+								class="max-h-[70dvh] rounded-lg border-2 border-transparent hover:border-primary-400 dark:hover:border-primary-600"
+								src={getImagorUrl(
+									`fit-in/2000x2000/filters:format(jpeg):quality(80)/${photo.src}`,
+								)}
+								alt={photo.src}
+							/>
+						</picture>
+					</a>
+				</div>
 				<div class="col-span-2 md:col-span-4 text-xs text-start text-primary-50 dark:text-primary-950 hover:text-primary-600 dark:hover:text-primary-400">
 					<a
 						href={`/photos/${album.slug}`}
@@ -298,7 +299,7 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 							<img
 								class="max-h-full max-w-full rounded-lg"
 								src={getImagorUrl(
-									`fit-in/2000x2000/filters:format(avif):quality(80)/${photo.src}`,
+									`fit-in/2000x2000/filters:format(jpeg):quality(80)/${photo.src}`,
 								)}
 								alt={photo.src}
 							/>
