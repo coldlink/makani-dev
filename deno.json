@@ -26,7 +26,7 @@
 		"@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.16",
 		"exifreader": "npm:exifreader@^4.30.1",
 		"marked": "npm:marked@^15.0.11",
-		"preact": "npm:preact@10.26.6",
+		"preact": "npm:preact@10.26.5",
 		"react-icons/io5": "https://cdn.jsdelivr.net/gh/urielch/react-icons-io5@1.0.10/mod.ts",
 		"tailwindcss": "npm:tailwindcss@3.4.17",
 		"tailwindcss/": "npm:/tailwindcss@3.4.17/",

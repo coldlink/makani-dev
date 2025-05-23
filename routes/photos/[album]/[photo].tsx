@@ -18,15 +18,18 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { defaultHandlerFunction, HandlerData } from "@/utils/handler.ts";
 import { Tags } from "exifreader";
 import { ProseSection } from "@/components/ProseSection.tsx";
+import PhotoKeyboardNavigation from "@/islands/PhotoKeyboardNavigation.tsx";
+
+export type PhotoIndex = {
+	current: number;
+	next: number;
+	prev: number;
+};
 
 type DataPhoto = {
 	album: Album | undefined;
 	photo: Photo | undefined;
-	photoIndex: {
-		current: number;
-		next: number;
-		prev: number;
-	};
+	photoIndex: PhotoIndex;
 	exif: Tags | undefined;
 };
 
@@ -225,11 +228,14 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 
 							{/* Default JPEG format (fallback) */}
 							<img
+								loading="lazy"
 								class="max-h-[70dvh] rounded-lg border-2 border-transparent hover:border-primary-400 dark:hover:border-primary-600"
 								src={getImagorUrl(
 									`fit-in/2000x2000/filters:format(jpeg):quality(80)/${photo.src}`,
 								)}
 								alt={photo.src}
+								width={2000}
+								height={2000}
 							/>
 						</picture>
 					</a>
@@ -297,11 +303,15 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 
 							{/* Default JPEG format (fallback) */}
 							<img
+								loading="lazy"
+								fetchPriority="low"
 								class="max-h-full max-w-full rounded-lg"
 								src={getImagorUrl(
 									`fit-in/2000x2000/filters:format(jpeg):quality(80)/${photo.src}`,
 								)}
 								alt={photo.src}
+								width={2000}
+								height={2000}
 							/>
 						</picture>
 					</div>
@@ -311,6 +321,10 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 				year={date?.getUTCFullYear().toString() || album.copyrightYear}
 				isPhoto
 				noLicense={photo.noLicense}
+			/>
+			<PhotoKeyboardNavigation
+				album={album}
+				photoIndex={photoIndex}
 			/>
 		</>
 	);

@@ -26,13 +26,39 @@ export default function Home() {
 				</p>
 			</ProseSection>
 			<div class="basis-auto sm:basis-full flex justify-center">
-				<img
-					class="rounded-lg h-48 sm:h-72 md:h-full"
-					src={getImagorUrl(
-						"fit-in/540x540/filters:format(jpeg):quality(80)/PXL_20240413_010322043_crop.jpg",
-					)}
-					alt="A photo of Mahesh Makani, under a cherry blossom tree. He is smiling and looking towards the top left of the image."
-				/>
+				<picture>
+					{/* AVIF format */}
+					<source
+						type="image/avif"
+						srcSet={getImagorUrl(
+							"fit-in/432x540/filters:format(avif):quality(80)/PXL_20240413_010322043_crop.jpg",
+						)}
+						width={432}
+						height={540}
+					/>
+
+					{/* WEBP format */}
+					<source
+						type="image/webp"
+						srcSet={getImagorUrl(
+							"fit-in/432x540/filters:format(webp):quality(80)/PXL_20240413_010322043_crop.jpg",
+						)}
+						width={432}
+						height={540}
+					/>
+
+					{/* Default JPEG format (fallback) */}
+					<img
+						loading="lazy"
+						width={432}
+						height={540}
+						class="w-auto rounded-lg h-48 sm:h-72 md:h-full"
+						src={getImagorUrl(
+							"fit-in/432x540/filters:format(jpeg):quality(80)/PXL_20240413_010322043_crop.jpg",
+						)}
+						alt="A photo of Mahesh Makani, under a cherry blossom tree. He is smiling and looking towards the top left of the image."
+					/>
+				</picture>
 			</div>
 		</section>
 	);

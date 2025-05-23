@@ -38,7 +38,7 @@ export const Album = ({
 						`300x300/filters:format(avif):quality(80)/${imageCover}`,
 					)}
 					width={300}
-					height={200}
+					height={300}
 				/>
 				<source
 					type="image/avif"
@@ -46,8 +46,8 @@ export const Album = ({
 					srcSet={getImagorUrl(
 						`400x400/filters:format(avif):quality(80)/${imageCover}`,
 					)}
-					width={390}
-					height={260}
+					width={400}
+					height={400}
 				/>
 
 				{/* WEBP format */}
@@ -58,7 +58,7 @@ export const Album = ({
 						`300x300/filters:format(webp):quality(80)/${imageCover}`,
 					)}
 					width={300}
-					height={200}
+					height={300}
 				/>
 				<source
 					type="image/webp"
@@ -66,18 +66,19 @@ export const Album = ({
 					srcSet={getImagorUrl(
 						`400x400/filters:format(webp):quality(80)/${imageCover}`,
 					)}
-					width={390}
-					height={260}
+					width={400}
+					height={400}
 				/>
 
 				{/* Default JPEG format (fallback) */}
 				<img
+					loading="lazy"
 					class="h-auto max-w-full rounded-lg object-cover"
 					src={getImagorUrl(
-						`400x400/filters:format(avif):quality(80)/${imageCover}`,
+						`400x400/filters:format(jpeg):quality(80)/${imageCover}`,
 					)}
-					width={390}
-					height={260}
+					width={400}
+					height={400}
 					alt={`Cover photo for the album ${name}`}
 				/>
 			</picture>

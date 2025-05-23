@@ -39,11 +39,14 @@ const Gallery = ({
 
 						{/* Default JPEG format (fallback) */}
 						<img
+							loading="lazy"
 							class="h-auto max-w-full rounded-lg mb-4 hover:shadow-lg border-2 border-transparent hover:border-primary-400 dark:hover:border-primary-600"
 							src={getImagorUrl(
-								`fit-in/540x540/filters:format(avif):quality(80)/${photo.src}`,
+								`fit-in/540x540/filters:format(jpeg):quality(80)/${photo.src}`,
 							)}
 							alt={photo.src}
+							width={540}
+							height={540}
 						/>
 					</picture>
 				</a>
