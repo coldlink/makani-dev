@@ -24,16 +24,19 @@ export const Miscellaneous: Album = {
 			src: "20241227-_87A7816-Enhanced-NR.jpg",
 			slug: "miscellaneous-gwen-xmas-1",
 			noLicense: true,
+			timezone: "+01:00",
 		},
 		{
 			src: "20241227-_87A7805-Enhanced-NR.jpg",
 			slug: "miscellaneous-gwen-xmas-2",
 			noLicense: true,
+			timezone: "+01:00",
 		},
 		{
 			src: "20241227-_87A7796-Enhanced-NR.jpg",
 			slug: "miscellaneous-miles-1",
 			noLicense: true,
+			timezone: "+01:00",
 		},
 	],
 };

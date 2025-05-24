@@ -11,6 +11,7 @@ Or in other words, "how I got into photography". It's mostly birds. A selection 
 		{
 			src: "20241230-_87A7993-Enhanced-NR.jpg",
 			slug: "wildlife-red-kite-over-london",
+			timezone: "+01:00",
 		},
 		{
 			src: "20231226-_87A5843-Enhanced-NR.jpg",

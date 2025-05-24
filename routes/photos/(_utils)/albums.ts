@@ -14,7 +14,11 @@ import { ALBUMS } from "@/routes/photos/(_utils)/albums/index.ts";
 export type Photo = {
 	src: string;
 	slug: string;
-	timezone?: "Europe/Amsterdam" | "Europe/London" | "Asia/Tokyo";
+	timezone?:
+		| "Europe/Amsterdam"
+		| "Europe/London"
+		| "Asia/Tokyo"
+		| "+01:00"; // used to manually fix timezone where the camera was set to the wrong timezone
 	noLicense?: boolean;
 };
 

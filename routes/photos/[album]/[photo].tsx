@@ -124,7 +124,7 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 			`${
 				exif?.DateTimeOriginal?.description.replace(":", "-").replace(":", "-")
 					.replace(" ", "T")
-			}${exif?.OffsetTimeOriginal?.description}`,
+			}${exif?.OffsetTimeOriginal?.description || ""}`,
 		);
 
 		// return the date if it's valid
