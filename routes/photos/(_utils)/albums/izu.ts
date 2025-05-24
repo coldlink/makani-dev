@@ -9,6 +9,11 @@ export const IzuPeninsula: Album = {
 	name: "The Izu Peninsula",
 	slug: "izu-peninsula",
 	dates: "April 2024",
+	description: `
+During my trip to Japan in April 2024, I spent a couple of days hiring a car and exploring the Izu Peninsula, a beautiful area known for its coastal views, hot springs, and scenic landscapes. This album showcases some of the highlights from that trip.
+
+I wish I'd spent a day or two longer there as I kept discovering new things that I couldn't fit into my schedule.
+`,
 	copyrightYear: "2024",
 	photos: [
 		{

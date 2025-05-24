@@ -9,6 +9,11 @@ export const Kyoto: Album = {
 	name: "Kyoto Wanders",
 	slug: "kyoto-wanders",
 	dates: "April 2024",
+	description: `
+My second trip to Kyoto after my first in 2018. However, it was my partner's first time in Japan, so while I repeated a few things, it was still great to spend a few days exploring the city and seeing things through a different lens.
+
+This album is a selection of my favourites from the trip, including some of the temples, shrines, and other sights we visited. I also got to see some cats, which is always a bonus!	
+	`,
 	copyrightYear: "2024",
 	photos: [
 		{

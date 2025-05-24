@@ -9,6 +9,12 @@ export const TokyoSkytreeVistas: Album = {
 	name: "Tokyo Skytree Vistas",
 	slug: "tokyo-skytree-vistas",
 	dates: "April 2024",
+	description: `
+Some may call the Tokyo Skytree a tourist trap, but I loved it so much when I visited in 2018, I had to go back again in 2024.
+
+This time, I was able to get some great photos of the views from the top, and the surrounding area, including the Asakusa district and Tokyo Bay.
+It's quite fascinating to see a city that doesn't seem to end. From the top you can really get a perspective of how vast Tokyo is, but using a zoom lens, you can spy on life below.
+	`,
 	copyrightYear: "2024",
 	photos: [
 		{

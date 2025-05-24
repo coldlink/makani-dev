@@ -9,6 +9,11 @@ export const TeamLabBorderless: Album = {
 	name: "teamLab Borderless",
 	slug: "teamlab-borderless",
 	dates: "9th April 2024",
+	description: `
+In 2018, I loved teamLab Planets, so I was excited to visit teamLab Borderless in 2024.
+
+As the name suggests, the immersive art installations here are designed to be experienced without boundaries, with you left to explore the space without a set path or map, with no clear distinction between rooms.
+`,
 	copyrightYear: "2024",
 	photos: [
 		{

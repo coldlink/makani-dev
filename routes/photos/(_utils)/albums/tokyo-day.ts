@@ -9,6 +9,9 @@ export const TokyoDay: Album = {
 	name: "Tokyo Day Vibes",
 	slug: "tokyo-day-vibes",
 	dates: "April 2024",
+	description: `
+A collection of photos capturing a snapshot of the vibes of Tokyo during the daytime.
+	`,
 	copyrightYear: "2024",
 	photos: [
 		{

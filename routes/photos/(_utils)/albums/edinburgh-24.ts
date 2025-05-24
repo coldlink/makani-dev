@@ -4,6 +4,9 @@ export const Edinburgh24: Album = {
 	name: "Edinburgh - November 2024",
 	slug: "edinburgh-24",
 	dates: "11th-13th November 2024",
+	description: `
+Photos from my trip with my partner to Edinburgh in November 2024 for her birthday.
+`,
 	copyrightYear: "2024",
 	photos: [
 		{

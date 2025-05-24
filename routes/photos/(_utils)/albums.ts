@@ -25,6 +25,7 @@ export type Photo = {
  * @property {string} name - Name of the album.
  * @property {string} slug - URL slug of the album.
  * @property {Photo[]} photos - Array of photos in the album, order matters.
+ * @property {string} [description] - Description of the album.
  * @property {string} [dates] - Date string to display for the album.
  * @property {string} copyrightYear - Year that the album is licensed.
  */
@@ -32,6 +33,7 @@ export type Album = {
 	name: string;
 	slug: string;
 	photos: Photo[];
+	description?: string; // make this optional until all albums have descriptions
 	dates?: string;
 	copyrightYear?: string;
 };

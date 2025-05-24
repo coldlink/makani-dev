@@ -4,6 +4,12 @@ export const Daily2025: Album = {
 	name: "A Photo Every Day 2025",
 	slug: "2025",
 	dates: "2025",
+	description: `
+I gave myself a challenge to attempt take at least one photo every day in 2025, with one photo for each day being posted here, with the aim of trying to improve my photography skills and to document my life in 2025.
+
+Day's missed so far:
+- 24th March 2025
+`,
 	photos: [
 		{
 			src: "20250101-_87A8223-Enhanced-NR.jpg",

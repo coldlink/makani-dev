@@ -3,6 +3,9 @@ import { Album } from "@/routes/photos/(_utils)/albums.ts";
 export const WildLife: Album = {
 	name: "Wildlife",
 	slug: "wildlife",
+	description: `
+Or in other words, "how I got into photography". It's mostly birds. A selection of some of my favourite wildlife photos I've taken.
+	`,
 	dates: "Various dates",
 	photos: [
 		{

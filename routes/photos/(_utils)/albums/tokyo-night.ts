@@ -9,6 +9,9 @@ export const TokyoNight: Album = {
 	name: "Tokyo Night City",
 	slug: "tokyo-night-city",
 	dates: "April 2024",
+	description: `
+Tokyo at night gives off a completely different vibe compared to the day. Simultaneously bustling and serene, I think I definitely captured more of the latter in this album.
+	`,
 	copyrightYear: "2024",
 	photos: [
 		{

@@ -6,9 +6,11 @@ import { Breadcrumb } from "@/routes/photos/(_components)/breadcrumb.tsx";
 import { License } from "@/routes/photos/(_components)/license.tsx";
 import { defaultHandlerFunction, HandlerData } from "@/utils/handler.ts";
 import { ProseSection } from "@/components/ProseSection.tsx";
+import { parseMarkdown } from "../../../utils/markdown.tsx";
 
 type DataAlbum = {
 	album: Album | undefined;
+	markdownDescription?: string;
 };
 
 const Gallery = ({
@@ -17,7 +19,7 @@ const Gallery = ({
 	album: Album;
 }) => {
 	return (
-		<div class="columns-2 md:columns-3 gap-4">
+		<div class="columns-1 sm:columns-2 md:columns-3 gap-4">
 			{album.photos.map((photo, i) => (
 				<a href={`/photos/${album.slug}/${photo.slug}`} class="group">
 					<picture key={i}>
@@ -56,8 +58,15 @@ const Gallery = ({
 };
 
 export const handler: Handlers = {
-	GET(_req, ctx) {
+	async GET(_req, ctx) {
 		const album = findAlbumFromSlug(ctx.params.album);
+
+		const markdownDescription = album?.description &&
+			await parseMarkdown(
+				`### ${album.name}\n\n_${
+					album.dates ? `${album.dates} / ` : ""
+				}${album.photos.length} photos_\n\n${album.description}`,
+			);
 
 		return defaultHandlerFunction<DataAlbum>(
 			_req,
@@ -67,6 +76,7 @@ export const handler: Handlers = {
 				description:
 					`Photos from the ${album?.name} album. A collection of photos taken by myself, all licensed under CC BY-NC-SA 4.0 unless otherwise stated.`,
 				album,
+				markdownDescription,
 			},
 		);
 	},
@@ -80,12 +90,17 @@ export default function PhotoAlbum(props: PageProps<HandlerData<DataAlbum>>) {
 
 	return (
 		<>
-			<ProseSection className="mb-8">
-				<h1>Photography</h1>
-			</ProseSection>
 			<Breadcrumb
 				album={album}
 			/>
+			{props.data.markdownDescription && (
+				<ProseSection
+					className="mb-6 prose-sm sm:prose-base prose-p:mt-3 prose-p:mb-3 prose-ul:mb-3 prose-ul:mt-3"
+					dangerouslySetInnerHTML={{
+						__html: props.data.markdownDescription,
+					}}
+				/>
+			)}
 			<Gallery album={album} />
 			<License year={album.copyrightYear} />
 		</>

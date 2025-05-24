@@ -10,6 +10,13 @@ interface Page {
 	published_at?: string;
 }
 
+export const parseMarkdown = async (raw: string) => {
+	return await marked.parse(raw, {
+		async: true,
+		gfm: true,
+	});
+};
+
 // replace starting and trailing slashes with empty string
 // to get a clean route which can be used as a filename
 // for the markdown file
@@ -25,10 +32,7 @@ export const markdownHandler: Handlers<HandlerData<Page>> = {
 			const { attrs, body } = extract(raw);
 
 			return ctx.render({
-				markdown: await marked.parse(body, {
-					async: true,
-					gfm: true,
-				}),
+				markdown: await parseMarkdown(body),
 				...attrs,
 			});
 		} catch (error) {

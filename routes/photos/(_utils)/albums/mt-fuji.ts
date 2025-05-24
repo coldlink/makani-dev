@@ -9,6 +9,11 @@ export const MtFuji: Album = {
 	name: "Mount Fuji Views",
 	slug: "mt-fuji",
 	dates: "April 2024",
+	description: `
+In 2018, I visited Mount Fuji for the first time, but it was shrouded in clouds, and was unable to even get a glimpse at it. This time, I was determined to get some clear views of Japan's iconic peak, and how I did succeed!
+
+Hokusai may have done ["Thirty-six Views of Mount Fuji"](https://en.wikipedia.org/wiki/Thirty-six_Views_of_Mount_Fuji), but heres my own "Seven Views of Mount Fuji" from my visit.
+	`,
 	copyrightYear: "2024",
 	photos: [
 		{

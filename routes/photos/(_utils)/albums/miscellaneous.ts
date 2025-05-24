@@ -4,6 +4,8 @@ export const Miscellaneous: Album = {
 	name: "Miscellaneous",
 	slug: "miscellaneous",
 	dates: "Various dates",
+	description:
+		"Photos that don't quite fit into specific albums, but are still worth sharing!",
 	photos: [
 		{
 			src: "20230827-_MG_8577-Enhanced-NR.jpg",

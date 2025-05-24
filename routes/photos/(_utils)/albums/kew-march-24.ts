@@ -9,6 +9,9 @@ export const KewMarch24: Album = {
 	name: "Kew Gardens - March 24",
 	slug: "kew-march-24",
 	dates: "22nd March 2024",
+	description: `
+Another of my regular visits to Kew Gardens, this time in March 2024. The weather was a bit gloomy, but I still managed to capture some nice photos of the plants and flowers starting to bloom as spring approached, and getting some nice shots inside the glasshouses.
+`,
 	copyrightYear: "2024",
 	photos: [
 		{

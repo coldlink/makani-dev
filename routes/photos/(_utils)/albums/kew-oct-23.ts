@@ -9,6 +9,11 @@ export const KewOct23: Album = {
 	name: "Kew Gardens - October 23",
 	slug: "kew-october-23",
 	dates: "22nd October 2023",
+	description: `
+Autumnal vibes at Kew Gardens on one of my regular visits. The colours were particularly vibrant at that time of year.
+
+Featuring water lily flowers, miniature succulent forest, chonky gourds, autumnal leaves, queer nature, chillis, and 😮😮 fish.
+`,
 	copyrightYear: "2023",
 	photos: [
 		{

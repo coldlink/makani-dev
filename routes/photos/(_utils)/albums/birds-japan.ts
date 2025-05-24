@@ -9,6 +9,11 @@ export const BirdsOfJapan: Album = {
 	name: "Birds of Japan",
 	slug: "birds-japan",
 	dates: "April 2024",
+	description: `
+Photos of various birds taken in Japan during my trip there in April 2024.
+
+Featuring heron after noods, black kites, japanese white wagtail, white cheeked starling, brown eared bulbul, little grebe in blossom, sparrow butts.
+	`,
 	copyrightYear: "2024",
 	photos: [
 		{
