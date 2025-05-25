@@ -24,7 +24,9 @@
 		"@preact/signals": "npm:@preact/signals@2.0.4",
 		"@preact/signals-core": "npm:@preact/signals-core@1.8.0",
 		"@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.16",
+		"@types/mdast": "npm:@types/mdast@^4.0.4",
 		"exifreader": "npm:exifreader@^4.30.1",
+		"hast-util-from-html": "npm:hast-util-from-html@^2.0.3",
 		"preact": "npm:preact@10.26.5",
 		"react-icons/io5": "https://cdn.jsdelivr.net/gh/urielch/react-icons-io5@1.0.10/mod.ts",
 		"rehype-raw": "npm:rehype-raw@^7.0.0",
@@ -36,7 +38,8 @@
 		"tailwindcss": "npm:tailwindcss@3.4.17",
 		"tailwindcss/": "npm:/tailwindcss@3.4.17/",
 		"tailwindcss/plugin": "npm:/tailwindcss@3.4.17/plugin.js",
-		"unified": "npm:unified@^11.0.5"
+		"unified": "npm:unified@^11.0.5",
+		"unist-util-visit": "npm:unist-util-visit@^5.0.0"
 	},
 	"compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
 	"nodeModulesDir": "auto"

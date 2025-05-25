@@ -5,6 +5,12 @@ description: This is a demo of the Tailwind Typography plugin, which is a plugin
 hidden: true
 ---
 
+<!-- deno-fmt-ignore -->
+::youtube[a video embed]{#1laEOsLJLV4}
+
+<!-- deno-fmt-ignore -->
+::photo{alt="a photo embed" src="20240425-3_87A2870-Enhanced-NR.jpg"}
+
 <p class="lead">
   Until now, trying to style an article, document, or blog post with Tailwind has been a tedious
   task that required a keen eye for typography and a lot of complex custom CSS.

@@ -8,12 +8,17 @@
     "npm:@preact/signals-core@1.8.0": "1.8.0",
     "npm:@preact/signals@2.0.4": "2.0.4_preact@10.26.5",
     "npm:@tailwindcss/typography@~0.5.16": "0.5.16_tailwindcss@3.4.17__postcss@8.5.3",
+    "npm:@types/mdast@^4.0.4": "4.0.4",
     "npm:@types/node@*": "22.15.15",
     "npm:autoprefixer@10.4.17": "10.4.17_postcss@8.4.35",
     "npm:cssnano@6.0.3": "6.0.3_postcss@8.4.35",
     "npm:exifreader@^4.30.1": "4.30.1",
+    "npm:hast-util-from-html@^2.0.3": "2.0.3",
+    "npm:hastscript@^9.0.1": "9.0.1",
     "npm:marked@*": "15.0.11",
     "npm:marked@^15.0.11": "15.0.11",
+    "npm:mdast@*": "3.0.0",
+    "npm:mdast@3": "3.0.0",
     "npm:postcss@8.4.35": "8.4.35",
     "npm:preact@10.26.5": "10.26.5",
     "npm:rehype-raw@*": "7.0.0",
@@ -30,7 +35,8 @@
     "npm:remark-rehype@^11.1.2": "11.1.2",
     "npm:tailwindcss@3.4.17": "3.4.17_postcss@8.5.3",
     "npm:unified@*": "11.0.5",
-    "npm:unified@^11.0.5": "11.0.5"
+    "npm:unified@^11.0.5": "11.0.5",
+    "npm:unist-util-visit@5": "5.0.0"
   },
   "jsr": {
     "@luca/esbuild-deno-loader@0.11.0": {
@@ -570,6 +576,17 @@
         "function-bind"
       ]
     },
+    "hast-util-from-html@2.0.3": {
+      "integrity": "sha512-CUSRHXyKjzHov8yKsQjGOElXy/3EKpyX56ELnkHH34vDVw1N1XSQ1ZcAvTyAPtGqLTuKP/uxM+aLkSPqF/EtMw==",
+      "dependencies": [
+        "@types/hast",
+        "devlop",
+        "hast-util-from-parse5",
+        "parse5",
+        "vfile",
+        "vfile-message"
+      ]
+    },
     "hast-util-from-parse5@8.0.3": {
       "integrity": "sha512-3kxEVkEKt0zvcZ3hCRYI8rqrgwtlIOFMWkbclACvjlDw8Li9S2hk/d51OI0nr/gIpdMHNepwgOKqZ/sy0Clpyg==",
       "dependencies": [
@@ -889,6 +906,10 @@
       "dependencies": [
         "@types/mdast"
       ]
+    },
+    "mdast@3.0.0": {
+      "integrity": "sha512-xySmf8g4fPKMeC07jXGz971EkLbWAJ83s4US2Tj9lEdnZ142UP5grN73H1Xd3HzrdbU5o9GYYP/y8F9ZSwLE9g==",
+      "deprecated": true
     },
     "mdn-data@2.0.28": {
       "integrity": "sha512-aylIc7Z9y4yzHYAJNuESG3hfhC+0Ibp/MAMiaOZgNv4pmEdFyfZhhhny4MNiAfWdBQ1RQ2mfDWmM1x8SvGyp8g=="
@@ -2358,7 +2379,9 @@
       "npm:@preact/signals-core@1.8.0",
       "npm:@preact/signals@2.0.4",
       "npm:@tailwindcss/typography@~0.5.16",
+      "npm:@types/mdast@^4.0.4",
       "npm:exifreader@^4.30.1",
+      "npm:hast-util-from-html@^2.0.3",
       "npm:preact@10.26.5",
       "npm:rehype-raw@7",
       "npm:rehype-stringify@^10.0.1",
@@ -2367,7 +2390,8 @@
       "npm:remark-parse@11",
       "npm:remark-rehype@^11.1.2",
       "npm:tailwindcss@3.4.17",
-      "npm:unified@^11.0.5"
+      "npm:unified@^11.0.5",
+      "npm:unist-util-visit@5"
     ]
   }
 }
