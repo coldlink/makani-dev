@@ -17,7 +17,6 @@ import { License } from "@/routes/photos/(_components)/license.tsx";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { defaultHandlerFunction, HandlerData } from "@/utils/handler.ts";
 import { Tags } from "exifreader";
-import { ProseSection } from "@/components/ProseSection.tsx";
 import PhotoKeyboardNavigation from "@/islands/PhotoKeyboardNavigation.tsx";
 
 export type PhotoIndex = {
@@ -157,9 +156,6 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 
 	return (
 		<>
-			<ProseSection className="mb-8">
-				<h1>Photography</h1>
-			</ProseSection>
 			<Breadcrumb
 				album={album}
 				photo={photo}
