@@ -22,16 +22,16 @@ interface Page {
 
 const mdPhoto = (src: string, alt: string) => {
 	return `<figure><picture><source type="image/avif" srcset="${
-		getImagorUrl(`fit-in/2000x2000/filters:format(avif):quality(80)/${src}`)
+		getImagorUrl(`fit-in/1280x1000/filters:format(avif):quality(80)/${src}`)
 	}"/><source type="image/webp" srcset="${
 		getImagorUrl(
-			`fit-in/2000x2000/filters:format(webp):quality(80)/${src}`,
+			`fit-in/1280x1000/filters:format(webp):quality(80)/${src}`,
 		)
 	}"/><img loading="lazy" class="w-auto max-h-[70dvh] rounded-lg border-2 border-transparent" src="${
 		getImagorUrl(
-			`fit-in/2000x2000/filters:format(jpeg):quality(80)/${src}`,
+			`fit-in/1280x1000/filters:format(jpeg):quality(80)/${src}`,
 		)
-	}" alt="${alt}" width="2000" height="2000"/><figcaption>${alt}</figcaption></picture></figure>`;
+	}" alt="${alt}" width="1280" height="1000"/><figcaption>${alt}</figcaption></picture></figure>`;
 };
 
 const processor = unified()
