@@ -5,6 +5,8 @@ export const WildLife: Album = {
 	slug: "wildlife",
 	description: `
 Or in other words, "how I got into photography". It's mostly birds. A selection of some of my favourite wildlife photos I've taken.
+
+These are miscellaneous wildlife photos that don't fit into any albums of their own, but I still wanted to share them.
 	`,
 	dates: "Various dates",
 	photos: [
