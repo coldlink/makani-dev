@@ -1,20 +1,30 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { extract } from "$std/front_matter/yaml.ts";
-import { marked } from "npm:marked";
 import { ProseSection } from "@/components/ProseSection.tsx";
 import Error404 from "@/routes/_404.tsx";
 import { HandlerData } from "./handler.ts";
-
+import rehypeRaw from "npm:rehype-raw";
+import rehypeStringify from "npm:rehype-stringify";
+import remarkDirective from "npm:remark-directive";
+import remarkGfm from "npm:remark-gfm";
+import remarkParse from "npm:remark-parse";
+import remarkRehype from "npm:remark-rehype";
+import { unified } from "npm:unified";
 interface Page {
 	markdown: string;
 	published_at?: string;
 }
 
+const processor = unified()
+	.use(remarkParse)
+	.use(remarkDirective)
+	.use(remarkGfm)
+	.use(remarkRehype, { allowDangerousHtml: true })
+	.use(rehypeRaw)
+	.use(rehypeStringify);
+
 export const parseMarkdown = async (raw: string) => {
-	return await marked.parse(raw, {
-		async: true,
-		gfm: true,
-	});
+	return (await (processor.process(raw))).value.toString();
 };
 
 // replace starting and trailing slashes with empty string
