@@ -20,18 +20,40 @@ interface Page {
 	published_at?: string;
 }
 
-const mdPhoto = (src: string, alt: string) => {
+const mdPhoto = (src: string, alt: string, resolution?: string) => {
+	const resize = (() => {
+		if (resolution === "high") {
+			return [2000, 1500];
+		}
+
+		if (resolution === "panorama") {
+			return [3000, 1000];
+		}
+
+		return [1280, 1000];
+	})();
+
 	return `<figure><picture><source type="image/avif" srcset="${
-		getImagorUrl(`fit-in/1280x1000/filters:format(avif):quality(80)/${src}`)
+		getImagorUrl(
+			`fit-in/${resize[0]}x${[
+				resize[1],
+			]}/filters:format(avif):quality(80)/${src}`,
+		)
 	}"/><source type="image/webp" srcset="${
 		getImagorUrl(
-			`fit-in/1280x1000/filters:format(webp):quality(80)/${src}`,
+			`fit-in/${resize[0]}x${[
+				resize[1],
+			]}/filters:format(webp):quality(80)/${src}`,
 		)
 	}"/><img loading="lazy" class="w-auto max-h-[70dvh] rounded-lg border-2 border-transparent" src="${
 		getImagorUrl(
-			`fit-in/1280x1000/filters:format(jpeg):quality(80)/${src}`,
+			`fit-in/${resize[0]}x${[
+				resize[1],
+			]}/filters:format(jpeg):quality(80)/${src}`,
 		)
-	}" alt="${alt}" width="1280" height="1000"/><figcaption>${alt}</figcaption></picture></figure>`;
+	}" alt="${alt}" width="${resize[0]}" height="${
+		resize[1]
+	}"/><figcaption>${alt}</figcaption></picture></figure>`;
 };
 
 const processor = unified()
@@ -76,7 +98,7 @@ const processor = unified()
 						const data = node.data || (node.data = {});
 						const attributes = node.attributes || {};
 
-						const { src, alt } = attributes;
+						const { src, alt, resolution } = attributes;
 
 						if (!src || !alt) {
 							file.fail(
@@ -86,7 +108,7 @@ const processor = unified()
 						}
 
 						const tree = fromHtml(
-							mdPhoto(src as string, alt as string),
+							mdPhoto(src as string, alt as string, resolution as string),
 							{ fragment: true },
 						);
 						data.hName = "div";
