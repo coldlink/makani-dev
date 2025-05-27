@@ -250,11 +250,7 @@ paths were relatively quiet, and I didn't come across anyone else on this
 section of the walk.
 
 <!-- deno-fmt-ignore -->
-::youtube[Walking through the Ashridge Estate]{#zScK1NkkfFU}
-
-<figcaption>
-    The woodland path in the Ashridge Estate heading towards the northern part of the estate and the Ling Ride Car Park.
-</figcaption>
+::youtube{id="zScK1NkkfFU" alt="The woodland path in the Ashridge Estate heading towards the northern part of the estate and the Ling Ride Car Park."}
 
 I did get slightly lost on the way to the
 ["Ling Ride Car Park"](https://maps.app.goo.gl/5hvmZzkrTZXvhXRB7), as I missed a
@@ -313,11 +309,7 @@ the UK's smallest birds, the
 to spot or hear one on this visit.
 
 <!-- deno-fmt-ignore -->
-::youtube[Walking from the Coombe into Mead's Plantation]{#kJENlbIWzhQ}
-
-<figcaption>
-    A video showing the sudden transition in vibes when walking into Mead's Plantation.
-</figcaption>
+::youtube{id="kJENlbIWzhQ" alt="A video showing the sudden transition in vibes when walking into Mead's Plantation."}
 
 <!-- deno-fmt-ignore -->
 ::photo{alt="Mead's Plantation. Full of dense, non-native western red cedar trees, hence the lack of ground flora. Apparently the firecrest can be found here, though I didn't catch a sight or even sound of one through." src="/20250523-_87A9509-Enhanced-NR.jpg"}

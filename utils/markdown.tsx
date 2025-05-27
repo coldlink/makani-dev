@@ -14,11 +14,28 @@ import { visit } from "unist-util-visit";
 import type { Root } from "npm:mdast";
 import { fromHtml } from "hast-util-from-html";
 import { getImagorUrl } from "./imagor.ts";
+import { renderToString } from "$fresh/src/server/deps.ts";
 
 interface Page {
 	markdown: string;
 	published_at?: string;
 }
+
+const mdYoutube = (id: string, alt: string) => {
+	return renderToString(
+		<>
+			<iframe
+				loading="lazy"
+				class="youtube"
+				src={`https://www.youtube.com/embed/${id}`}
+				allow="picture-in-picture"
+				allowFullScreen
+				title={alt}
+			/>
+			<figcaption>{alt}</figcaption>
+		</>,
+	);
+};
 
 const mdPhoto = (src: string, alt: string, resolution?: string) => {
 	const resize = (() => {
@@ -33,27 +50,47 @@ const mdPhoto = (src: string, alt: string, resolution?: string) => {
 		return [1280, 1000];
 	})();
 
-	return `<figure><picture><source type="image/avif" srcset="${
-		getImagorUrl(
-			`fit-in/${resize[0]}x${[
-				resize[1],
-			]}/filters:format(avif):quality(80)/${src}`,
-		)
-	}"/><source type="image/webp" srcset="${
-		getImagorUrl(
-			`fit-in/${resize[0]}x${[
-				resize[1],
-			]}/filters:format(webp):quality(80)/${src}`,
-		)
-	}"/><img loading="lazy" class="w-auto max-h-[70dvh] rounded-lg border-2 border-transparent" src="${
-		getImagorUrl(
-			`fit-in/${resize[0]}x${[
-				resize[1],
-			]}/filters:format(jpeg):quality(80)/${src}`,
-		)
-	}" alt="${alt}" width="${resize[0]}" height="${
-		resize[1]
-	}"/><figcaption>${alt}</figcaption></picture></figure>`;
+	return renderToString(
+		<>
+			<picture>
+				<source
+					type="image/avif"
+					srcset={`${
+						getImagorUrl(
+							`fit-in/${resize[0]}x${[
+								resize[1],
+							]}/filters:format(avif):quality(80)/${src}`,
+						)
+					}`}
+				/>
+				<source
+					type="image/webp"
+					srcset={`${
+						getImagorUrl(
+							`fit-in/${resize[0]}x${[
+								resize[1],
+							]}/filters:format(webp):quality(80)/${src}`,
+						)
+					}`}
+				/>
+				<img
+					loading="lazy"
+					class="w-auto max-h-[70dvh] rounded-lg border-2 border-transparent"
+					src={`${
+						getImagorUrl(
+							`fit-in/${resize[0]}x${[
+								resize[1],
+							]}/filters:format(jpeg):quality(80)/${src}`,
+						)
+					}`}
+					alt={alt}
+					width={resize[0]}
+					height={resize[1]}
+				/>
+			</picture>
+			<figcaption>{alt}</figcaption>
+		</>,
+	);
 };
 
 const processor = unified()
@@ -71,7 +108,8 @@ const processor = unified()
 					if (node.name === "youtube") {
 						const data = node.data || (node.data = {});
 						const attributes = node.attributes || {};
-						const id = attributes.id;
+
+						const { id } = attributes;
 
 						if (node.type === "textDirective") {
 							file.fail(
@@ -84,14 +122,14 @@ const processor = unified()
 							file.fail("Unexpected missing `id` on `youtube` directive", node);
 						}
 
-						data.hName = "iframe";
-						data.hProperties = {
-							src: `https://www.youtube.com/embed/${id}`,
-							frameBorder: 0,
-							allow: "picture-in-picture",
-							allowFullScreen: true,
-							class: "youtube",
-						};
+						const tree = fromHtml(
+							mdYoutube(id as string, attributes.alt as string || ""),
+							{ fragment: true },
+						);
+						data.hName = "figure";
+
+						// deno-lint-ignore no-explicit-any
+						data.hChildren = tree.children as any;
 					}
 
 					if (node.name === "photo") {
@@ -111,7 +149,7 @@ const processor = unified()
 							mdPhoto(src as string, alt as string, resolution as string),
 							{ fragment: true },
 						);
-						data.hName = "div";
+						data.hName = "figure";
 
 						// deno-lint-ignore no-explicit-any
 						data.hChildren = tree.children as any;
