@@ -2,10 +2,10 @@ import { PageProps } from "$fresh/server.ts";
 import Footer from "@/components/Footer.tsx";
 import Nav from "@/components/Nav.tsx";
 
-export default function Layout({ Component }: PageProps) {
+export default function Layout({ Component, route }: PageProps) {
 	return (
 		<>
-			<Nav />
+			<Nav route={route} />
 			<main>
 				<Component />
 			</main>

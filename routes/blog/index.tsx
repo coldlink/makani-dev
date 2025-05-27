@@ -50,7 +50,7 @@ function Post(props: { post: Post }) {
 						timeZone: "Europe/London",
 					}).format(new Date(post.publishedAt))}
 				</time>
-				<h3 class="text-lg font-serif text-text dark:text-textDark">
+				<h3 class="text-lg font-serif text-primary-300 dark:text-primary-700 transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400">
 					{post.title}
 				</h3>
 				<p class="mb-4 text-base font-normal text-text dark:text-textDark">

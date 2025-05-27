@@ -1,4 +1,10 @@
-export default function Nav() {
+type NavProps = {
+	route: string;
+};
+
+export default function Nav({ route }: NavProps) {
+	const activeRoute = route.split("/")[1] || "home";
+
 	return (
 		<header class="flex-initial">
 			<nav class="w-full grid grid-cols-1 sm:grid-cols-2 mb-4 pt-4 pb-4 border-b border-b-primary-600 dark:border-b-primary-400">
@@ -14,7 +20,11 @@ export default function Nav() {
 					<li>
 						<a
 							href="/blog"
-							class="flex items-center text-text dark:text-textDark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
+							class={`flex items-center transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400 ${
+								activeRoute === "blog"
+									? "text-primary-300 dark:text-primary-700"
+									: "text-text dark:text-textDark"
+							}`}
 						>
 							Blog
 						</a>
@@ -22,7 +32,11 @@ export default function Nav() {
 					<li>
 						<a
 							href="/photos"
-							class="flex items-center text-text dark:text-textDark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
+							class={`flex items-center transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400 ${
+								activeRoute === "photos"
+									? "text-primary-300 dark:text-primary-700"
+									: "text-text dark:text-textDark"
+							}`}
 						>
 							Photography
 						</a>
@@ -30,7 +44,11 @@ export default function Nav() {
 					<li>
 						<a
 							href="/work"
-							class="flex items-center text-text dark:text-textDark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
+							class={`flex items-center transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400 ${
+								activeRoute === "work"
+									? "text-primary-300 dark:text-primary-700"
+									: "text-text dark:text-textDark"
+							}`}
 						>
 							Work
 						</a>
@@ -38,7 +56,11 @@ export default function Nav() {
 					<li>
 						<a
 							href="/projects"
-							class="flex items-center text-text dark:text-textDark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
+							class={`flex items-center transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400 ${
+								activeRoute === "projects"
+									? "text-primary-300 dark:text-primary-700"
+									: "text-text dark:text-textDark"
+							}`}
 						>
 							Projects
 						</a>
@@ -46,7 +68,11 @@ export default function Nav() {
 					<li>
 						<a
 							href="/contact"
-							class="flex items-center text-text dark:text-textDark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
+							class={`flex items-center transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400 ${
+								activeRoute === "contact"
+									? "text-primary-300 dark:text-primary-700"
+									: "text-text dark:text-textDark"
+							}`}
 						>
 							Contact
 						</a>
