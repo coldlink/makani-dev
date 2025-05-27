@@ -633,5 +633,13 @@ Day's missed so far:
 			src: "20250525-_87A9885.jpg",
 			slug: "2025-may-25",
 		},
+		{
+			src: "20250526-_87A9976-Enhanced-NR.jpg",
+			slug: "2025-may-26",
+		},
+		{
+			src: "20250527-_87A0500-2.jpg",
+			slug: "2025-may-27",
+		},
 	],
 };
