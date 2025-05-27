@@ -75,7 +75,7 @@ export default function BlogIndexPage(props: PageProps<Post[]>) {
 			<ProseSection className="mb-8">
 				<h1>Blog</h1>
 			</ProseSection>
-			<ol class="relative border-s border-primary-200 dark:border-primary-700">
+			<ol class="relative border-s border-primary-200 dark:border-primary-700 max-w-[80ch]">
 				{posts.map((post) => <Post post={post} key={post.slug} />)}
 			</ol>
 		</>
