@@ -6,7 +6,7 @@ import { Breadcrumb } from "@/routes/photos/(_components)/breadcrumb.tsx";
 import { License } from "@/routes/photos/(_components)/license.tsx";
 import { defaultHandlerFunction, HandlerData } from "@/utils/handler.ts";
 import { ProseSection } from "@/components/ProseSection.tsx";
-import { parseMarkdown } from "../../../utils/markdown.tsx";
+import { parseMarkdown } from "@/utils/markdown.tsx";
 
 type DataAlbum = {
 	album: Album | undefined;

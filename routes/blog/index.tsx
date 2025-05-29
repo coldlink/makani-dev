@@ -2,7 +2,8 @@ import { PageProps } from "$fresh/server.ts";
 import { Handlers } from "$fresh/server.ts";
 import { extract } from "$std/front_matter/yaml.ts";
 import { join } from "$std/path/mod.ts";
-import { ProseSection } from "../../components/ProseSection.tsx";
+import { ProseSection } from "@/components/ProseSection.tsx";
+import { defaultHandlerFunction } from "@/utils/handler.ts";
 
 interface Post {
 	slug: string;
@@ -11,6 +12,10 @@ interface Post {
 	description: string;
 	hidden?: boolean;
 }
+
+type Blog = {
+	posts: Post[];
+};
 
 async function getPost(slug: string): Promise<Post | null> {
 	const text = await Deno.readTextFile(join("markdown/blog", `${slug}.md`));
@@ -61,15 +66,25 @@ function Post(props: { post: Post }) {
 	);
 }
 
-export const handler: Handlers<Post[]> = {
+export const handler: Handlers = {
 	async GET(_req, ctx) {
 		const posts = await getPosts();
-		return ctx.render(posts);
+
+		return defaultHandlerFunction<Blog>(
+			_req,
+			ctx,
+			{
+				title: "Blog",
+				description:
+					"Musings, walks, walkthroughs, and other things I write about.",
+				posts,
+			},
+		);
 	},
 };
 
-export default function BlogIndexPage(props: PageProps<Post[]>) {
-	const posts = props.data;
+export default function BlogIndexPage(props: PageProps<Blog>) {
+	const { posts } = props.data;
 	return (
 		<>
 			<ProseSection className="mb-8">

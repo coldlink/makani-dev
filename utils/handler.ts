@@ -24,11 +24,9 @@ export const basicHandler = ({
 }: HandlerData): Handlers => ({
 	GET(_req, ctx) {
 		return ctx.render({
-			data: {
-				title,
-				description,
-				...otherData,
-			},
+			title,
+			description,
+			...otherData,
 		});
 	},
 });

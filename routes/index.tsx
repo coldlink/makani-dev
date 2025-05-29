@@ -1,11 +1,6 @@
 import { ProseSection } from "@/components/ProseSection.tsx";
-import { basicHandler } from "@/utils/handler.ts";
-import { getImagorUrl } from "../utils/imagor.ts";
+import { getImagorUrl } from "@/utils/imagor.ts";
 
-export const handler = basicHandler({
-	title: "Mahesh Makani",
-	description: "Software Developer",
-});
 export default function Home() {
 	return (
 		<section class="justify-center mx-auto flex flex-col-reverse sm:flex-row gap-4 items-center h-full">

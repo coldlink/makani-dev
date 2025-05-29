@@ -3,6 +3,7 @@
   "specifiers": {
     "jsr:@luca/esbuild-deno-loader@0.11.0": "0.11.0",
     "jsr:@std/bytes@^1.0.2": "1.0.5",
+    "jsr:@std/dotenv@*": "0.225.5",
     "jsr:@std/encoding@^1.0.5": "1.0.8",
     "jsr:@std/path@^1.0.6": "1.0.9",
     "npm:@preact/signals-core@1.8.0": "1.8.0",
@@ -49,6 +50,9 @@
     },
     "@std/bytes@1.0.5": {
       "integrity": "4465dd739d7963d964c809202ebea6d5c6b8e3829ef25c6a224290fbb8a1021e"
+    },
+    "@std/dotenv@0.225.5": {
+      "integrity": "9ce6f9d0ec3311f74a32535aa1b8c62ed88b1ab91b7f0815797d77a6f60c922f"
     },
     "@std/encoding@1.0.8": {
       "integrity": "a6c8f3f933ab1bed66244f435d1dc0fd23a888e07195532122ddc3d5f8f0e6b4"
