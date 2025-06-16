@@ -657,5 +657,69 @@ Day's missed so far:
 			src: "20250531-_87A0659-Enhanced-NR.jpg",
 			slug: "2025-may-31",
 		},
+		{
+			src: "20250601-_87A0711-Enhanced-NR.jpg",
+			slug: "2025-jun-01",
+		},
+		{
+			src: "20250602-_87A0890-Enhanced-NR.jpg",
+			slug: "2025-jun-02",
+		},
+		{
+			src: "20250603-_87A1084-Enhanced-NR.jpg",
+			slug: "2025-jun-03",
+		},
+		{
+			src: "20250604-_87A1087-Enhanced-NR.jpg",
+			slug: "2025-jun-04",
+		},
+		{
+			src: "20250605-_87A1114-Enhanced-NR.jpg",
+			slug: "2025-jun-05",
+		},
+		{
+			src: "20250606-_87A1236-Enhanced-NR.jpg",
+			slug: "2025-jun-06",
+		},
+		{
+			src: "20250607-_87A1278-Enhanced-NR.jpg",
+			slug: "2025-jun-07",
+		},
+		{
+			src: "20250608-_87A1281-Enhanced-NR.jpg",
+			slug: "2025-jun-08",
+		},
+		{
+			src: "20250609-_87A1296-Enhanced-NR.jpg",
+			slug: "2025-jun-09",
+		},
+		{
+			src: "20250610-_87A1337-Enhanced-NR.jpg",
+			slug: "2025-jun-10",
+		},
+		{
+			src: "20250611-_87A1345-Enhanced-NR.jpg",
+			slug: "2025-jun-11",
+		},
+		{
+			src: "20250612-_87A1352-Enhanced-NR.jpg",
+			slug: "2025-jun-12",
+		},
+		{
+			src: "20250613-_87A1358-Enhanced-NR-Edit.jpg",
+			slug: "2025-jun-13",
+		},
+		{
+			src: "20250614-_87A1377-Enhanced-NR.jpg",
+			slug: "2025-jun-14",
+		},
+		{
+			src: "20250615-_87A1450-Enhanced-NR.jpg",
+			slug: "2025-jun-15",
+		},
+		{
+			src: "20250616-_87A1463-Enhanced-NR.jpg",
+			slug: "2025-jun-16",
+		},
 	],
 };
