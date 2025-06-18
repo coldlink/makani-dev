@@ -7,6 +7,7 @@ import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
 import * as $blog_slug_ from "./routes/blog/[slug].tsx";
 import * as $blog_index from "./routes/blog/index.tsx";
+import * as $blog_rss_xml from "./routes/blog/rss.xml.ts";
 import * as $contact from "./routes/contact.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $photos_album_photo_ from "./routes/photos/[album]/[photo].tsx";
@@ -24,6 +25,7 @@ const manifest = {
 		"./routes/_layout.tsx": $_layout,
 		"./routes/blog/[slug].tsx": $blog_slug_,
 		"./routes/blog/index.tsx": $blog_index,
+		"./routes/blog/rss.xml.ts": $blog_rss_xml,
 		"./routes/contact.tsx": $contact,
 		"./routes/index.tsx": $index,
 		"./routes/photos/[album]/[photo].tsx": $photos_album_photo_,

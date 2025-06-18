@@ -5,7 +5,7 @@ import { join } from "$std/path/mod.ts";
 import { ProseSection } from "@/components/ProseSection.tsx";
 import { defaultHandlerFunction } from "@/utils/handler.ts";
 
-interface Post {
+export interface Post {
 	slug: string;
 	title: string;
 	publishedAt: Date;
@@ -16,6 +16,9 @@ interface Post {
 type Blog = {
 	posts: Post[];
 };
+
+export const description: string =
+	"Musings, walks, walkthroughs, and other things related to Mahesh.";
 
 async function getPost(slug: string): Promise<Post | null> {
 	const text = await Deno.readTextFile(join("markdown/blog", `${slug}.md`));
@@ -29,7 +32,7 @@ async function getPost(slug: string): Promise<Post | null> {
 	};
 }
 
-async function getPosts(): Promise<Post[]> {
+export async function getPosts(): Promise<Post[]> {
 	const files = Deno.readDir("markdown/blog");
 	const promises = [];
 	for await (const file of files) {
@@ -44,7 +47,7 @@ async function getPosts(): Promise<Post[]> {
 function Post(props: { post: Post }) {
 	const { post } = props;
 	return (
-		<li class="mb-10 ms-4">
+		<li class="mb-8 ms-4">
 			<div class="absolute w-3 h-3 bg-primary-200 rounded-full -start-1.5 border border-white dark:border-primary-900 dark:bg-primary-700">
 			</div>
 
@@ -75,8 +78,7 @@ export const handler: Handlers = {
 			ctx,
 			{
 				title: "Blog",
-				description:
-					"Musings, walks, walkthroughs, and other things I write about.",
+				description,
 				posts,
 			},
 		);
