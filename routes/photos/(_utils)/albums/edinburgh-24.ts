@@ -28,6 +28,7 @@ Photos from my trip with my partner to Edinburgh in November 2024 for her birthd
 			src: "20241113-_87A6385-Pano-2.jpg",
 			slug: "edinburgh-24-dean-village-pano",
 			timezone: "+01:00",
+			panorama: true,
 		},
 		{
 			src: "20241112-_87A6249-Enhanced-NR.jpg",

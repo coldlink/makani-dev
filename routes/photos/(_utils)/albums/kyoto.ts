@@ -57,6 +57,7 @@ This album is a selection of my favourites from the trip, including some of the 
 			src: "20240414-3_87A0903-Pano.jpg",
 			timezone: "Asia/Tokyo",
 			slug: "kyoto-city-panorama",
+			panorama: true,
 		},
 		{
 			src: "20240415-3_87A1002-Enhanced-NR.jpg",
@@ -77,6 +78,7 @@ This album is a selection of my favourites from the trip, including some of the 
 			src: "20240413-2_87A0658-Pano.jpg",
 			timezone: "Asia/Tokyo",
 			slug: "kyoto-kiyomizu-city-panorama",
+			panorama: true,
 		},
 	],
 };

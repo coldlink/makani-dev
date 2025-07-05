@@ -15,6 +15,7 @@ import * as $photos_album_index from "./routes/photos/[album]/index.tsx";
 import * as $photos_index from "./routes/photos/index.tsx";
 import * as $projects from "./routes/projects.tsx";
 import * as $work from "./routes/work.tsx";
+import * as $LightboxIsland from "./islands/LightboxIsland.tsx";
 import * as $PhotoKeyboardNavigation from "./islands/PhotoKeyboardNavigation.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -35,6 +36,7 @@ const manifest = {
 		"./routes/work.tsx": $work,
 	},
 	islands: {
+		"./islands/LightboxIsland.tsx": $LightboxIsland,
 		"./islands/PhotoKeyboardNavigation.tsx": $PhotoKeyboardNavigation,
 	},
 	baseUrl: import.meta.url,

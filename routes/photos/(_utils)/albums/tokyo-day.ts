@@ -51,6 +51,7 @@ A collection of photos capturing a snapshot of the vibes of Tokyo during the day
 			src: "20240425-3_87A2785-Pano.jpg",
 			timezone: "Asia/Tokyo",
 			slug: "tokyo-hamarikyuu-gardens-pano",
+			panorama: true,
 		},
 		{
 			src: "20240426-3_87A3051-Enhanced-NR.jpg",

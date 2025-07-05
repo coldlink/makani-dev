@@ -20,6 +20,7 @@ export type Photo = {
 		| "Asia/Tokyo"
 		| "+01:00"; // used to manually fix timezone where the camera was set to the wrong timezone
 	noLicense?: boolean;
+	panorama?: boolean; // if true, the photo is a panorama and should be displayed as such
 };
 
 /**

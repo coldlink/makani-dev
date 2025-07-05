@@ -200,6 +200,7 @@ What an experience it was. The scale of the festival is immense, so much to see 
 			src: "20250628-_87A2485-Edit.jpg",
 			slug: "glastonbury-25-panorama-above-the-park",
 			noLicense: true,
+			panorama: true,
 		},
 		{
 			src: "20250628-_87A2583.jpg",
@@ -285,6 +286,7 @@ What an experience it was. The scale of the festival is immense, so much to see 
 			src: "20250629-_87A2912-Edit.jpg",
 			slug: "glastonbury-25-pyramid-stage-olivia-rodrigo-panorama",
 			noLicense: true,
+			panorama: true,
 		},
 	],
 };

@@ -740,6 +740,7 @@ Day's missed so far:
 		{
 			src: "20250621-_87A1743.jpg",
 			slug: "2025-jun-21",
+			panorama: true,
 		},
 		{
 			src: "20250622-_87A1745.jpg",

@@ -35,6 +35,10 @@
 	pre code {
 		@apply block w-0;
 	}
+
+	.viewerjs {
+		@apply backdrop-blur-md;
+	}
 }
 
 .youtube {

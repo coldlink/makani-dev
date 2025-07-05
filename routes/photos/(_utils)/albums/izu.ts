@@ -45,6 +45,7 @@ I wish I'd spent a day or two longer there as I kept discovering new things that
 			src: "20240422-3_87A2291-Pano.jpg",
 			timezone: "Asia/Tokyo",
 			slug: "izu-shirahama-beach-panorama",
+			panorama: true,
 		},
 		{
 			src: "20240422-3_87A2101-Enhanced-NR.jpg",
@@ -60,6 +61,7 @@ I wish I'd spent a day or two longer there as I kept discovering new things that
 			src: "20240423-3_87A2624-Pano.jpg",
 			timezone: "Asia/Tokyo",
 			slug: "izu-heda-port-panorama",
+			panorama: true,
 		},
 		{
 			src: "20240422-3_87A2230-Enhanced-NR.jpg",
