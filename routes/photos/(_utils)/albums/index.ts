@@ -14,6 +14,7 @@ import { KewOct23 } from "@/routes/photos/(_utils)/albums/kew-oct-23.ts";
 import { Miscellaneous } from "@/routes/photos/(_utils)/albums/miscellaneous.ts";
 import { Daily2025 } from "@/routes/photos/(_utils)/albums/2025.ts";
 import { BemptonCliffs } from "@/routes/photos/(_utils)/albums/bempton-cliffs.ts";
+import { Glastonbury25 } from "@/routes/photos/(_utils)/albums/glastonbury-25.ts";
 
 /**
  * @name ALBUMS
@@ -22,6 +23,7 @@ import { BemptonCliffs } from "@/routes/photos/(_utils)/albums/bempton-cliffs.ts
  * @constant
  */
 export const ALBUMS: Album[] = [
+	Glastonbury25,
 	Daily2025,
 	BemptonCliffs,
 	WildLife,
