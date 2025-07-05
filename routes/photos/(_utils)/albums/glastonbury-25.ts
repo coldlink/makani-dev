@@ -3,7 +3,7 @@ import { Album } from "@/routes/photos/(_utils)/albums.ts";
 export const Glastonbury25: Album = {
 	name: "Glastonbury 2025",
 	slug: "glastonbury-25",
-	dates: "25th June - 29th June 2025",
+	dates: "25th-29th June 2025",
 	description: `
 Highlights from my first time at Glastonbury Festival. In mostly chronological order.
 

@@ -753,5 +753,38 @@ Day's missed so far:
 			src: "20250624-_87A1760.jpg",
 			slug: "2025-jun-24",
 		},
+		{
+			src: "20250625-_87A1793.jpg",
+			slug: "2025-jun-25",
+			noLicense: true,
+		},
+		{
+			src: "20250626-_87A2032.jpg",
+			slug: "2025-jun-26",
+			noLicense: true,
+		},
+		{
+			src: "20250627-_87A2282.jpg",
+			slug: "2025-jun-27",
+			noLicense: true,
+		},
+		{
+			src: "20250628-_87A2714.jpg",
+			slug: "2025-jun-28",
+			noLicense: true,
+		},
+		{
+			src: "20250629-_87A2861.jpg",
+			slug: "2025-jun-29",
+			noLicense: true,
+		},
+		{
+			src: "20250630-_87A2980.jpg",
+			slug: "2025-jun-30",
+		},
+		{
+			src: "20250701-_87A2989.jpg",
+			slug: "2025-jul-01",
+		},
 	],
 };
