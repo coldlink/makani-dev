@@ -224,16 +224,19 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 							id="image"
 							loading="lazy"
 							class="w-auto max-h-[70dvh] rounded-lg border-2 border-transparent hover:border-primary-400 dark:hover:border-primary-600 hover:cursor-pointer"
-							src={photo.panorama
+							src={getImagorUrl(
+								`fit-in/2000x2000/filters:format(jpeg):quality(80)/${photo.src}`,
+							)}
+							alt={photo.src}
+							width={2000}
+							height={2000}
+							data-uri={photo.panorama
 								? getImagorUrl(
 									`fit-in/9999x2000/filters:format(jpeg):quality(80)/${photo.src}`,
 								)
 								: getImagorUrl(
 									`fit-in/2000x2000/filters:format(jpeg):quality(80)/${photo.src}`,
 								)}
-							alt={photo.src}
-							width={2000}
-							height={2000}
 						/>
 					</picture>
 				</div>
@@ -286,7 +289,7 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 				album={album}
 				photoIndex={photoIndex}
 			/>
-			<LightboxIsland />
+			<LightboxIsland url="data-uri" />
 		</>
 	);
 }

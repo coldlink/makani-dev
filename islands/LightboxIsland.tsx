@@ -1,6 +1,14 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
 
-export default function LightboxIsland() {
+type Props = {
+	// Define the ID of the element to attach the lightbox to
+	// If not provided, it defaults to "image"
+	id?: string;
+	// Define the attribute to get the image URL from
+	url?: "src" | "data-uri";
+};
+
+export default function LightboxIsland({ id = "image", url = "src" }: Props) {
 	if (!IS_BROWSER) {
 		return;
 	}
@@ -16,8 +24,8 @@ export default function LightboxIsland() {
 				onLoad={() => {
 					// @ts-ignore -- Viewer is not defined in TypeScript
 					// deno-lint-ignore no-window
-					const _viewer = new window.Viewer(
-						document.getElementById("image")!,
+					new window.Viewer(
+						document.getElementById(id)!,
 						{
 							navbar: false,
 							title: false,
@@ -36,9 +44,7 @@ export default function LightboxIsland() {
 								},
 							},
 							className: "viewerjs",
-							viewed() {
-								_viewer.zoomTo(1);
-							},
+							url,
 						},
 					);
 				}}
