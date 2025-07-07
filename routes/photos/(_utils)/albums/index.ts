@@ -23,8 +23,8 @@ import { Glastonbury25 } from "@/routes/photos/(_utils)/albums/glastonbury-25.ts
  * @constant
  */
 export const ALBUMS: Album[] = [
-	Glastonbury25,
 	Daily2025,
+	Glastonbury25,
 	BemptonCliffs,
 	WildLife,
 	Miscellaneous,
