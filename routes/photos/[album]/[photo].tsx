@@ -182,10 +182,14 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 					</div>
 				)}
 				<div class="col-span-2 md:col-start-1 md:col-span-1 text-xs text-start italic text-primary-50 dark:text-primary-950">
-					{exif?.Model?.description}
+					{!(exif?.Model?.description.toUpperCase().includes(
+						exif?.Make?.description.toUpperCase() || "",
+					)) &&
+						exif?.Make?.description} {exif?.Model?.description}
 				</div>
 				<div class="col-span-2 md:col-span-1 text-xs italic text-end md:text-center text-primary-50 dark:text-primary-950">
-					{exif?.LensModel?.description}
+					{exif?.LensProfileName?.description.match(/\(([^)]+)\)/)?.[1] ||
+						exif?.LensModel?.description}
 				</div>
 				<div class="col-span-1 text-xs italic text-start md:text-center text-primary-50 dark:text-primary-950">
 					{exif?.FocalLength?.description}

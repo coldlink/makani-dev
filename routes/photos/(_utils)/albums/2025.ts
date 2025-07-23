@@ -819,5 +819,62 @@ Day's missed so far:
 			src: "20250709-_87A3325.jpg",
 			slug: "2025-jul-09",
 		},
+		{
+			src: "_87A3342.jpg",
+			slug: "2025-jul-10",
+		},
+		{
+			src: "_87A3378.jpg",
+			slug: "2025-jul-11",
+		},
+		{
+			src: "_87A3427.jpg",
+			slug: "2025-jul-12",
+		},
+		{
+			src: "_87A3659.jpg",
+			slug: "2025-jul-13",
+		},
+		{
+			src: "_87A3705.jpg",
+			slug: "2025-jul-14",
+		},
+		{
+			src: "_87A3717.jpg",
+			slug: "2025-jul-15",
+		},
+		{
+			src: "_87A3736.jpg",
+			slug: "2025-jul-16",
+		},
+		{
+			src: "_87A3750.jpg",
+			slug: "2025-jul-17",
+		},
+		{
+			src: "_DSF4171.jpg",
+			slug: "2025-jul-18",
+		},
+		{
+			src: "20250719-_DSF4465.jpg",
+			slug: "2025-jul-19",
+		},
+		{
+			src: "_DSF4723-Pano.jpg",
+			slug: "2025-jul-20",
+			noLicense: true,
+		},
+		{
+			src: "_87A3755.jpg",
+			slug: "2025-jul-21",
+		},
+		{
+			src: "_87A3769.jpg",
+			slug: "2025-jul-22",
+		},
+		{
+			src: "20250723-_87A3772.jpg",
+			slug: "2025-jul-23",
+		},
 	],
 };
