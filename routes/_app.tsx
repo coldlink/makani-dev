@@ -42,6 +42,16 @@ export default function App(
 				/>
 				<meta name="apple-mobile-web-app-title" content="makani.dev" />
 				<link rel="manifest" href="/site.webmanifest" />
+				{props.route.startsWith("/blog")
+					? (
+						<link
+							rel="alternate"
+							type="application/rss+xml"
+							title="Mahesh Makani's Blog RSS Feed"
+							href="/blog/rss.xml"
+						/>
+					)
+					: null}
 			</head>
 			<body>
 				<Component />

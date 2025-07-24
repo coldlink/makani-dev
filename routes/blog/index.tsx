@@ -4,6 +4,7 @@ import { extract } from "$std/front_matter/yaml.ts";
 import { join } from "$std/path/mod.ts";
 import { ProseSection } from "@/components/ProseSection.tsx";
 import { defaultHandlerFunction } from "@/utils/handler.ts";
+import { IoLogoRss } from "react-icons/io5";
 
 export interface Post {
 	slug: string;
@@ -91,6 +92,12 @@ export default function BlogIndexPage(props: PageProps<Blog>) {
 		<>
 			<ProseSection className="mb-8">
 				<h1>Blog</h1>
+				<p>
+					<a href="/blog/rss.xml" class="inline-block">
+						<IoLogoRss class="inline-block me-2" />
+						RSS feed
+					</a>
+				</p>
 			</ProseSection>
 			<ol class="relative border-s border-primary-200 dark:border-primary-700 max-w-[80ch]">
 				{posts.map((post) => <Post post={post} key={post.slug} />)}

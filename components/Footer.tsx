@@ -2,6 +2,7 @@ import {
 	IoLogoGithub,
 	IoLogoInstagram,
 	IoLogoLinkedin,
+	IoLogoRss,
 	IoMailOutline,
 } from "react-icons/io5";
 
@@ -43,6 +44,15 @@ export default function Footer() {
 				class="block text-text dark:text-textDark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
 			>
 				<IoLogoInstagram class="size-6 md:size-8" />
+			</a>
+			<a
+				target="_blank"
+				rel="noopener noreferrer"
+				href="/blog/rss.xml"
+				title="Blog - RSS Feed"
+				class="block text-text dark:text-textDark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
+			>
+				<IoLogoRss class="size-6 md:size-8" />
 			</a>
 		</footer>
 	);
