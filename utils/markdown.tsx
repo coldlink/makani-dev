@@ -37,8 +37,19 @@ const mdYoutube = (id: string, alt: string) => {
 	);
 };
 
-const mdPhoto = (src: string, alt: string, resolution?: string) => {
+const mdPhoto = (
+	{ src, alt, resolution, animatedgif }: {
+		src: string;
+		alt: string;
+		resolution?: string;
+		animatedgif?: string;
+	},
+) => {
 	const resize = (() => {
+		if (animatedgif) {
+			return [640, 500];
+		}
+
 		if (resolution === "high") {
 			return [2000, 1500];
 		}
@@ -49,6 +60,40 @@ const mdPhoto = (src: string, alt: string, resolution?: string) => {
 
 		return [1280, 1000];
 	})();
+
+	if (animatedgif) {
+		return renderToString(
+			<>
+				<picture>
+					<source
+						type="image/webp"
+						srcset={`${
+							getImagorUrl(
+								`fit-in/${resize[0]}x${[
+									resize[1],
+								]}/filters:format(webp):quality(80)/${src}`,
+							)
+						}`}
+					/>
+					<img
+						loading="lazy"
+						class="w-auto max-h-[70dvh] rounded-lg border-2 border-transparent"
+						src={`${
+							getImagorUrl(
+								`fit-in/${resize[0]}x${[
+									resize[1],
+								]}/filters:format(gif):quality(80)/${src}`,
+							)
+						}`}
+						alt={alt}
+						width={resize[0]}
+						height={resize[1]}
+					/>
+				</picture>
+				<figcaption>{alt}</figcaption>
+			</>,
+		);
+	}
 
 	return renderToString(
 		<>
@@ -136,7 +181,7 @@ const processor = unified()
 						const data = node.data || (node.data = {});
 						const attributes = node.attributes || {};
 
-						const { src, alt, resolution } = attributes;
+						const { src, alt, resolution, animatedgif } = attributes;
 
 						if (!src || !alt) {
 							file.fail(
@@ -146,7 +191,12 @@ const processor = unified()
 						}
 
 						const tree = fromHtml(
-							mdPhoto(src as string, alt as string, resolution as string),
+							mdPhoto({
+								src: src as string,
+								alt: alt as string,
+								resolution: resolution as string,
+								animatedgif: animatedgif as string,
+							}),
 							{ fragment: true },
 						);
 						data.hName = "figure";
