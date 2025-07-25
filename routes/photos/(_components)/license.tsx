@@ -36,7 +36,7 @@ export const License = (
 										href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
 										target="_blank"
 									>
-										CC BY-SA 4.0
+										CC BY-NC-SA 4.0
 									</a>. Contact me for high-res versions or commercial use.
 								</>
 							)}
@@ -51,7 +51,7 @@ export const License = (
 							href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
 							target="_blank"
 						>
-							CC BY-SA 4.0
+							CC BY-NC-SA 4.0
 						</a>{" "}
 						unless otherwise stated on the photo page. Contact me for high-res
 						versions or commercial use.
