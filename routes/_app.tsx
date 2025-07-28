@@ -1,6 +1,9 @@
 import { type PageProps } from "$fresh/server.ts";
 import { HandlerData } from "@/utils/handler.ts";
 
+const umamiScriptUrl = Deno.env.get("UMAMI_SCRIPT_URL");
+const umamiSiteId = Deno.env.get("UMAMI_WEBSITE_ID");
+
 export default function App(
 	props: PageProps<HandlerData>,
 ) {
@@ -50,6 +53,16 @@ export default function App(
 							title="Mahesh Makani's Blog RSS Feed"
 							href="/blog/rss.xml"
 						/>
+					)
+					: null}
+				{umamiScriptUrl && umamiSiteId
+					? (
+						<script
+							defer
+							src={umamiScriptUrl}
+							data-website-id={umamiSiteId}
+						>
+						</script>
 					)
 					: null}
 			</head>
