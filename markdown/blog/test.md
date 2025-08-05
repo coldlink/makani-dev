@@ -1,7 +1,10 @@
 ---
 title: "Tailwind Typography"
-published_at: 2025-05-21T15:00:00.000Z
+publishedAt: 2025-05-21T15:00:00.000Z
 description: This is a demo of the Tailwind Typography plugin, which is a plugin for Tailwind CSS that provides a set of pre-defined styles for typography elements.
+image:
+  src: "20240425-3_87A2870-Enhanced-NR.jpg"
+  alt: "A photo embed"
 hidden: true
 ---
 

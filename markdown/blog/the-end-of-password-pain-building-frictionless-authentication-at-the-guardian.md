@@ -1,7 +1,10 @@
 ---
 title: "The end of password pain: building frictionless authentication at the Guardian"
-published_at: 2025-07-24T20:00:00.000Z
+publishedAt: 2025-07-24T20:00:00.000Z
 description: "How the Guardian's Identity and Trust team eliminated password friction and improved security by implementing one-time passcodes, leading to 82% of readers now using passwordless authentication."
+image:
+  src: "20250718-_DSF4139.jpg"
+  alt: "A photograph of a person holding a phone with the Guardian app open, showing the sign-in screen. Photograph: Mahesh Makani"
 ---
 
 How the Guardian's Identity and Trust team eliminated password friction and

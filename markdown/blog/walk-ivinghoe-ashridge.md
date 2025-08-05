@@ -1,7 +1,10 @@
 ---
 title: Ivinghoe Beacon and Ashridge Estate Walk
-published_at: 2025-05-27T20:00:00.000Z
+publishedAt: 2025-05-27T20:00:00.000Z
 description: A scenic circular 15km walk in the Chiltern Hills, exploring the northern part of Ashridge Estate taking in the spectacular views from Ivinghoe Beacon, Incombe Hole, Pitstone Hill, and passing through the charming village of Aldbury.
+image:
+    src: "20250523-_87A9602-Enhanced-NR-Edit.jpg"
+    alt: "A 3 photo composite showing a model aircraft enthusiast launching their glider."
 ---
 
 A scenic circular 15km walk in the Chiltern Hills, exploring the northern part
