@@ -1135,5 +1135,13 @@ Day's missed so far:
 			slug: "2025-sep-25",
 			noLicense: true,
 		},
+		{
+			src: "20250926-_87A6147.jpg",
+			slug: "2025-sep-26",
+		},
+		{
+			src: "20250927-_87A6183.jpg",
+			slug: "2025-sep-27",
+		},
 	],
 };
