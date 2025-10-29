@@ -15,6 +15,7 @@ import { Miscellaneous } from "@/routes/photos/(_utils)/albums/miscellaneous.ts"
 import { Daily2025 } from "@/routes/photos/(_utils)/albums/2025.ts";
 import { BemptonCliffs } from "@/routes/photos/(_utils)/albums/bempton-cliffs.ts";
 import { Glastonbury25 } from "@/routes/photos/(_utils)/albums/glastonbury-25.ts";
+import { OlympusFilm } from "./olympus-film.ts";
 
 /**
  * @name ALBUMS
@@ -24,6 +25,7 @@ import { Glastonbury25 } from "@/routes/photos/(_utils)/albums/glastonbury-25.ts
  */
 export const ALBUMS: Album[] = [
 	Daily2025,
+	OlympusFilm,
 	Glastonbury25,
 	BemptonCliffs,
 	WildLife,
