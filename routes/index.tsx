@@ -8,7 +8,7 @@ export default function Home() {
 				<h1>Mahesh Makani</h1>
 				<h2>Software Developer</h2>
 				<p>
-					he/him
+					he/they
 				</p>
 				<p>
 					Cruising the information superhighway 🏄

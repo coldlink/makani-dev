@@ -11,7 +11,7 @@ I've currently been shooting Kodak Gold 200 on the Zuiko 50mm f/1.8 lens that ca
 
 A selection of my favorite shots from this camera are below.
 
-Film processed and scanned by [Filmprocessing.co.uk](https://www.filmprocessing.co.uk/). All as scanned images with no edits applied.
+Film processed and scanned by [Filmprocessing.co.uk](https://www.filmprocessing.co.uk/). All as scanned images with no additional edits applied.
     `,
 	photos: [{
 		src: "000014400004.JPG",
