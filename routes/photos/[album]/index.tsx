@@ -1,4 +1,4 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
+import { PageProps, type RouteHandler } from "fresh";
 import { Album, findAlbumFromSlug } from "@/routes/photos/(_utils)/albums.ts";
 import Error404 from "@/routes/_404.tsx";
 import { getImagorUrl } from "@/utils/imagor.ts";
@@ -13,11 +13,7 @@ type DataAlbum = {
 	markdownDescription?: string;
 };
 
-const Gallery = ({
-	album,
-}: {
-	album: Album;
-}) => {
+const Gallery = ({ album }: { album: Album }) => {
 	return (
 		<div class="columns-1 sm:columns-2 md:columns-3 gap-4">
 			{album.photos.map((photo, i) => (
@@ -27,7 +23,7 @@ const Gallery = ({
 						<source
 							type="image/avif"
 							srcSet={getImagorUrl(
-								`fit-in/540x540/filters:format(avif):quality(80)/${photo.src}`,
+								`fit-in/540x540/filters:format(avif):quality(80)/${photo.src}`
 							)}
 						/>
 
@@ -35,7 +31,7 @@ const Gallery = ({
 						<source
 							type="image/webp"
 							srcSet={getImagorUrl(
-								`fit-in/540x540/filters:format(webp):quality(80)/${photo.src}`,
+								`fit-in/540x540/filters:format(webp):quality(80)/${photo.src}`
 							)}
 						/>
 
@@ -44,7 +40,7 @@ const Gallery = ({
 							loading="lazy"
 							class="h-auto max-w-full rounded-lg mb-4 hover:shadow-lg border-2 border-transparent hover:border-primary-400 dark:hover:border-primary-600"
 							src={getImagorUrl(
-								`fit-in/540x540/filters:format(jpeg):quality(80)/${photo.src}`,
+								`fit-in/540x540/filters:format(jpeg):quality(80)/${photo.src}`
 							)}
 							alt={photo.src}
 							width={540}
@@ -57,28 +53,24 @@ const Gallery = ({
 	);
 };
 
-export const handler: Handlers = {
-	async GET(_req, ctx) {
+export const handler: RouteHandler<HandlerData<DataAlbum>, unknown> = {
+	async GET(ctx) {
 		const album = findAlbumFromSlug(ctx.params.album);
 
-		const markdownDescription = album?.description &&
-			await parseMarkdown(
-				`### ${album.name}\n\n_${
-					album.dates ? `${album.dates} / ` : ""
-				}${album.photos.length} photos_\n\n${album.description}`,
-			);
+		const markdownDescription =
+			album?.description &&
+			(await parseMarkdown(
+				`### ${album.name}\n\n_${album.dates ? `${album.dates} / ` : ""}${
+					album.photos.length
+				} photos_\n\n${album.description}`
+			));
 
-		return defaultHandlerFunction<DataAlbum>(
-			_req,
-			ctx,
-			{
-				title: `${album?.name} | Photography`,
-				description:
-					`Photos from the ${album?.name} album. A collection of photos taken by myself, all licensed under CC BY-NC-SA 4.0 unless otherwise stated.`,
-				album,
-				markdownDescription,
-			},
-		);
+		return defaultHandlerFunction<DataAlbum>({
+			title: `${album?.name} | Photography`,
+			description: `Photos from the ${album?.name} album. A collection of photos taken by myself, all licensed under CC BY-NC-SA 4.0 unless otherwise stated.`,
+			album,
+			markdownDescription,
+		});
 	},
 };
 export default function PhotoAlbum(props: PageProps<HandlerData<DataAlbum>>) {
@@ -90,9 +82,7 @@ export default function PhotoAlbum(props: PageProps<HandlerData<DataAlbum>>) {
 
 	return (
 		<>
-			<Breadcrumb
-				album={album}
-			/>
+			<Breadcrumb album={album} />
 			{props.data.markdownDescription && (
 				<ProseSection
 					className="mb-6 prose-sm sm:prose-base prose-p:mt-3 prose-p:mb-3 prose-ul:mb-3 prose-ul:mt-3"

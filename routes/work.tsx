@@ -1,7 +1,9 @@
-import { PageProps } from "$fresh/server.ts";
-import MarkdownPage, { markdownHandler } from "@/utils/markdown.tsx";
+import MarkdownPage, {
+	markdownHandler,
+	type MarkdownPageProps,
+} from "@/utils/markdown.tsx";
 
 export const handler = markdownHandler;
-export default function Work(props: PageProps) {
+export default function Work(props: MarkdownPageProps) {
 	return MarkdownPage(props);
 }

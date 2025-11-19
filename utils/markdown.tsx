@@ -1,4 +1,4 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
+import { page, PageProps, type RouteHandler } from "fresh";
 import { extract } from "$std/front_matter/yaml.ts";
 import { ProseSection } from "@/components/ProseSection.tsx";
 import Error404 from "@/routes/_404.tsx";
@@ -11,12 +11,12 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import { visit } from "unist-util-visit";
-import type { Root } from "npm:mdast";
+import type { Root } from "npm:mdast@3.0.0";
 import { fromHtml } from "hast-util-from-html";
 import { getImagorUrl } from "./imagor.ts";
-import { renderToString } from "$fresh/src/server/deps.ts";
+import { renderToString } from "preact-render-to-string";
 
-interface Page {
+export interface MarkdownData {
 	markdown: string;
 	published_at?: string;
 }
@@ -33,18 +33,21 @@ const mdYoutube = (id: string, alt: string) => {
 				title={alt}
 			/>
 			<figcaption>{alt}</figcaption>
-		</>,
+		</>
 	);
 };
 
-const mdPhoto = (
-	{ src, alt, resolution, animatedgif }: {
-		src: string;
-		alt: string;
-		resolution?: string;
-		animatedgif?: string;
-	},
-) => {
+const mdPhoto = ({
+	src,
+	alt,
+	resolution,
+	animatedgif,
+}: {
+	src: string;
+	alt: string;
+	resolution?: string;
+	animatedgif?: string;
+}) => {
 	const resize = (() => {
 		if (animatedgif) {
 			return [640, 500];
@@ -67,31 +70,27 @@ const mdPhoto = (
 				<picture>
 					<source
 						type="image/webp"
-						srcset={`${
-							getImagorUrl(
-								`fit-in/${resize[0]}x${[
-									resize[1],
-								]}/filters:format(webp):quality(80)/${src}`,
-							)
-						}`}
+						srcset={`${getImagorUrl(
+							`fit-in/${resize[0]}x${[
+								resize[1],
+							]}/filters:format(webp):quality(80)/${src}`
+						)}`}
 					/>
 					<img
 						loading="lazy"
 						class="w-auto max-h-[70dvh] rounded-lg border-2 border-transparent"
-						src={`${
-							getImagorUrl(
-								`fit-in/${resize[0]}x${[
-									resize[1],
-								]}/filters:format(gif):quality(80)/${src}`,
-							)
-						}`}
+						src={`${getImagorUrl(
+							`fit-in/${resize[0]}x${[
+								resize[1],
+							]}/filters:format(gif):quality(80)/${src}`
+						)}`}
 						alt={alt}
 						width={resize[0]}
 						height={resize[1]}
 					/>
 				</picture>
 				<figcaption>{alt}</figcaption>
-			</>,
+			</>
 		);
 	}
 
@@ -100,41 +99,35 @@ const mdPhoto = (
 			<picture>
 				<source
 					type="image/avif"
-					srcset={`${
-						getImagorUrl(
-							`fit-in/${resize[0]}x${[
-								resize[1],
-							]}/filters:format(avif):quality(80)/${src}`,
-						)
-					}`}
+					srcset={`${getImagorUrl(
+						`fit-in/${resize[0]}x${[
+							resize[1],
+						]}/filters:format(avif):quality(80)/${src}`
+					)}`}
 				/>
 				<source
 					type="image/webp"
-					srcset={`${
-						getImagorUrl(
-							`fit-in/${resize[0]}x${[
-								resize[1],
-							]}/filters:format(webp):quality(80)/${src}`,
-						)
-					}`}
+					srcset={`${getImagorUrl(
+						`fit-in/${resize[0]}x${[
+							resize[1],
+						]}/filters:format(webp):quality(80)/${src}`
+					)}`}
 				/>
 				<img
 					loading="lazy"
 					class="w-auto max-h-[70dvh] rounded-lg border-2 border-transparent"
-					src={`${
-						getImagorUrl(
-							`fit-in/${resize[0]}x${[
-								resize[1],
-							]}/filters:format(jpeg):quality(80)/${src}`,
-						)
-					}`}
+					src={`${getImagorUrl(
+						`fit-in/${resize[0]}x${[
+							resize[1],
+						]}/filters:format(jpeg):quality(80)/${src}`
+					)}`}
 					alt={alt}
 					width={resize[0]}
 					height={resize[1]}
 				/>
 			</picture>
 			<figcaption>{alt}</figcaption>
-		</>,
+		</>
 	);
 };
 
@@ -159,7 +152,7 @@ const processor = unified()
 						if (node.type === "textDirective") {
 							file.fail(
 								"Unexpected `:youtube` text directive, use two colons for a leaf directive",
-								node,
+								node
 							);
 						}
 
@@ -168,8 +161,8 @@ const processor = unified()
 						}
 
 						const tree = fromHtml(
-							mdYoutube(id as string, attributes.alt as string || ""),
-							{ fragment: true },
+							mdYoutube(id as string, (attributes.alt as string) || ""),
+							{ fragment: true }
 						);
 						data.hName = "figure";
 
@@ -186,7 +179,7 @@ const processor = unified()
 						if (!src || !alt) {
 							file.fail(
 								"Unexpected missing `slug` or `src` on `photo` directive",
-								node,
+								node
 							);
 						}
 
@@ -197,7 +190,7 @@ const processor = unified()
 								resolution: resolution as string,
 								animatedgif: animatedgif as string,
 							}),
-							{ fragment: true },
+							{ fragment: true }
 						);
 						data.hName = "figure";
 
@@ -218,30 +211,41 @@ const processor = unified()
 const cleanRoute = (route: string) => route.replace(/^\/|\/$/g, "");
 
 export const parseMarkdown = async (raw: string) => {
-	return (await (processor.process(raw))).value.toString();
+	return (await processor.process(raw)).value.toString();
 };
 
-export const markdownHandler: Handlers<HandlerData<Page>> = {
-	async GET(_req, ctx) {
+export const markdownHandler: RouteHandler<
+	HandlerData<MarkdownData> | undefined,
+	unknown
+> = {
+	async GET(ctx) {
 		try {
 			const raw = await Deno.readTextFile(
-				`markdown/${cleanRoute(ctx.url.pathname)}.md`,
+				`markdown/${cleanRoute(ctx.url.pathname)}.md`
 			);
 
 			const { attrs, body } = extract(raw);
 
-			return ctx.render({
+			const pageData: HandlerData<MarkdownData> = {
+				...(attrs as Partial<HandlerData<MarkdownData>>),
 				markdown: await parseMarkdown(body),
-				...attrs,
-			});
+			};
+
+			return page<HandlerData<MarkdownData> | undefined>(pageData);
 		} catch (error) {
 			console.error(error);
-			return ctx.render(undefined);
+			return page<HandlerData<MarkdownData> | undefined>(undefined, {
+				status: 404,
+			});
 		}
 	},
 };
 
-export default function MarkdownPage({ data }: PageProps<HandlerData<Page>>) {
+export type MarkdownPageProps = PageProps<
+	HandlerData<MarkdownData> | undefined
+>;
+
+export default function MarkdownPage({ data }: MarkdownPageProps) {
 	if (!data) {
 		return <Error404 />;
 	}
@@ -249,9 +253,7 @@ export default function MarkdownPage({ data }: PageProps<HandlerData<Page>>) {
 	return (
 		<>
 			<ProseSection className={`${data.published_at ? "mb-4" : "mb-8"}`}>
-				<h1>
-					{data.title}
-				</h1>
+				<h1>{data.title}</h1>
 				{data.published_at && (
 					<time class="text-xs">
 						{new Intl.DateTimeFormat("en-GB", {

@@ -1,5 +1,5 @@
-import { Handlers } from "$fresh/server.ts";
 import { description, getPosts, Post } from "./index.tsx";
+import type { RouteHandler } from "fresh";
 
 const formatToRFC822 = (date: Date): string => {
 	const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -42,8 +42,8 @@ const item = (post: Post) => `
     </item>
 `;
 
-export const handler: Handlers = {
-	async GET(_req) {
+export const handler: RouteHandler<unknown, unknown> = {
+	async GET() {
 		const title: string = "Blog | Mahesh Makani";
 		const url: string = "https://makani.dev/blog";
 
@@ -58,19 +58,13 @@ export const handler: Handlers = {
                     <description>${description}</description>
                     <language>en-gb</language>
                     <managingEditor>contact@makani.dev (Mahesh Makani)</managingEditor>
-                    <pubDate>${
-			formatToRFC822(
-				posts[0]?.publishedAt || new Date(),
-			)
-		}</pubDate>
-                    <lastBuildDate>${
-			formatToRFC822(
-				posts[0]?.publishedAt || new Date(),
-			)
-		}</lastBuildDate>
-                    <copyright>Copyright © ${
-			new Date().getFullYear()
-		} Mahesh Makani</copyright>
+                    <pubDate>${formatToRFC822(
+											posts[0]?.publishedAt || new Date()
+										)}</pubDate>
+                    <lastBuildDate>${formatToRFC822(
+											posts[0]?.publishedAt || new Date()
+										)}</lastBuildDate>
+                    <copyright>Copyright © ${new Date().getFullYear()} Mahesh Makani</copyright>
                     <image>
                         <url>https://makani.dev/favicon-96x96.png</url>
                         <title>${title}</title>
@@ -89,11 +83,8 @@ export const handler: Handlers = {
 			"Content-Type": "application/xml",
 		});
 
-		return new Response(
-			rss,
-			{
-				headers,
-			},
-		);
+		return new Response(rss, {
+			headers,
+		});
 	},
 };

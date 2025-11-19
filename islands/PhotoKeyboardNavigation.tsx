@@ -1,16 +1,17 @@
 // deno-lint-ignore-file jsx-no-useless-fragment
 import type { Album } from "@/routes/photos/(_utils)/albums.ts";
 import type { PhotoIndex } from "@/routes/photos/[album]/[photo].tsx";
-import { IS_BROWSER } from "$fresh/runtime.ts";
+import { IS_BROWSER } from "fresh/runtime";
 
 interface PhotoKeyboardNavigationProps {
 	album: Album;
 	photoIndex: PhotoIndex;
 }
 
-export default function PhotoKeyboardNavigation(
-	{ album, photoIndex }: PhotoKeyboardNavigationProps,
-) {
+export default function PhotoKeyboardNavigation({
+	album,
+	photoIndex,
+}: PhotoKeyboardNavigationProps) {
 	if (!IS_BROWSER) {
 		return <></>;
 	}

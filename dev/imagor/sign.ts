@@ -1,5 +1,5 @@
 // deno run --allow-read --allow-env sign.ts
-import "jsr:@std/dotenv/load";
+import "jsr:@std/dotenv@0.224.0/load";
 import { getImagorUrl } from "../../utils/imagor.ts";
 
 const input = prompt("Enter imagor url: ");

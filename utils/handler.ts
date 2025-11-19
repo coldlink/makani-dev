@@ -1,4 +1,4 @@
-import { FreshContext, Handlers } from "$fresh/server.ts";
+import { page, type RouteHandler } from "fresh";
 
 type DefaultAdditionalArgs = Record<PropertyKey, unknown | undefined>;
 
@@ -8,22 +8,19 @@ export type HandlerData<AdditionalArgs = DefaultAdditionalArgs> = {
 } & AdditionalArgs;
 
 export const defaultHandlerFunction = <AdditionalArgs = DefaultAdditionalArgs>(
-	_req: Request,
-	ctx: FreshContext<unknown, HandlerData>,
-	data?: HandlerData<AdditionalArgs>,
-) => {
-	return ctx.render({
+	data: HandlerData<AdditionalArgs>
+) =>
+	page<HandlerData<AdditionalArgs>>({
 		...data,
 	});
-};
 
 export const basicHandler = ({
 	title,
 	description,
 	...otherData
-}: HandlerData): Handlers => ({
-	GET(_req, ctx) {
-		return ctx.render({
+}: HandlerData): RouteHandler<HandlerData, unknown> => ({
+	GET() {
+		return page({
 			title,
 			description,
 			...otherData,

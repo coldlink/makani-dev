@@ -1,13 +1,10 @@
 {
-	"lock": true,
 	"tasks": {
-		"check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
-		"cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
-		"manifest": "deno task cli manifest $(pwd)",
-		"start": "deno run -A --watch=static/,routes/ dev.ts",
-		"build": "deno run -A dev.ts build",
-		"preview": "deno run -A main.ts",
-		"update": "deno run -A -r https://fresh.deno.dev/update ."
+		"check": "deno fmt --check && deno lint && deno check",
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "deno serve -A _fresh/server.js",
+		"update": "deno run -A -r jsr:@fresh/update ."
 	},
 	"lint": {
 		"rules": {
@@ -19,15 +16,17 @@
 	"exclude": ["**/_fresh/*"],
 	"imports": {
 		"@/": "./",
-		"$fresh/": "https://deno.land/x/fresh@1.7.3/",
 		"$std/": "https://deno.land/std@0.224.0/",
-		"@preact/signals": "npm:@preact/signals@2.5.1",
-		"@preact/signals-core": "npm:@preact/signals-core@1.12.1",
+		"@fresh/plugin-vite": "jsr:@fresh/plugin-vite@1.0.8",
+		"@preact/signals": "npm:@preact/signals@^2.5.0",
 		"@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.19",
+		"autoprefixer": "npm:autoprefixer@^10.4.20",
 		"@types/mdast": "npm:@types/mdast@^4.0.4",
 		"exifreader": "npm:exifreader@^4.32.0",
+		"fresh": "jsr:@fresh/core@^2.2.0",
 		"hast-util-from-html": "npm:hast-util-from-html@^2.0.3",
-		"preact": "npm:preact@10.27.2",
+		"preact": "npm:preact@^10.27.2",
+		"preact-render-to-string": "npm:preact-render-to-string@^6.5.10",
 		"react-icons/io5": "https://cdn.jsdelivr.net/gh/urielch/react-icons-io5@1.0.10/mod.ts",
 		"rehype-raw": "npm:rehype-raw@^7.0.0",
 		"rehype-stringify": "npm:rehype-stringify@^10.0.1",
@@ -39,7 +38,8 @@
 		"tailwindcss/": "npm:/tailwindcss@3.4.17/",
 		"tailwindcss/plugin": "npm:/tailwindcss@3.4.17/plugin.js",
 		"unified": "npm:unified@^11.0.5",
-		"unist-util-visit": "npm:unist-util-visit@^5.0.0"
+		"unist-util-visit": "npm:unist-util-visit@^5.0.0",
+		"vite": "npm:vite@^7.2.0"
 	},
 	"compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
 	"nodeModulesDir": "auto"
