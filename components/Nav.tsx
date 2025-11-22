@@ -1,9 +1,9 @@
 type NavProps = {
-	route: string;
+	route?: string | null;
 };
 
 export default function Nav({ route }: NavProps) {
-	const activeRoute = route.split("/")[1] || "home";
+	const activeRoute = route?.split("/")?.[1] || "home";
 
 	return (
 		<header class="flex-initial">

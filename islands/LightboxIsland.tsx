@@ -1,4 +1,4 @@
-import { IS_BROWSER } from "$fresh/runtime.ts";
+import { IS_BROWSER } from "fresh/runtime";
 
 type Props = {
 	// Define the ID of the element to attach the lightbox to
@@ -24,29 +24,26 @@ export default function LightboxIsland({ id = "image", url = "src" }: Props) {
 				onLoad={() => {
 					// @ts-ignore -- Viewer is not defined in TypeScript
 					// deno-lint-ignore no-window
-					new window.Viewer(
-						document.getElementById(id)!,
-						{
-							navbar: false,
-							title: false,
-							toolbar: {
-								zoomIn: {
-									show: true,
-								},
-								zoomOut: {
-									show: true,
-								},
-								reset: {
-									show: true,
-								},
-								oneToOne: {
-									show: true,
-								},
+					new window.Viewer(document.getElementById(id)!, {
+						navbar: false,
+						title: false,
+						toolbar: {
+							zoomIn: {
+								show: true,
 							},
-							className: "viewerjs",
-							url,
+							zoomOut: {
+								show: true,
+							},
+							reset: {
+								show: true,
+							},
+							oneToOne: {
+								show: true,
+							},
 						},
-					);
+						className: "viewerjs",
+						url,
+					});
 				}}
 			/>
 		</>
