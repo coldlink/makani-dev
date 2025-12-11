@@ -1,34 +1,30 @@
-import { type PageProps } from "$fresh/server.ts";
+import { type PageProps } from "fresh";
 import { HandlerData } from "@/utils/handler.ts";
 
 const umamiScriptUrl = Deno.env.get("UMAMI_SCRIPT_URL");
 const umamiSiteId = Deno.env.get("UMAMI_WEBSITE_ID");
 
-export default function App(
-	props: PageProps<HandlerData>,
-) {
+export default function App(props: PageProps<HandlerData>) {
 	const { Component, data = {} } = props;
+	const isBlogRoute = props.route?.startsWith("/blog") ?? false;
 	return (
 		<html lang="en">
 			<head>
 				<meta charset="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-				{data?.title
-					? <title>{data.title} | Mahesh Makani</title>
-					: <title>Mahesh Makani</title>}
-				{data?.description
-					? (
-						<meta
-							name="description"
-							content={data.description}
-						/>
-					)
-					: (
-						<meta
-							name="description"
-							content="Hello! I'm Mahesh Makani, a software developer based in Hertfordshire and London, UK. I'm cruising the information superhighway and coding along the full stack across the way."
-						/>
-					)}
+				{data?.title ? (
+					<title>{data.title} | Mahesh Makani</title>
+				) : (
+					<title>Mahesh Makani</title>
+				)}
+				{data?.description ? (
+					<meta name="description" content={data.description} />
+				) : (
+					<meta
+						name="description"
+						content="Hello! I'm Mahesh Makani, a software developer based in Hertfordshire and London, UK. I'm cruising the information superhighway and coding along the full stack across the way."
+					/>
+				)}
 				<link rel="stylesheet" href="/styles.css" />
 				<link
 					rel="icon"
@@ -45,26 +41,21 @@ export default function App(
 				/>
 				<meta name="apple-mobile-web-app-title" content="makani.dev" />
 				<link rel="manifest" href="/site.webmanifest" />
-				{props.route.startsWith("/blog")
-					? (
-						<link
-							rel="alternate"
-							type="application/rss+xml"
-							title="Mahesh Makani's Blog RSS Feed"
-							href="/blog/rss.xml"
-						/>
-					)
-					: null}
-				{umamiScriptUrl && umamiSiteId
-					? (
-						<script
-							defer
-							src={umamiScriptUrl}
-							data-website-id={umamiSiteId}
-						>
-						</script>
-					)
-					: null}
+				{isBlogRoute ? (
+					<link
+						rel="alternate"
+						type="application/rss+xml"
+						title="Mahesh Makani's Blog RSS Feed"
+						href="/blog/rss.xml"
+					/>
+				) : null}
+				{umamiScriptUrl && umamiSiteId ? (
+					<script
+						defer
+						src={umamiScriptUrl}
+						data-website-id={umamiSiteId}
+					></script>
+				) : null}
 			</head>
 			<body>
 				<Component />
