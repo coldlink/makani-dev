@@ -1,24 +1,24 @@
+import { define } from "@/utils/utils.ts";
 import {
 	Album,
 	findAlbumFromSlug,
 	findPhotoInAlbum,
 	getPhotoExif,
 	Photo,
-} from "@/routes/photos/(_utils)/albums.ts";
-import Error404 from "@/routes/_404.tsx";
-import { Breadcrumb } from "@/routes/photos/(_components)/breadcrumb.tsx";
+} from "../(_utils)/albums.ts";
+import { HttpError, page } from "fresh";
+import { Tags } from "exifreader";
+import { Breadcrumb } from "../(_components)/Breadcrumb.tsx";
+import { License } from "../(_components)/License.tsx";
 import { getImagorUrl } from "@/utils/imagor.ts";
 import {
-	IoChevronBackCircle,
-	IoChevronForwardCircle,
-	IoReturnDownBack,
-} from "react-icons/io5";
-import { License } from "@/routes/photos/(_components)/license.tsx";
-import { Handlers, PageProps } from "$fresh/server.ts";
-import { defaultHandlerFunction, HandlerData } from "@/utils/handler.ts";
-import { Tags } from "exifreader";
+	CircleChevronLeft,
+	CircleChevronRight,
+	CornerDownLeft,
+} from "lucide-preact";
 import PhotoKeyboardNavigation from "@/islands/PhotoKeyboardNavigation.tsx";
-import LightboxIsland from "../../../islands/LightboxIsland.tsx";
+import LightboxIsland from "@/islands/LightboxIsland.tsx";
+import { Head } from "@/components/Head.tsx";
 
 export type PhotoIndex = {
 	current: number;
@@ -33,81 +33,62 @@ type DataPhoto = {
 	exif: Tags | undefined;
 };
 
-/**
- * @name PhotoPage
- * @description Photo page component.
- */
-export const handler: Handlers = {
-	async GET(_req, ctx) {
+export const handler = define.handlers({
+	async GET(ctx) {
 		const album = findAlbumFromSlug(ctx.params.album);
 
 		if (!album) {
-			return defaultHandlerFunction<DataPhoto>(
-				_req,
-				ctx,
-				{
-					album,
-					photo: undefined,
-					photoIndex: {
-						current: -1,
-						next: -1,
-						prev: -1,
-					},
-					exif: undefined,
+			return page<DataPhoto>({
+				album,
+				photo: undefined,
+				photoIndex: {
+					current: -1,
+					next: -1,
+					prev: -1,
 				},
-			);
+				exif: undefined,
+			});
 		}
 
 		const [photo, photoIndex] = findPhotoInAlbum(album, ctx.params.photo);
 
 		if (!photo) {
-			return defaultHandlerFunction<DataPhoto>(
-				_req,
-				ctx,
-				{
-					album,
-					photo: undefined,
-					photoIndex: {
-						current: -1,
-						next: -1,
-						prev: -1,
-					},
-					exif: undefined,
+			return page<DataPhoto>({
+				album,
+				photo: undefined,
+				photoIndex: {
+					current: -1,
+					next: -1,
+					prev: -1,
 				},
-			);
+				exif: undefined,
+			});
 		}
 
-		const nextPhotoIndex = photoIndex !== album.photos.length - 1
-			? photoIndex + 1
-			: -1;
+		const nextPhotoIndex =
+			photoIndex !== album.photos.length - 1 ? photoIndex + 1 : -1;
 		const prevPhotoIndex = photoIndex !== 0 ? photoIndex - 1 : -1;
 
 		const exif = await getPhotoExif(photo);
 
-		return defaultHandlerFunction<DataPhoto>(
-			_req,
-			ctx,
-			{
-				title: `${album.name} | ${photo.slug} | Photography`,
-				description:
-					`A photo from the ${album.name} album, with the name "${photo.slug}". A collection of photos taken by myself, all licensed under CC BY-NC-SA 4.0 unless otherwise stated.`,
-				album,
-				photo,
-				photoIndex: {
-					current: photoIndex,
-					next: nextPhotoIndex,
-					prev: prevPhotoIndex,
-				},
-				exif,
+		return page<DataPhoto>({
+			album,
+			photo,
+			photoIndex: {
+				current: photoIndex,
+				next: nextPhotoIndex,
+				prev: prevPhotoIndex,
 			},
-		);
+			exif,
+		});
 	},
-};
-export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
-	const { album, photo, photoIndex, exif } = props.data;
+});
+
+export default define.page<typeof handler>(function PhotoPage(ctx) {
+	const { album, photo, photoIndex, exif } = ctx.data;
 
 	if (!album || !photo) {
-		return <Error404 />;
+		throw new HttpError(404);
 	}
 
 	const date = (() => {
@@ -121,10 +102,10 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 		// otherwise, try to get the date from `DateTimeOriginal` and `OffsetTimeOriginal`
 		// which we parse into an ISO 8601 string
 		const dateTimeOriginal = new Date(
-			`${
-				exif?.DateTimeOriginal?.description.replace(":", "-").replace(":", "-")
-					.replace(" ", "T")
-			}${exif?.OffsetTimeOriginal?.description || ""}`,
+			`${exif?.DateTimeOriginal?.description
+				.replace(":", "-")
+				.replace(":", "-")
+				.replace(" ", "T")}${exif?.OffsetTimeOriginal?.description || ""}`
 		);
 
 		// return the date if it's valid
@@ -137,7 +118,9 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 	const gps: string | undefined = (() => {
 		// if any of the GPS tags are missing, return undefined
 		if (
-			!exif?.GPSLatitude || !exif?.GPSLongitude || !exif?.GPSLatitudeRef ||
+			!exif?.GPSLatitude ||
+			!exif?.GPSLongitude ||
+			!exif?.GPSLatitudeRef ||
 			!exif?.GPSLongitudeRef
 		) {
 			return undefined;
@@ -157,10 +140,11 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 
 	return (
 		<>
-			<Breadcrumb
-				album={album}
-				photo={photo}
+			<Head
+				title={`${album.name} | ${photo.slug} | Photography`}
+				description={`A photo from the ${album.name} album, with the name "${photo.slug}". A collection of photos taken by myself, all licensed under CC BY-NC-SA 4.0 unless otherwise stated.`}
 			/>
+			<Breadcrumb album={album} photo={photo} />
 			<section class="grid grid-cols-4 md:grid-cols-6 gap-1">
 				{date && (
 					<time class="col-start-1 col-span-3 md:col-span-5 text-xs italic text-start text-primary-50 dark:text-primary-950">
@@ -182,10 +166,11 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 					</div>
 				)}
 				<div class="col-span-2 md:col-start-1 md:col-span-1 text-xs text-start italic text-primary-50 dark:text-primary-950">
-					{!(exif?.Model?.description.toUpperCase().includes(
-						exif?.Make?.description.toUpperCase() || "",
-					)) &&
-						exif?.Make?.description} {exif?.Model?.description}
+					{!exif?.Model?.description
+						.toUpperCase()
+						.includes(exif?.Make?.description.toUpperCase() || "") &&
+						exif?.Make?.description}{" "}
+					{exif?.Model?.description}
 				</div>
 				<div class="col-span-2 md:col-span-1 text-xs italic text-end md:text-center text-primary-50 dark:text-primary-950">
 					{exif?.LensProfileName?.description.match(/\(([^)]+)\)/)?.[1] ||
@@ -211,7 +196,7 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 						<source
 							type="image/avif"
 							srcSet={getImagorUrl(
-								`fit-in/2000x2000/filters:format(avif):quality(80)/${photo.src}`,
+								`fit-in/2000x2000/filters:format(avif):quality(80)/${photo.src}`
 							)}
 						/>
 
@@ -219,7 +204,7 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 						<source
 							type="image/webp"
 							srcSet={getImagorUrl(
-								`fit-in/2000x2000/filters:format(webp):quality(80)/${photo.src}`,
+								`fit-in/2000x2000/filters:format(webp):quality(80)/${photo.src}`
 							)}
 						/>
 
@@ -229,30 +214,28 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 							loading="lazy"
 							class="w-auto max-h-[70dvh] rounded-lg border-2 border-transparent hover:border-primary-400 dark:hover:border-primary-600 hover:cursor-pointer"
 							src={getImagorUrl(
-								`fit-in/2000x2000/filters:format(jpeg):quality(80)/${photo.src}`,
+								`fit-in/2000x2000/filters:format(jpeg):quality(80)/${photo.src}`
 							)}
 							alt={photo.src}
 							width={2000}
 							height={2000}
-							data-uri={photo.panorama
-								? getImagorUrl(
-									`fit-in/9999x2000/filters:format(jpeg):quality(80)/${photo.src}`,
-								)
-								: getImagorUrl(
-									`fit-in/2000x2000/filters:format(jpeg):quality(80)/${photo.src}`,
-								)}
+							data-uri={
+								photo.panorama
+									? getImagorUrl(
+											`fit-in/9999x2000/filters:format(jpeg):quality(80)/${photo.src}`
+									  )
+									: getImagorUrl(
+											`fit-in/2000x2000/filters:format(jpeg):quality(80)/${photo.src}`
+									  )
+							}
 						/>
 					</picture>
 				</div>
 				<div class="col-span-2 md:col-span-4 text-xs text-start text-primary-50 dark:text-primary-950 hover:text-primary-600 dark:hover:text-primary-400">
-					<a
-						href={`/photos/${album.slug}`}
-						class="text-sm flex flex-row"
-					>
-						<IoReturnDownBack class="size-5" />&nbsp;
-						<span class="underline">
-							Back to album
-						</span>
+					<a href={`/photos/${album.slug}`} class="text-sm flex flex-row">
+						<CornerDownLeft class="size-5" />
+						&nbsp;
+						<span class="underline">Back to album</span>
 					</a>
 				</div>
 				{photoIndex.prev !== -1 && (
@@ -263,9 +246,8 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 							}`}
 							class="text-sm flex flex-row justify-end"
 						>
-							<IoChevronBackCircle class="self-center size-5" />&nbsp;<span class="underline">
-								Previous
-							</span>
+							<CircleChevronLeft class="self-center size-5" />
+							&nbsp;<span class="underline">Previous</span>
 						</a>
 					</div>
 				)}
@@ -277,9 +259,8 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 							}`}
 							class="text-sm flex flex-row justify-end"
 						>
-							<span class="underline">
-								Next
-							</span>&nbsp;<IoChevronForwardCircle class="self-center size-5" />
+							<span class="underline">Next</span>&nbsp;
+							<CircleChevronRight class="self-center size-5" />
 						</a>
 					</div>
 				)}
@@ -289,11 +270,10 @@ export default function PhotoPage(props: PageProps<HandlerData<DataPhoto>>) {
 				isPhoto
 				noLicense={photo.noLicense}
 			/>
-			<PhotoKeyboardNavigation
-				album={album}
-				photoIndex={photoIndex}
-			/>
+
+			<PhotoKeyboardNavigation album={album} photoIndex={photoIndex} />
+
 			<LightboxIsland url="data-uri" />
 		</>
 	);
-}
+});

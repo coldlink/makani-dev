@@ -13,10 +13,10 @@ const Crumb = ({
 	divider: boolean;
 }) => {
 	return (
-		<li class="flex cursor-pointer items-center text-xs sm:text-sm md:text-base text-text dark:text-textDark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400">
+		<li class="flex cursor-pointer items-center text-xs sm:text-sm md:text-base text-text dark:text-text-dark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400">
 			<a href={href}>{text}</a>
 			{divider && (
-				<span class="pointer-events-none mx-2 text-text dark:text-textDark transition-colors duration-300 ">
+				<span class="pointer-events-none mx-2 text-text dark:text-text-dark transition-colors duration-300 ">
 					/
 				</span>
 			)}

@@ -1,9 +1,12 @@
 import { ProseSection } from "@/components/ProseSection.tsx";
+import { define } from "@/utils/utils.ts";
 import { getImagorUrl } from "@/utils/imagor.ts";
+import { Head } from "@/components/Head.tsx";
 
-export default function Home() {
+export default define.page(function Home() {
 	return (
 		<section class="justify-center mx-auto flex flex-col-reverse sm:flex-row gap-4 items-center h-full">
+			<Head />
 			<ProseSection className="text-center basis-auto sm:basis-full">
 				<h1>Mahesh Makani</h1>
 				<h2>Software Developer</h2>
@@ -57,4 +60,4 @@ export default function Home() {
 			</div>
 		</section>
 	);
-}
+});

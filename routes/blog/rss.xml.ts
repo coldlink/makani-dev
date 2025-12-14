@@ -1,4 +1,4 @@
-import { Handlers } from "$fresh/server.ts";
+import { define } from "@/utils/utils.ts";
 import { description, getPosts, Post } from "./index.tsx";
 
 const formatToRFC822 = (date: Date): string => {
@@ -42,8 +42,8 @@ const item = (post: Post) => `
     </item>
 `;
 
-export const handler: Handlers = {
-	async GET(_req) {
+export const handler = define.handlers({
+	async GET() {
 		const title: string = "Blog | Mahesh Makani";
 		const url: string = "https://makani.dev/blog";
 
@@ -96,4 +96,4 @@ export const handler: Handlers = {
 			},
 		);
 	},
-};
+});
