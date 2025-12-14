@@ -1,20 +1,17 @@
-import { Album } from "@/routes/photos/(_components)/album.tsx";
-import { License } from "@/routes/photos/(_components)/license.tsx";
-import { ALBUMS } from "@/routes/photos/(_utils)/albums/index.ts";
-import { basicHandler } from "@/utils/handler.ts";
+import { Head } from "@/components/Head.tsx";
 import { ProseSection } from "@/components/ProseSection.tsx";
+import { define } from "@/utils/utils.ts";
+import { License } from "./(_components)/License.tsx";
+import { ALBUMS } from "./(_utils)/albums/index.ts";
+import { Album } from "./(_components)/Album.tsx";
 
-/**
- * /photos route
- */
-export const handler = basicHandler({
-	title: "Photography",
-	description:
-		"Photography by Mahesh Makani. A collection of photos taken by myself, all licensed under CC BY-NC-SA 4.0 unless otherwise stated.",
-});
-export default function Photos() {
+export default define.page(function Photos() {
 	return (
 		<section>
+			<Head
+				title="Photography"
+				description="Photography by Mahesh Makani. A collection of photos taken by myself, all licensed under CC BY-NC-SA 4.0 unless otherwise stated."
+			/>
 			<ProseSection className="mb-8">
 				<h1>Photography</h1>
 			</ProseSection>
@@ -29,4 +26,4 @@ export default function Photos() {
 			<License />
 		</section>
 	);
-}
+});

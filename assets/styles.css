@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montaga&display=swap");
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@config "../tailwind.config.ts";
+
+@theme {
+	/* Fonts */
+	--font-serif: "Montaga", serif;
+	--font-sans: "Lato", sans-serif;
+
+	/* Base colors */
+	--color-text: #011a1e;
+	--color-background: #ecfcfe;
+	--color-text-dark: #e1fafe;
+	--color-background-dark: #011113;
+
+	/* Primary palette */
+	--color-primary-50: #19010d;
+	--color-primary-100: #31021a;
+	--color-primary-200: #630335;
+	--color-primary-300: #94054f;
+	--color-primary-400: #c60669;
+	--color-primary-500: #f70883;
+	--color-primary-600: #f9399c;
+	--color-primary-700: #fa6bb5;
+	--color-primary-800: #fc9cce;
+	--color-primary-900: #fdcee6;
+	--color-primary-950: #fee6f3;
+}
+
+@utility prose-custom {
+	--tw-prose-body: var(--color-text);
+	--tw-prose-headings: var(--color-primary-300);
+	--tw-prose-lead: var(--color-primary-400);
+	--tw-prose-links: var(--color-primary-400);
+	--tw-prose-bold: var(--color-text);
+	--tw-prose-counters: var(--color-primary-300);
+	--tw-prose-bullets: var(--color-primary-300);
+	--tw-prose-hr: var(--color-primary-700);
+	--tw-prose-quotes: var(--color-primary-400);
+	--tw-prose-quote-borders: var(--color-primary-300);
+
+	/* primary-100 = rgb(49 2 26) */
+	--tw-prose-captions: rgb(49 2 26 / 70%);
+	--tw-prose-kbd: var(--color-primary-100);
+	--tw-prose-kbd-shadows: 49 2 26;
+
+	--tw-prose-code: var(--color-primary-50);
+	--tw-prose-pre-code: var(--color-primary-50);
+
+	/* primary-950 = rgb(254 230 243) */
+	--tw-prose-pre-bg: rgb(254 230 243 / 50%);
+
+	--tw-prose-th-borders: var(--color-primary-300);
+	--tw-prose-td-borders: var(--color-primary-200);
+
+	/* Invert */
+	--tw-prose-invert-body: var(--color-text-dark);
+	--tw-prose-invert-headings: var(--color-primary-700);
+	--tw-prose-invert-lead: var(--color-primary-800);
+	--tw-prose-invert-links: var(--color-primary-800);
+	--tw-prose-invert-bold: var(--color-text-dark);
+	--tw-prose-invert-counters: var(--color-primary-700);
+	--tw-prose-invert-bullets: var(--color-primary-700);
+	--tw-prose-invert-hr: var(--color-primary-300);
+	--tw-prose-invert-quotes: var(--color-primary-800);
+	--tw-prose-invert-quote-borders: var(--color-primary-300);
+
+	/* primary-900 = rgb(253 206 230) */
+	--tw-prose-invert-captions: rgb(253 206 230 / 70%);
+	--tw-prose-invert-kbd: var(--color-primary-900);
+	--tw-prose-invert-kbd-shadows: 253 206 230;
+
+	--tw-prose-invert-code: var(--color-primary-950);
+	--tw-prose-invert-pre-code: var(--color-primary-950);
+
+	/* primary-50 = rgb(25 1 13) */
+	--tw-prose-invert-pre-bg: rgb(25 1 13 / 50%);
+
+	--tw-prose-invert-th-borders: var(--color-primary-800);
+	--tw-prose-invert-td-borders: var(--color-primary-900);
+}
+
+@layer base {
+	html {
+		@apply min-h-full grid;
+	}
+
+	body {
+		@apply flex flex-col bg-background dark:bg-background-dark container
+			max-w-7xl bg-linear-to-br from-background to-primary-950
+			dark:from-background-dark dark:to-primary-100;
+	}
+
+	main {
+		@apply flex-auto;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		@apply font-serif;
+	}
+
+	:where(h1) {
+		margin-block: 0.67em;
+		font-size: 2em;
+	}
+
+	.youtube {
+		@apply w-full aspect-video;
+	}
+
+	pre code {
+		@apply block w-0;
+	}
+
+	.viewerjs {
+		@apply backdrop-blur-md;
+	}
+
+	/* Font-weight normalization */
+	.prose h1,
+	.prose h1 strong,
+	.prose h2,
+	.prose h2 strong,
+	.prose h3,
+	.prose h3 strong,
+	.prose h4,
+	.prose h4 strong {
+		font-weight: 400;
+	}
+}
+
+.youtube {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	height: auto;
+}

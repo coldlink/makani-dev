@@ -1,10 +1,4 @@
-import {
-	IoLogoGithub,
-	IoLogoInstagram,
-	IoLogoLinkedin,
-	IoLogoRss,
-	IoMailOutline,
-} from "react-icons/io5";
+import { Github, Instagram, Linkedin, Mail, Rss } from "lucide-preact";
 
 export default function Footer() {
 	return (
@@ -14,45 +8,45 @@ export default function Footer() {
 				rel="noopener noreferrer"
 				href="mailto:contact@makani.dev"
 				title="Contact - Email"
-				class="block text-text dark:text-textDark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
+				class="block text-text dark:text-text-dark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
 			>
-				<IoMailOutline class="size-6 md:size-8" />
+				<Mail class="size-6 md:size-8" />
 			</a>
 			<a
 				target="_blank"
 				rel="noopener noreferrer"
 				href="https://www.linkedin.com/in/mahesh-makani/"
 				title="Contact - LinkedIn"
-				class="block text-text dark:text-textDark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
+				class="block text-text dark:text-text-dark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
 			>
-				<IoLogoLinkedin class="size-6 md:size-8" />
+				<Linkedin class="size-6 md:size-8" />
 			</a>
 			<a
 				target="_blank"
 				rel="noopener noreferrer"
 				href="https://github.com/coldlink"
 				title="Contact - GitHub"
-				class="block text-text dark:text-textDark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
+				class="block text-text dark:text-text-dark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
 			>
-				<IoLogoGithub class="size-6 md:size-8" />
+				<Github class="size-6 md:size-8" />
 			</a>
 			<a
 				target="_blank"
 				rel="noopener noreferrer"
 				href="https://www.instagram.com/coldlink_/"
 				title="Contact - Instagram"
-				class="block text-text dark:text-textDark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
+				class="block text-text dark:text-text-dark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
 			>
-				<IoLogoInstagram class="size-6 md:size-8" />
+				<Instagram class="size-6 md:size-8" />
 			</a>
 			<a
 				target="_blank"
 				rel="noopener noreferrer"
 				href="/blog/rss.xml"
 				title="Blog - RSS Feed"
-				class="block text-text dark:text-textDark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
+				class="block text-text dark:text-text-dark transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"
 			>
-				<IoLogoRss class="size-6 md:size-8" />
+				<Rss class="size-6 md:size-8" />
 			</a>
 		</footer>
 	);

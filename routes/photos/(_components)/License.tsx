@@ -17,7 +17,7 @@ export const License = (
 	},
 ) => {
 	return (
-		<div class="text-xs text-start text-text dark:text-textDark mt-6">
+		<div class="text-xs text-start text-text dark:text-text-dark mt-6">
 			{isPhoto
 				? (
 					// @ts-ignore -- cc license tag

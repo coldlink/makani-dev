@@ -1,9 +1,9 @@
 type NavProps = {
-	route: string;
+	route: string | null;
 };
 
 export default function Nav({ route }: NavProps) {
-	const activeRoute = route.split("/")[1] || "home";
+	const activeRoute = route?.split("/")[1] || "home";
 
 	return (
 		<header class="flex-initial">
@@ -23,7 +23,7 @@ export default function Nav({ route }: NavProps) {
 							class={`flex items-center transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400 ${
 								activeRoute === "blog"
 									? "text-primary-300 dark:text-primary-700"
-									: "text-text dark:text-textDark"
+									: "text-text dark:text-text-dark"
 							}`}
 						>
 							Blog
@@ -35,7 +35,7 @@ export default function Nav({ route }: NavProps) {
 							class={`flex items-center transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400 ${
 								activeRoute === "photos"
 									? "text-primary-300 dark:text-primary-700"
-									: "text-text dark:text-textDark"
+									: "text-text dark:text-text-dark"
 							}`}
 						>
 							Photography
@@ -47,7 +47,7 @@ export default function Nav({ route }: NavProps) {
 							class={`flex items-center transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400 ${
 								activeRoute === "work"
 									? "text-primary-300 dark:text-primary-700"
-									: "text-text dark:text-textDark"
+									: "text-text dark:text-text-dark"
 							}`}
 						>
 							Work
@@ -59,7 +59,7 @@ export default function Nav({ route }: NavProps) {
 							class={`flex items-center transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400 ${
 								activeRoute === "projects"
 									? "text-primary-300 dark:text-primary-700"
-									: "text-text dark:text-textDark"
+									: "text-text dark:text-text-dark"
 							}`}
 						>
 							Projects
@@ -71,7 +71,7 @@ export default function Nav({ route }: NavProps) {
 							class={`flex items-center transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400 ${
 								activeRoute === "contact"
 									? "text-primary-300 dark:text-primary-700"
-									: "text-text dark:text-textDark"
+									: "text-text dark:text-text-dark"
 							}`}
 						>
 							Contact

@@ -7,8 +7,9 @@
 
 # Fresh build directory
 _fresh/
-# npm dependencies
+# npm + other dependencies
 node_modules/
+vendor/
 
 # Mac OS finder app metadata
 .DS_Store

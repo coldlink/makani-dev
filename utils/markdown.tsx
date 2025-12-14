@@ -1,8 +1,6 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
-import { extract } from "$std/front_matter/yaml.ts";
-import { ProseSection } from "@/components/ProseSection.tsx";
-import Error404 from "@/routes/_404.tsx";
-import { HandlerData } from "./handler.ts";
+import { HttpError, page } from "fresh";
+import { define, State } from "./utils.ts";
+import { extract } from "@std/front-matter/yaml";
 import rehypeRaw from "rehype-raw";
 import rehypeStringify from "rehype-stringify";
 import remarkDirective from "remark-directive";
@@ -11,15 +9,17 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import { visit } from "unist-util-visit";
-import type { Root } from "npm:mdast";
+import type { Root } from "mdast";
 import { fromHtml } from "hast-util-from-html";
 import { getImagorUrl } from "./imagor.ts";
-import { renderToString } from "$fresh/src/server/deps.ts";
+import { renderToString } from "preact-render-to-string";
+import { ProseSection } from "@/components/ProseSection.tsx";
+import { Head } from "@/components/Head.tsx";
 
-interface Page {
+type MarkdownPage = {
 	markdown: string;
 	published_at?: string;
-}
+} & State;
 
 const mdYoutube = (id: string, alt: string) => {
 	return renderToString(
@@ -164,11 +164,17 @@ const processor = unified()
 						}
 
 						if (!id) {
-							file.fail("Unexpected missing `id` on `youtube` directive", node);
+							file.fail(
+								"Unexpected missing `id` on `youtube` directive",
+								node,
+							);
 						}
 
 						const tree = fromHtml(
-							mdYoutube(id as string, attributes.alt as string || ""),
+							mdYoutube(
+								id as string,
+								attributes.alt as string || "",
+							),
 							{ fragment: true },
 						);
 						data.hName = "figure";
@@ -221,33 +227,39 @@ export const parseMarkdown = async (raw: string) => {
 	return (await (processor.process(raw))).value.toString();
 };
 
-export const markdownHandler: Handlers<HandlerData<Page>> = {
-	async GET(_req, ctx) {
+export const handler = define.handlers({
+	async GET(ctx) {
 		try {
 			const raw = await Deno.readTextFile(
 				`markdown/${cleanRoute(ctx.url.pathname)}.md`,
 			);
 
-			const { attrs, body } = extract(raw);
+			const { attrs, body } = extract<Omit<MarkdownPage, "markdown">>(
+				raw,
+			);
 
-			return ctx.render({
+			return page<MarkdownPage>({
 				markdown: await parseMarkdown(body),
 				...attrs,
 			});
 		} catch (error) {
 			console.error(error);
-			return ctx.render(undefined);
+			return page();
 		}
 	},
-};
+});
 
-export default function MarkdownPage({ data }: PageProps<HandlerData<Page>>) {
+export default define.page<typeof handler>(({ data }) => {
 	if (!data) {
-		return <Error404 />;
+		throw new HttpError(404);
 	}
 
 	return (
 		<>
+			<Head
+				title={data.title}
+				description={data.description}
+			/>
 			<ProseSection className={`${data.published_at ? "mb-4" : "mb-8"}`}>
 				<h1>
 					{data.title}
@@ -268,4 +280,4 @@ export default function MarkdownPage({ data }: PageProps<HandlerData<Page>>) {
 			/>
 		</>
 	);
-}
+});
