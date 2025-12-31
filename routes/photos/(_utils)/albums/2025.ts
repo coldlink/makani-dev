@@ -7,7 +7,7 @@ export const Daily2025: Album = {
 	description: `
 I gave myself a challenge to attempt take at least one photo every day in 2025, with one photo for each day being posted here, with the aim of trying to improve my photography skills and to document my life in 2025.
 
-Day's missed so far:
+Days missed:
 - 24th March 2025
 `,
 	photos: [
@@ -1514,6 +1514,14 @@ Day's missed so far:
 		{
 			src: "20251229-IMG_0006.jpg",
 			slug: "2025-dec-29",
+		},
+		{
+			src: "20251230-_87A0637.jpg",
+			slug: "2025-dec-30",
+		},
+		{
+			src: "20251231-_87A0713-2.jpg",
+			slug: "2025-dec-31",
 		},
 	],
 };
