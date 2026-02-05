@@ -84,7 +84,7 @@
 
 @layer base {
 	html {
-		@apply min-h-full grid;
+		@apply min-h-svh grid;
 	}
 
 	body {
