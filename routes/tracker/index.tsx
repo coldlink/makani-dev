@@ -58,7 +58,8 @@ export default define.page<typeof handler>(function TrackerIndexPage(ctx) {
 			<ol class="relative border-s border-primary-200 dark:border-primary-700 max-w-[80ch]">
 				{posts.map((post) => (
 					<li class="mb-10 ml-4">
-						<div class="absolute w-3 h-3 bg-primary-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-primary-900 dark:bg-primary-700"></div>
+						<div class="absolute w-3 h-3 bg-primary-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-primary-900 dark:bg-primary-700">
+						</div>
 						<a
 							href={`/tracker/${post.slug}`}
 							class="mb-1 text-lg font-serif text-primary-300 dark:text-primary-700 transition-colors duration-300 hover:text-primary-600 hover:dark:text-primary-400"

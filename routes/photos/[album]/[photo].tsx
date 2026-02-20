@@ -65,8 +65,9 @@ export const handler = define.handlers({
 			});
 		}
 
-		const nextPhotoIndex =
-			photoIndex !== album.photos.length - 1 ? photoIndex + 1 : -1;
+		const nextPhotoIndex = photoIndex !== album.photos.length - 1
+			? photoIndex + 1
+			: -1;
 		const prevPhotoIndex = photoIndex !== 0 ? photoIndex - 1 : -1;
 
 		const exif = await getPhotoExif(photo);
@@ -102,10 +103,12 @@ export default define.page<typeof handler>(function PhotoPage(ctx) {
 		// otherwise, try to get the date from `DateTimeOriginal` and `OffsetTimeOriginal`
 		// which we parse into an ISO 8601 string
 		const dateTimeOriginal = new Date(
-			`${exif?.DateTimeOriginal?.description
-				.replace(":", "-")
-				.replace(":", "-")
-				.replace(" ", "T")}${exif?.OffsetTimeOriginal?.description || ""}`
+			`${
+				exif?.DateTimeOriginal?.description
+					.replace(":", "-")
+					.replace(":", "-")
+					.replace(" ", "T")
+			}${exif?.OffsetTimeOriginal?.description || ""}`,
 		);
 
 		// return the date if it's valid
@@ -169,8 +172,7 @@ export default define.page<typeof handler>(function PhotoPage(ctx) {
 					{!exif?.Model?.description
 						.toUpperCase()
 						.includes(exif?.Make?.description.toUpperCase() || "") &&
-						exif?.Make?.description}{" "}
-					{exif?.Model?.description}
+						exif?.Make?.description} {exif?.Model?.description}
 				</div>
 				<div class="col-span-2 md:col-span-1 text-xs italic text-end md:text-center text-primary-50 dark:text-primary-950">
 					{exif?.LensProfileName?.description.match(/\(([^)]+)\)/)?.[1] ||
@@ -196,7 +198,7 @@ export default define.page<typeof handler>(function PhotoPage(ctx) {
 						<source
 							type="image/avif"
 							srcSet={getImagorUrl(
-								`fit-in/2000x2000/filters:format(avif):quality(80)/${photo.src}`
+								`fit-in/2000x2000/filters:format(avif):quality(80)/${photo.src}`,
 							)}
 						/>
 
@@ -204,7 +206,7 @@ export default define.page<typeof handler>(function PhotoPage(ctx) {
 						<source
 							type="image/webp"
 							srcSet={getImagorUrl(
-								`fit-in/2000x2000/filters:format(webp):quality(80)/${photo.src}`
+								`fit-in/2000x2000/filters:format(webp):quality(80)/${photo.src}`,
 							)}
 						/>
 
@@ -214,20 +216,18 @@ export default define.page<typeof handler>(function PhotoPage(ctx) {
 							loading="lazy"
 							class="w-auto max-h-[70dvh] rounded-lg border-2 border-transparent hover:border-primary-400 dark:hover:border-primary-600 hover:cursor-pointer"
 							src={getImagorUrl(
-								`fit-in/2000x2000/filters:format(jpeg):quality(80)/${photo.src}`
+								`fit-in/2000x2000/filters:format(jpeg):quality(80)/${photo.src}`,
 							)}
 							alt={photo.src}
 							width={2000}
 							height={2000}
-							data-uri={
-								photo.panorama
-									? getImagorUrl(
-											`fit-in/9999x2000/filters:format(jpeg):quality(80)/${photo.src}`
-									  )
-									: getImagorUrl(
-											`fit-in/2000x2000/filters:format(jpeg):quality(80)/${photo.src}`
-									  )
-							}
+							data-uri={photo.panorama
+								? getImagorUrl(
+									`fit-in/9999x2000/filters:format(jpeg):quality(80)/${photo.src}`,
+								)
+								: getImagorUrl(
+									`fit-in/2000x2000/filters:format(jpeg):quality(80)/${photo.src}`,
+								)}
 						/>
 					</picture>
 				</div>

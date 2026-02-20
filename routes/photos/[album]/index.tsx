@@ -23,7 +23,7 @@ const Gallery = ({ album }: { album: Album }) => {
 						<source
 							type="image/avif"
 							srcSet={getImagorUrl(
-								`fit-in/540x540/filters:format(avif):quality(80)/${photo.src}`
+								`fit-in/540x540/filters:format(avif):quality(80)/${photo.src}`,
 							)}
 						/>
 
@@ -31,7 +31,7 @@ const Gallery = ({ album }: { album: Album }) => {
 						<source
 							type="image/webp"
 							srcSet={getImagorUrl(
-								`fit-in/540x540/filters:format(webp):quality(80)/${photo.src}`
+								`fit-in/540x540/filters:format(webp):quality(80)/${photo.src}`,
 							)}
 						/>
 
@@ -40,7 +40,7 @@ const Gallery = ({ album }: { album: Album }) => {
 							loading="lazy"
 							class="h-auto max-w-full rounded-lg mb-4 hover:shadow-lg border-2 border-transparent hover:border-primary-400 dark:hover:border-primary-600"
 							src={getImagorUrl(
-								`fit-in/540x540/filters:format(jpeg):quality(80)/${photo.src}`
+								`fit-in/540x540/filters:format(jpeg):quality(80)/${photo.src}`,
 							)}
 							alt={photo.src}
 							width={540}
@@ -57,12 +57,11 @@ export const handler = define.handlers({
 	async GET(ctx) {
 		const album = findAlbumFromSlug(ctx.params.album);
 
-		const markdownDescription =
-			album?.description &&
+		const markdownDescription = album?.description &&
 			(await parseMarkdown(
-				`### ${album.name}\n\n_${album.dates ? `${album.dates} / ` : ""}${
-					album.photos.length
-				} photos_\n\n${album.description}`
+				`### ${album.name}\n\n_${
+					album.dates ? `${album.dates} / ` : ""
+				}${album.photos.length} photos_\n\n${album.description}`,
 			));
 
 		return page<DataAlbum>({

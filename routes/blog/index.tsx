@@ -36,9 +36,9 @@ async function getPost(slug: string): Promise<Post | null> {
 		description: attrs.description as string,
 		image: attrs.image
 			? {
-					src: attrs.image.src,
-					alt: attrs.image.alt,
-			  }
+				src: attrs.image.src,
+				alt: attrs.image.alt,
+			}
 			: undefined,
 		hidden: attrs.hidden as boolean,
 	};
@@ -60,7 +60,8 @@ function Post(props: { post: Post }) {
 	const { post } = props;
 	return (
 		<li class="mb-8 ms-4">
-			<div class="absolute w-3 h-3 bg-primary-200 rounded-full -start-1.5 border border-white dark:border-primary-900 dark:bg-primary-700"></div>
+			<div class="absolute w-3 h-3 bg-primary-200 rounded-full -start-1.5 border border-white dark:border-primary-900 dark:bg-primary-700">
+			</div>
 
 			<a class="relative -top-1.5 block" href={`/blog/${post.slug}`}>
 				<div class="flex flex-col-reverse sm:flex-row sm:items-center gap-4">
@@ -71,7 +72,7 @@ function Post(props: { post: Post }) {
 								<source
 									type="image/avif"
 									srcSet={getImagorUrl(
-										`fit-in/400x300/filters:format(avif):quality(80)/${post.image.src}`
+										`fit-in/400x300/filters:format(avif):quality(80)/${post.image.src}`,
 									)}
 								/>
 
@@ -79,7 +80,7 @@ function Post(props: { post: Post }) {
 								<source
 									type="image/webp"
 									srcSet={getImagorUrl(
-										`fit-in/400x300/filters:format(webp):quality(80)/${post.image.src}`
+										`fit-in/400x300/filters:format(webp):quality(80)/${post.image.src}`,
 									)}
 								/>
 
@@ -88,7 +89,7 @@ function Post(props: { post: Post }) {
 									loading="lazy"
 									class="w-full h-auto rounded-lg object-cover border-2 border-transparent hover:border-primary-400 dark:hover:border-primary-600 transition-all duration-300 aspect-4/3"
 									src={getImagorUrl(
-										`fit-in/400x300/filters:format(jpeg):quality(80)/${post.image.src}`
+										`fit-in/400x300/filters:format(jpeg):quality(80)/${post.image.src}`,
 									)}
 									alt={post.image.alt}
 									width={400}
@@ -142,9 +143,7 @@ export default define.page<typeof handler>(function BlogIndexPage(ctx) {
 				</p>
 			</ProseSection>
 			<ol class="relative border-s border-primary-200 dark:border-primary-700 max-w-[80ch]">
-				{posts.map((post) => (
-					<Post post={post} key={post.slug} />
-				))}
+				{posts.map((post) => <Post post={post} key={post.slug} />)}
 			</ol>
 		</>
 	);

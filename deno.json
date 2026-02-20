@@ -1,5 +1,4 @@
 {
-	"lock": true,
 	"nodeModulesDir": "manual",
 	"tasks": {
 		"check": "deno fmt --check . && deno lint . && deno check **/*.ts && deno check **/*.tsx",
@@ -9,9 +8,7 @@
 		"update": "deno run -A -r jsr:@fresh/update ."
 	},
 	"lint": {
-		"rules": {
-			"tags": ["fresh", "recommended"]
-		},
+		"rules": { "tags": ["fresh", "recommended"] },
 		"exclude": ["react-no-danger", "react-no-danger-with-children"]
 	},
 	"fmt": { "useTabs": true, "indentWidth": 2, "semiColons": true },
@@ -23,14 +20,13 @@
 		"@std/path": "jsr:@std/path@^1.1.4",
 		"@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.19",
 		"@types/mdast": "npm:@types/mdast@^4.0.4",
-		"exifreader": "npm:exifreader@^4.33.1",
+		"exifreader": "npm:exifreader@^4.36.2",
 		"fresh": "jsr:@fresh/core@^2.2.0",
 		"hast-util-from-html": "npm:hast-util-from-html@^2.0.3",
 		"lucide-preact": "npm:lucide-preact@^0.562.0",
 		"preact": "npm:preact@^10.28.1",
 		"@preact/signals": "npm:@preact/signals@^2.5.1",
 		"@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.8",
-		"preact-render-to-string": "npm:preact-render-to-string@^6.6.4",
 		"rehype-raw": "npm:rehype-raw@^7.0.0",
 		"rehype-stringify": "npm:rehype-stringify@^10.0.1",
 		"remark-directive": "npm:remark-directive@^4.0.0",
@@ -38,10 +34,10 @@
 		"remark-parse": "npm:remark-parse@^11.0.0",
 		"remark-rehype": "npm:remark-rehype@^11.1.2",
 		"unified": "npm:unified@^11.0.5",
-		"unist-util-visit": "npm:unist-util-visit@^5.0.0",
-		"vite": "npm:vite@^7.3.0",
-		"tailwindcss": "npm:tailwindcss@^4.1.18",
-		"@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.18"
+		"unist-util-visit": "npm:unist-util-visit@^5.1.0",
+		"vite": "npm:vite@^7.3.1",
+		"tailwindcss": "npm:tailwindcss@^4.2.0",
+		"@tailwindcss/vite": "npm:@tailwindcss/vite@^4.2.0"
 	},
 	"compilerOptions": {
 		"lib": ["dom", "dom.asynciterable", "dom.iterable", "deno.ns"],
@@ -65,5 +61,5 @@
 		],
 		"types": ["vite/client"]
 	},
-	"allowScripts": ["npm:esbuild@0.25.7", "npm:exifreader@4.33.1"]
+	"allowScripts": ["npm:esbuild@0.27.2", "npm:exifreader@4.36.2"]
 }
