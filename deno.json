@@ -23,9 +23,9 @@
 		"exifreader": "npm:exifreader@^4.36.2",
 		"fresh": "jsr:@fresh/core@^2.2.0",
 		"hast-util-from-html": "npm:hast-util-from-html@^2.0.3",
-		"lucide-preact": "npm:lucide-preact@^0.562.0",
-		"preact": "npm:preact@^10.28.1",
-		"@preact/signals": "npm:@preact/signals@^2.5.1",
+		"lucide-preact": "npm:lucide-preact@^0.577.0",
+		"preact": "npm:preact@^10.28.4",
+		"@preact/signals": "npm:@preact/signals@^2.8.1",
 		"@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.8",
 		"rehype-raw": "npm:rehype-raw@^7.0.0",
 		"rehype-stringify": "npm:rehype-stringify@^10.0.1",
@@ -36,8 +36,8 @@
 		"unified": "npm:unified@^11.0.5",
 		"unist-util-visit": "npm:unist-util-visit@^5.1.0",
 		"vite": "npm:vite@^7.3.1",
-		"tailwindcss": "npm:tailwindcss@^4.2.0",
-		"@tailwindcss/vite": "npm:@tailwindcss/vite@^4.2.0"
+		"tailwindcss": "npm:tailwindcss@^4.2.1",
+		"@tailwindcss/vite": "npm:@tailwindcss/vite@^4.2.1"
 	},
 	"compilerOptions": {
 		"lib": ["dom", "dom.asynciterable", "dom.iterable", "deno.ns"],
