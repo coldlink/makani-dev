@@ -10,6 +10,7 @@ I gave myself a challenge to attempt take at least one photo every day in 2025, 
 Days missed:
 - 24th March 2025
 `,
+	fullWidth: true,
 	photos: [
 		{
 			src: "20250101-_87A8223-Enhanced-NR.jpg",

@@ -15,7 +15,13 @@ type DataAlbum = {
 
 const Gallery = ({ album }: { album: Album }) => {
 	return (
-		<div class="columns-1 sm:columns-2 md:columns-3 gap-4">
+		<div
+			class={`columns-1 sm:columns-2 md:columns-3 gap-4 ${
+				album.fullWidth
+					? "lg:w-screen lg:relative lg:left-1/2 lg:right-1/2 lg:-ml-[50svw] lg:-mr-[50svw] lg:px-6 lg:columns-4 xl:columns-5"
+					: ""
+			}`}
+		>
 			{album.photos.map((photo, i) => (
 				<a href={`/photos/${album.slug}/${photo.slug}`} class="group">
 					<picture key={i}>

@@ -10,6 +10,7 @@ Highlights from my first time at Glastonbury Festival. In mostly chronological o
 What an experience it was. The scale of the festival is immense, so much to see and do, this is but a small selection of the photos I took that hopefully capture some of the magic of the event.
     `,
 	copyrightYear: "2025",
+	fullWidth: true,
 	photos: [
 		{
 			src: "20250625-_87A1779.jpg",

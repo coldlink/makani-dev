@@ -13,6 +13,7 @@ A selection of my favorite shots from this camera are below.
 
 Film processed and scanned by [Filmprocessing.co.uk](https://www.filmprocessing.co.uk/). All as scanned images with no additional edits applied.
     `,
+	fullWidth: true,
 	photos: [{
 		src: "000014400004.JPG",
 		slug: "olympus-film-1",

@@ -41,6 +41,7 @@ export type Album = {
 	description?: string; // make this optional until all albums have descriptions
 	dates?: string;
 	copyrightYear?: string;
+	fullWidth?: boolean; // if true, the album should be displayed full width, ignoring the max width of the container
 };
 
 /**

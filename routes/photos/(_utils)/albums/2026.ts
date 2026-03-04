@@ -6,6 +6,7 @@ export const Daily2026: Album = {
 	dates: "2026",
 	description:
 		`A photo (nearly) every day in 2026. Continuing on from where I left off in [2025](\/photos\/2025). This project is a way for me to document my year, improve my photography skills, and share my perspective with others.`,
+	fullWidth: true,
 	photos: [
 		{
 			src: "20260101-_87A0771.jpg",

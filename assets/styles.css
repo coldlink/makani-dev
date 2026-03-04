@@ -84,7 +84,7 @@
 
 @layer base {
 	html {
-		@apply min-h-svh grid;
+		@apply min-h-svh grid overflow-x-hidden;
 	}
 
 	body {
