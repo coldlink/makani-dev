@@ -267,5 +267,9 @@ export const Daily2026: Album = {
 			src: "20260305-_DSC2057.jpg",
 			slug: "2026-03-05",
 		},
+		{
+			src: "20260306-_J6A4264.jpg",
+			slug: "2026-03-06",
+		},
 	],
 };
