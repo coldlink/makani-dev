@@ -20,13 +20,13 @@
 		"@std/path": "jsr:@std/path@^1.1.4",
 		"@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.19",
 		"@types/mdast": "npm:@types/mdast@^4.0.4",
-		"exifreader": "npm:exifreader@^4.36.2",
-		"fresh": "jsr:@fresh/core@^2.2.0",
+		"exifreader": "npm:exifreader@^4.38.1",
+		"fresh": "jsr:@fresh/core@^2.3.3",
 		"hast-util-from-html": "npm:hast-util-from-html@^2.0.3",
 		"lucide-preact": "npm:lucide-preact@^0.577.0",
-		"preact": "npm:preact@^10.28.4",
-		"@preact/signals": "npm:@preact/signals@^2.8.1",
-		"@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.8",
+		"preact": "npm:preact@^10.29.1",
+		"@preact/signals": "npm:@preact/signals@^2.9.0",
+		"@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.1.2",
 		"rehype-raw": "npm:rehype-raw@^7.0.0",
 		"rehype-stringify": "npm:rehype-stringify@^10.0.1",
 		"remark-directive": "npm:remark-directive@^4.0.0",
@@ -36,8 +36,8 @@
 		"unified": "npm:unified@^11.0.5",
 		"unist-util-visit": "npm:unist-util-visit@^5.1.0",
 		"vite": "npm:vite@^7.3.1",
-		"tailwindcss": "npm:tailwindcss@^4.2.1",
-		"@tailwindcss/vite": "npm:@tailwindcss/vite@^4.2.1"
+		"tailwindcss": "npm:tailwindcss@^4.2.4",
+		"@tailwindcss/vite": "npm:@tailwindcss/vite@^4.2.4"
 	},
 	"compilerOptions": {
 		"lib": ["dom", "dom.asynciterable", "dom.iterable", "deno.ns"],
@@ -61,5 +61,5 @@
 		],
 		"types": ["vite/client"]
 	},
-	"allowScripts": ["npm:esbuild@0.27.2", "npm:exifreader@4.36.2"]
+	"allowScripts": ["npm:esbuild@0.27.2", "npm:exifreader@4.38.1"]
 }
