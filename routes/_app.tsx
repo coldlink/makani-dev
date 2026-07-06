@@ -1,8 +1,5 @@
 import { define } from "@/utils/utils.ts";
 
-const umamiScriptUrl = Deno.env.get("UMAMI_SCRIPT_URL");
-const umamiSiteId = Deno.env.get("UMAMI_WEBSITE_ID");
-
 export default define.page(
 	function App({ Component, route }) {
 		return (
@@ -39,16 +36,6 @@ export default define.page(
 								title="Mahesh Makani's Blog RSS Feed"
 								href="/blog/rss.xml"
 							/>
-						)
-						: null}
-					{umamiScriptUrl && umamiSiteId
-						? (
-							<script
-								defer
-								src={umamiScriptUrl}
-								data-website-id={umamiSiteId}
-							>
-							</script>
 						)
 						: null}
 				</head>
