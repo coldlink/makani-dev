@@ -802,6 +802,10 @@ export const Daily2026: Album = {
 			slug: "2026-07-14",
 		},
 		{
+			src: "20260715-_DSC6286.jpg",
+			slug: "2026-07-15",
+		},
+		{
 			src: "20260716-_DSC6306.jpg",
 			slug: "2026-07-16",
 		},
@@ -820,6 +824,10 @@ export const Daily2026: Album = {
 		{
 			src: "20260720-_DSC6405.jpg",
 			slug: "2026-07-20",
+		},
+		{
+			src: "20260721-_DSC6418.jpg",
+			slug: "2026-07-21",
 		},
 		{
 			src: "20260722-_DSC6425.jpg",
