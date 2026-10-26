@@ -8,11 +8,19 @@ worked on.
 
 ## [The Guardian](https://theguardian.com)
 
-#### Senior Software Developer | April 2022 - Present | London, UK
+#### Staff Software Engineer | October 2026 - Present | London, UK
+
+#### Senior Software Developer | April 2022 - October 2026 | London, UK
 
 #### Full-stack Software Engineer | September 2019 - April 2022 | London, UK
 
-### Developer Experience | E2E Team | May 2025 - Present
+### Design Systems | June 2026 - Present
+
+#### About
+
+Will fill in later.
+
+### Developer Experience | E2E Team | May 2025 - June 2026
 
 #### About
 
